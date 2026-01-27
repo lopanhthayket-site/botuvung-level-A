@@ -1,0 +1,2683 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Từ vựng Level A- Lớp Anh thầy Kết</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #fff8f0;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+ header {
+  background-color: #ffd6ba;
+  padding: 15px 20px;
+  font-weight: bold;
+  color: #7a4e3e;
+  display: flex;
+  flex-wrap: wrap;       
+  align-items: center;
+  justify-content: space-between;  /* Left luôn bên trái, center căn giữa */
+  gap: 15px;
+}
+
+/* Left: icon + home text */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 0 0 auto;          /* không bị co lại */
+}
+
+.header-left a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 24px;
+  color: #7a4e3e;
+  text-decoration: none;
+}
+
+.header-left a i {
+  font-size: 28px;
+}
+
+/* Center title */
+header {
+  position: relative;
+}
+
+.header-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 32px;
+  margin: 0;
+  white-space: nowrap;
+}
+/* ===== TOP SELECT ===== */
+.top-select {
+  display: flex;
+  justify-content: flex-start;
+  margin: 20px 40px;
+}
+
+select {
+  padding: 8px 14px;
+  font-size: 18px;
+  border-radius: 8px;
+  border: 2px solid #a0e7e5;
+  background-color: #e3fdfd;
+}
+
+
+
+/* MEDIA QUERY cho điện thoại */
+@media (max-width: 480px) {
+
+    .header-center {
+    flex-basis: 100%;
+    order: 2;
+    text-align: center;
+    position: static;
+    transform: none;
+    margin-top: 8px;
+  }
+
+  .header-left {
+    order: 1;
+  }
+}
+
+  header {
+    padding: 10px 15px;
+  }
+  .header-left a {
+    font-size: 18px;
+  }
+  .header-left a i {
+    font-size: 20px;
+  }
+  .header-center {
+    font-size: 22px;
+  }
+}
+
+
+  .top-select {
+    display: flex;
+    justify-content: flex-start;
+    margin: 20px 40px;
+  }
+
+  select {
+    padding: 8px 14px;
+    font-size: 18px;
+    border-radius: 8px;
+    border: 2px solid #a0e7e5;
+    background-color: #e3fdfd;
+  }
+
+  /* Word list */
+  .word-list {
+    width: 85%;
+    margin: 20px auto;
+    background-color: #E0FBE2;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: left;
+    font-size: 22px;
+  }
+
+.word-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 10px;
+  border-bottom: 1px dashed #ffb3ba;
+  transition: background-color .15s ease-in-out;
+}
+.word-row:last-child { border-bottom: none; }
+
+/* Hover đổi màu */
+.word-row:hover {
+  background-color: #fffacd; /* xanh nhạt dễ thấy */
+  cursor: pointer;
+}
+
+  /* Ôn tập */
+  .review-box {
+    margin: 40px auto;
+    width: 70%;
+    background-color: #ffe5ec;
+    padding: 25px;
+    font-weight: bold;
+    color: #607274;
+    font-size: 26px;
+    border-radius: 12px;
+    position: relative;
+  }
+  .review-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 15px;
+}
+.review-buttons button {
+  background-color: #a0e7e5;
+  border: none;
+  padding: 12px 20px;
+  font-size: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.review-buttons button:hover {
+  background-color: #ffb3ba;
+}
+
+
+  /* Bài tập */
+  .exercise {
+    width: 80%;
+    margin: 0 auto 30px auto;
+    font-size: 22px;
+    text-align: left;
+  }
+
+  .exercise input {
+    width: 220px;
+    font-size: 20px;
+    padding: 5px;
+    margin-left: 10px;
+    border-radius: 6px;
+  }
+
+  .exercise button {
+    margin-left: 10px;
+    padding: 6px 12px;
+    font-size: 18px;
+    background-color: #a0e7e5;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .exercise button:hover {
+    background-color: #ffb3ba;
+  }
+
+  .result {
+    font-weight: bold;
+    color: #C5705D;
+    font-size: 20px;
+    margin-left: 10px;
+  }
+
+  footer {
+    font-size: 22px;
+    margin-top: 40px;
+    padding: 20px;
+    color: #7a4e3e;
+    background-color: #fff0e1;
+  }
+
+  .confetti {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    background: red;
+    opacity: .9;
+    animation: pop .9s ease-out forwards;
+  }
+  @keyframes pop {
+    0% { transform: translate(0,0) scale(1); opacity:1;}
+    50% {transform: translate(calc(var(--x)*.5),calc(var(--y)*.4)) scale(1.1);opacity:1;}
+    100% {transform: translate(var(--x),var(--y)) scale(.5);opacity:0;}
+  }
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-left">
+    <a href="https://lopanhthayket-site.github.io/lopanhthayket_thcs-botuvung/">
+      <i class="fa-solid fa-house"></i> Lớp Anh thầy Kết
+    </a>
+  </div>
+  <div class="header-center">
+    Từ vựng Level A
+  </div>
+</header>
+
+<!-- Bộ chọn -->
+<div class="top-select">
+  <select id="wordList">
+    <option value="1">Từ vựng Level A - 1</option>
+    <option value="2">Từ vựng Level A - 2</option>
+    <option value="3">Từ vựng Level A - 3</option>
+    <option value="4">Từ vựng Level A - 4</option>
+    <option value="5">Từ vựng Level A - 5</option>
+    <option value="6">Từ vựng Level A - 6</option>
+    <option value="7">Từ vựng Level A - 7</option>
+    <option value="8">Từ vựng Level A - 8</option>
+    <option value="9">Từ vựng Level A - 9</option>
+    <option value="10">Từ vựng Level A - 10</option>
+    <option value="11">Từ vựng Level A - 11</option>
+    <option value="12">Từ vựng Level A - 12</option>
+    <option value="13">Từ vựng Level A - 13</option>
+    <option value="14">Từ vựng Level A - 14</option>
+    <option value="15">Từ vựng Level A - 15</option>
+    <option value="16">Từ vựng Level A - 16</option>
+    <option value="17">Từ vựng Level A - 17</option>
+    <option value="18">Từ vựng Level A - 18</option>
+    <option value="19">Từ vựng Level A - 19</option>
+    <option value="20">Từ vựng Level A - 20</option>
+    <option value="21">Từ vựng Level A - 21</option>
+    <option value="22">Từ vựng Level A - 22</option>
+
+
+  </select>
+</div>
+
+
+
+<script>
+// Bắt sự kiện Enter cho tất cả các ô input trong bài tập
+document.addEventListener("DOMContentLoaded", function() {
+  const exerciseInputs = document.querySelectorAll(".exercise input");
+
+  exerciseInputs.forEach(input => {
+    input.addEventListener("keydown", function(e) {
+      if (e.key === "Enter") {      // Kiểm tra nếu nhấn Enter
+        e.preventDefault();          // Ngăn việc xuống dòng mặc định
+        const checkBtn = this.nextElementSibling; // giả định nút Check ngay sau input
+        if (checkBtn && checkBtn.tagName === "BUTTON") {
+          checkBtn.click();         // kích hoạt nút Check
+        }
+      }
+    });
+  });
+});
+</script>
+
+
+
+<!-- Danh sách từ vựng -->
+<div class="word-list" id="wordContainer"></div>
+
+<!-- Ôn tập -->
+<div class="review-box">
+<div id="progressCounter"
+     style="position:absolute; top:12px; right:18px;
+            font-size:18px; color:#7a4e3e;">
+  Đã biết 0 / 0
+</div>
+
+
+  <div id="vietWord">Chọn Bộ từ vựng để bắt đầu</div>
+    
+  <!-- Hiển thị đáp án -->
+<div id="answer" style="font-size:22px;color:#7a4e3e; margin-top:15px; text-align:center; min-height:40px;"></div>
+   
+  <!-- Nút bấm -->
+  <div class="review-buttons" style="margin-top:20px;">
+    <button onclick="know()">Đã biết</button>
+    <button onclick="dontKnow()">Chưa biết</button>
+    <button onclick="nextWord()">Tiếp theo</button>
+  </div>
+
+</div>
+
+<!-- Bài tập -->
+<div class="exercise" id="exercise"></div>
+
+<footer>Chúc mừng bạn đã hoàn thành bài học!</footer>
+<script>
+const selectEl = document.getElementById("wordList");
+
+function sortOptionsByNumber() {
+  const opts = Array.from(selectEl.options);
+
+  opts.sort((a, b) => {
+    return Number(a.value) - Number(b.value);
+  });
+
+  selectEl.innerHTML = "";
+  opts.forEach(o => selectEl.appendChild(o));
+}
+
+// sort ngay khi load
+sortOptionsByNumber();
+
+// sort lại khi mở dropdown
+selectEl.addEventListener("mousedown", sortOptionsByNumber);
+selectEl.addEventListener("touchstart", sortOptionsByNumber);
+</script>
+
+<script>
+/********** DATA **********/
+const data = {
+  1: [
+  { en: "ability /əˈbɪləti/", vn: "khả năng", tick: false },
+  { en: "action /ˈækʃən/", vn: "hành động", tick: false },
+  { en: "activity /ækˈtɪvɪti/", vn: "hoạt động", tick: false },
+  { en: "actor /ˈæktər/", vn: "nam diễn viên", tick: false },
+  { en: "actress /ˈæktrəs/", vn: "nữ diễn viên", tick: false },
+  { en: "add /æd/", vn: "thêm vào", tick: false },
+  { en: "address /əˈdrɛs/", vn: "địa chỉ", tick: false },
+  { en: "adult /əˈdʌlt/", vn: "người lớn", tick: false },
+  { en: "advice /ədˈvaɪs/", vn: "lời khuyên", tick: false },
+  { en: "afraid /əˈfreɪd/", vn: "sợ, sợ hãi", tick: false },
+  { en: "after /ˈæftər/", vn: "sau", tick: false },
+  { en: "afternoon /ˌæftərˈnun/", vn: "buổi chiều", tick: false },
+  { en: "again /əˈɡɛn/", vn: "lại / lần nữa", tick: false },
+  { en: "age /eɪdʒ/", vn: "tuổi", tick: false },
+  { en: "ago /əˈɡoʊ/", vn: "trước đây", tick: false },
+  { en: "agree /əˈɡriː/", vn: "đồng ý", tick: false },
+  { en: "air /ɛr/", vn: "không khí", tick: false },
+  { en: "airport /ˈɛrpɔrt/", vn: "sân bay", tick: false },
+  { en: "also /ˈɔlsoʊ/", vn: "cũng", tick: false },
+  { en: "always /ˈɔlweɪz/", vn: "luôn luôn", tick: false },
+  { en: "amazing /əˈmeɪzɪŋ/", vn: "tuyệt vời", tick: false },
+  { en: "angry /ˈæŋɡri/", vn: "tức giận", tick: false },
+  { en: "animal /ˈænɪməl/", vn: "động vật", tick: false },
+  { en: "another /əˈnʌðər/", vn: "khác / một cái khác", tick: false },
+  { en: "answer /ˈænsər/", vn: "trả lời / câu trả lời", tick: false },
+  { en: "any /ˈɛni/", vn: "bất kỳ", tick: false },
+  { en: "anyone /ˈɛniwʌn/", vn: "bất kỳ ai", tick: false },
+  { en: "anything /ˈɛnɪθɪŋ/", vn: "bất cứ điều gì", tick: false },
+  { en: "apartment /əˈpɑrtmənt/", vn: "căn hộ", tick: false },
+  { en: "apple /ˈæpəl/", vn: "quả táo", tick: false },
+  { en: "April /ˈeɪprəl/", vn: "tháng Tư", tick: false },
+  { en: "area /ˈɛriə/", vn: "khu vực", tick: false },
+  { en: "arm /ɑrm/", vn: "cánh tay", tick: false },
+  { en: "around /əˈraʊnd/", vn: "xung quanh", tick: false },
+  { en: "arrive /əˈraɪv/", vn: "đến nơi", tick: false },
+  { en: "art /ɑrt/", vn: "nghệ thuật", tick: false },
+  { en: "article /ˈɑrtɪkəl/", vn: "bài báo", tick: false },
+  { en: "artist /ˈɑrtɪst/", vn: "nghệ sĩ", tick: false },
+  { en: "as /æz/", vn: "như / với tư cách", tick: false },
+  { en: "ask /æsk/", vn: "hỏi", tick: false },
+  { en: "August /ˈɔɡəst/", vn: "tháng Tám", tick: false },
+  { en: "aunt /ænt/", vn: "dì / cô", tick: false },
+  { en: "autumn /ˈɔtəm/", vn: "mùa thu", tick: false },
+  { en: "away /əˈweɪ/", vn: "xa / đi xa", tick: false },
+  { en: "baby /ˈbeɪbi/", vn: "em bé", tick: false },
+  { en: "back /bæk/", vn: "phía sau / trở lại", tick: false },
+  { en: "bad /bæd/", vn: "xấu", tick: false },
+  { en: "bag /bæɡ/", vn: "cái túi", tick: false },
+  { en: "ball /bɔl/", vn: "quả bóng", tick: false },
+  { en: "banana /bəˈnænə/", vn: "quả chuối", tick: false },
+  { en: "band /bænd/", vn: "ban nhạc", tick: false },
+  { en: "bank /bæŋk/", vn: "ngân hàng", tick: false },
+  { en: "select /sɪˈlɛkt/", vn: "chọn", tick: false },
+  { en: "alongside /əˈlɔŋsaɪd/", vn: "cùng với", tick: false },
+  { en: "bath /bæθ/", vn: "bồn tắm", tick: false },
+  { en: "bathroom /ˈbæθrum/", vn: "phòng tắm", tick: false },
+  { en: "beach /bitʃ/", vn: "bãi biển", tick: false },
+  { en: "beautiful /ˈbjutɪfəl/", vn: "đẹp", tick: false },
+  { en: "because /bɪˈkʌz/", vn: "bởi vì", tick: false },
+  { en: "become /bɪˈkʌm/", vn: "trở thành", tick: false },
+  { en: "bed /bɛd/", vn: "giường", tick: false },
+  { en: "bedroom /ˈbɛdruːm/", vn: "phòng ngủ", tick: false },
+  { en: "beer /bɪr/", vn: "bia", tick: false },
+  { en: "valley /ˈvæli/", vn: "thung lũng", tick: false },
+  { en: "before /bɪˈfɔr/", vn: "trước", tick: false },
+  { en: "begin /bɪˈɡɪn/", vn: "bắt đầu", tick: false },
+  { en: "beginning /bɪˈɡɪnɪŋ/", vn: "sự bắt đầu", tick: false },
+  { en: "behind /bɪˈhaɪnd/", vn: "phía sau", tick: false },
+  { en: "believe /bɪˈliv/", vn: "tin tưởng", tick: false },
+  { en: "below /bɪˈloʊ/", vn: "bên dưới", tick: false },
+  { en: "best /bɛst/", vn: "tốt nhất", tick: false },
+  { en: "better /ˈbɛtər/", vn: "tốt hơn", tick: false },
+  { en: "between /bɪˈtwin/", vn: "giữa", tick: false },
+  { en: "bicycle /ˈbaɪsɪkəl/", vn: "xe đạp", tick: false },
+  { en: "big /bɪɡ/", vn: "to / lớn", tick: false },
+  { en: "bike /baɪk/", vn: "xe đạp", tick: false },
+  { en: "bill /bɪl/", vn: "hóa đơn", tick: false },
+  { en: "bird /bɜrd/", vn: "chim", tick: false },
+  { en: "birthday /ˈbɜrθdeɪ/", vn: "sinh nhật", tick: false },
+  { en: "black /blæk/", vn: "màu đen", tick: false },
+  { en: "blog /blɑɡ/", vn: "blog", tick: false },
+  { en: "blonde /blɑnd/", vn: "tóc vàng", tick: false },
+  { en: "blue /blu/", vn: "màu xanh dương", tick: false },
+  { en: "boat /boʊt/", vn: "thuyền", tick: false },
+  { en: "body /ˈbɑdi/", vn: "cơ thể", tick: false },
+  { en: "book /bʊk/", vn: "sách", tick: false },
+  { en: "boot /but/", vn: "ủng", tick: false },
+  { en: "bored /bɔrd/", vn: "chán", tick: false },
+  { en: "born /bɔrn/", vn: "được sinh ra", tick: false },
+  { en: "both /boʊθ/", vn: "cả hai", tick: false },
+  { en: "bottle /ˈbɑtəl/", vn: "chai", tick: false },
+  { en: "box /bɑks/", vn: "hộp", tick: false },
+  { en: "boy /bɔɪ/", vn: "con trai", tick: false },
+  { en: "boyfriend /ˈbɔɪfrɛnd/", vn: "bạn trai", tick: false },
+  { en: "bread /brɛd/", vn: "bánh mì", tick: false },
+  { en: "break /breɪk/", vn: "làm vỡ / sự vỡ", tick: false },
+  { en: "breakfast /ˈbrɛkfəst/", vn: "bữa sáng", tick: false },
+  { en: "bring /brɪŋ/", vn: "mang / đem", tick: false },
+  { en: "brother /ˈbrʌðər/", vn: "anh/em trai", tick: false },
+  { en: "brown /braʊn/", vn: "màu nâu", tick: false }
+  ],
+  2: [
+  { en: "build /bɪld/", vn: "xây dựng", tick: false },
+  { en: "building /ˈbɪldɪŋ/", vn: "tòa nhà", tick: false },
+  { en: "bus /bʌs/", vn: "xe buýt", tick: false },
+  { en: "business /ˈbɪznəs/", vn: "kinh doanh", tick: false },
+  { en: "busy /ˈbɪzi/", vn: "bận rộn", tick: false },
+  { en: "but /bʌt/", vn: "nhưng", tick: false },
+  { en: "butter /ˈbʌtər/", vn: "bơ", tick: false },
+  { en: "buy /baɪ/", vn: "mua", tick: false },
+  { en: "by /baɪ/", vn: "bởi / bằng", tick: false },
+  { en: "bye /baɪ/", vn: "tạm biệt", tick: false },
+  { en: "cafe /kæˈfeɪ/", vn: "quán cà phê", tick: false },
+  { en: "cake /keɪk/", vn: "bánh", tick: false },
+  { en: "call /kɔl/", vn: "gọi / cuộc gọi", tick: false },
+  { en: "camera /ˈkæmərə/", vn: "máy ảnh", tick: false },
+  { en: "can /kæn/", vn: "có thể", tick: false },
+  { en: "cannot /ˈkænɑt/", vn: "không thể", tick: false },
+  { en: "capital /ˈkæpɪtəl/", vn: "thủ đô / thuộc thủ đô", tick: false },
+  { en: "car /kɑr/", vn: "xe hơi", tick: false },
+  { en: "card /kɑrd/", vn: "thẻ", tick: false },
+  { en: "career /kəˈrɪr/", vn: "sự nghiệp", tick: false },
+  { en: "carrot /ˈkærət/", vn: "cà rốt", tick: false },
+  { en: "carry /ˈkæri/", vn: "mang / vác", tick: false },
+  { en: "cat /kæt/", vn: "con mèo", tick: false },
+  { en: "center /ˈsɛntər/", vn: "trung tâm", tick: false },
+  { en: "century /ˈsɛnʧəri/", vn: "thế kỷ", tick: false },
+  { en: "chair /ʧɛr/", vn: "cái ghế", tick: false },
+  { en: "change /ʧeɪndʒ/", vn: "thay đổi", tick: false },
+  { en: "chart /ʧɑrt/", vn: "biểu đồ", tick: false },
+  { en: "cheap /ʧip/", vn: "rẻ", tick: false },
+  { en: "check /ʧɛk/", vn: "kiểm tra", tick: false },
+  { en: "cheese /ʧiz/", vn: "phô mai", tick: false },
+  { en: "chicken /ˈʧɪkɪn/", vn: "thịt gà / con gà", tick: false },
+  { en: "child /ʧaɪld/", vn: "đứa trẻ", tick: false },
+  { en: "chocolate /ˈʧɑklət/", vn: "sô cô la", tick: false },
+  { en: "choose /ʧuz/", vn: "chọn", tick: false },
+  { en: "cinema /ˈsɪnəmə/", vn: "rạp chiếu phim", tick: false },
+  { en: "compass /ˈkʌmpəs/", vn: "la bàn", tick: false },
+  { en: "city /ˈsɪti/", vn: "thành phố", tick: false },
+  { en: "class /klæs/", vn: "lớp học", tick: false },
+  { en: "classroom /ˈklæsrum/", vn: "phòng học", tick: false },
+  { en: "clean /klin/", vn: "sạch / làm sạch", tick: false },
+  { en: "climb /klaɪm/", vn: "leo", tick: false },
+  { en: "clock /klɑk/", vn: "đồng hồ", tick: false },
+  { en: "close /kloʊz/", vn: "đóng", tick: false },
+  { en: "clothes /kloʊðz/", vn: "quần áo", tick: false },
+  { en: "club /klʌb/", vn: "câu lạc bộ", tick: false },
+  { en: "coat /koʊt/", vn: "áo khoác", tick: false },
+  { en: "award /əˈwɔrd/", vn: "giải thưởng", tick: false },
+  { en: "audio /ˈɔdioʊ/", vn: "âm thanh", tick: false },
+  { en: "directly /dəˈrɛktli/", vn: "trực tiếp", tick: false },
+  { en: "indirect /ˌɪndəˈrɛkt/", vn: "gián tiếp", tick: false },
+  { en: "bud /bʌd/", vn: "chồi non", tick: false },
+  { en: "bug /bʌɡ/", vn: "côn trùng", tick: false },
+  { en: "bullet /ˈbʊlɪt/", vn: "đạn", tick: false },
+  { en: "bunch /bʌnʧ/", vn: "bó / đống", tick: false },
+  { en: "burn /bɜrn/", vn: "đốt cháy", tick: false },
+  { en: "relaxed /rɪˈlækst/", vn: "thư giãn", tick: false },
+  { en: "indoor /ˈɪndɔr/", vn: "trong nhà", tick: false },
+  { en: "view /vju/", vn: "quan điểm / xem", tick: false },
+  { en: "broom /brum/", vn: "cây chổi", tick: false },
+  { en: "beyond /bɪjɑnd/", vn: "vượt ra ngoài", tick: false },
+  { en: "amazed /əˈmeɪzd/", vn: "ngạc nhiên", tick: false },
+  { en: "viewer /ˈvjuər/", vn: "người xem", tick: false },
+  { en: "software /ˈsɔftwer/", vn: "phần mềm", tick: false },
+  { en: "truth /truθ/", vn: "sự thật", tick: false },
+  { en: "useless /ˈjusləs/", vn: "vô dụng", tick: false },
+  { en: "photographer /fəˈtɑɡrəfər/", vn: "nhiếp ảnh gia", tick: false },
+  { en: "trend /trɛnd/", vn: "xu hướng", tick: false },
+  { en: "photography /fəˈtɑɡrəfi/", vn: "nhiếp ảnh", tick: false },
+  { en: "strength /strɛŋθ/", vn: "sức mạnh", tick: false },
+  { en: "rent /rɛnt/", vn: "thuê", tick: false },
+  { en: "stadium /ˈsteɪdiəm/", vn: "sân vận động", tick: false },
+  { en: "stage /steɪdʒ/", vn: "giai đoạn / sân khấu", tick: false },
+  { en: "standard /ˈstændərd/", vn: "tiêu chuẩn", tick: false },
+  { en: "indoors /ɪnˈdɔrz/", vn: "ở trong nhà", tick: false },
+  { en: "aspect /ˈæspɛkt/", vn: "khía cạnh", tick: false },
+  { en: "occasion /əˈkeɪʒən/", vn: "dịp", tick: false },
+  { en: "occasionally /əˈkeɪʒənəli/", vn: "thỉnh thoảng", tick: false },
+  { en: "race /reɪs/", vn: "chủng tộc / cuộc đua", tick: false },
+  { en: "despite /dɪˈspaɪt/", vn: "mặc dù", tick: false },
+  { en: "champion /ˈʧæmpiən/", vn: "nhà vô địch", tick: false },
+  { en: "housing /ˈhaʊzɪŋ/", vn: "nhà ở", tick: false },
+  { en: "highly /ˈhaɪli/", vn: "rất / cực kỳ", tick: false },
+  { en: "channel /ˈʧænəl/", vn: "kênh", tick: false },
+  { en: "hardly /ˈhɑrdli/", vn: "hầu như không", tick: false },
+  { en: "court /kɔrt/", vn: "tòa án", tick: false },
+  { en: "deep /dip/", vn: "sâu", tick: false },
+  { en: "cover /ˈkʌvər/", vn: "che phủ", tick: false },
+  { en: "cry /kraɪ/", vn: "khóc", tick: false },
+  { en: "creation /kriˈeɪʃən/", vn: "sự sáng tạo", tick: false },
+  { en: "covered /ˈkʌvərd/", vn: "được che", tick: false },
+  { en: "growth /ɡroʊθ/", vn: "sự tăng trưởng", tick: false },
+  { en: "brick /brɪk/", vn: "gạch", tick: false },
+  { en: "acne /ˈækni/", vn: "mụn trứng cá", tick: false },
+  { en: "agent /ˈeɪdʒənt/", vn: "đại lý / tác nhân", tick: false },
+  { en: "mad /mæd/", vn: "điên / tức giận", tick: false },
+  { en: "contact /ˈkɑntækt/", vn: "liên hệ", tick: false },
+  { en: "alcohol /ˈælkəhɔl/", vn: "rượu / cồn", tick: false },
+  { en: "bite /baɪt/", vn: "cắn", tick: false }
+  ],
+
+  3: [
+  { en: "neighbourhood /ˈneɪbərˌhʊd/", vn: "hàng xóm / khu vực lân cận", tick: false },
+  { en: "pan /pæn/", vn: "cái chảo", tick: false },
+  { en: "once /wʌns/", vn: "một lần", tick: false },
+  { en: "normal /ˈnɔrməl/", vn: "bình thường", tick: false },
+  { en: "northern /ˈnɔrðərn/", vn: "thuộc phương bắc", tick: false },
+  { en: "need /nid/", vn: "cần", tick: false },
+  { en: "note /noʊt/", vn: "ghi chú", tick: false },
+  { en: "now /naʊ/", vn: "bây giờ", tick: false },
+  { en: "pass /pæs/", vn: "vượt qua / chuyền", tick: false },
+  { en: "password /ˈpæswərd/", vn: "mật khẩu", tick: false },
+  { en: "outdoor /ˈaʊtˌdɔr/", vn: "ngoài trời", tick: false },
+  { en: "oxygen /ˈɑksɪdʒən/", vn: "oxy", tick: false },
+  { en: "path /pæθ/", vn: "đường mòn / lối đi", tick: false },
+  { en: "patient /ˈpeɪʃənt/", vn: "bệnh nhân / kiên nhẫn", tick: false },
+  { en: "payment /ˈpeɪmənt/", vn: "thanh toán", tick: false },
+  { en: "warm /wɔrm/", vn: "ấm áp", tick: false },
+  { en: "sort /sɔrt/", vn: "loại / sắp xếp", tick: false },
+  { en: "plenty /ˈplɛnti/", vn: "nhiều", tick: false },
+  { en: "southern /ˈsʌðərn/", vn: "thuộc phương nam", tick: false },
+  { en: "perfectly /ˈpɜrfɪktli/", vn: "hoàn hảo", tick: false },
+  { en: "prepared /prɪˈpɛrd/", vn: "đã chuẩn bị", tick: false },
+  { en: "point /pɔɪnt/", vn: "điểm", tick: false },
+  { en: "poem /ˈpoʊəm/", vn: "bài thơ", tick: false },
+  { en: "pipe /paɪp/", vn: "ống dẫn", tick: false },
+  { en: "place /pleɪs/", vn: "nơi chốn", tick: false },
+  { en: "planning /ˈplænɪŋ/", vn: "sự lập kế hoạch", tick: false },
+  { en: "pleasant /ˈplɛzənt/", vn: "dễ chịu", tick: false },
+  { en: "pleasure /ˈplɛʒər/", vn: "niềm vui", tick: false },
+  { en: "poet /ˈpoʊət/", vn: "nhà thơ", tick: false },
+  { en: "poetry /ˈpoʊətri/", vn: "thơ ca", tick: false },
+  { en: "push /pʊʃ/", vn: "đẩy", tick: false },
+  { en: "powder /ˈpaʊdər/", vn: "bột", tick: false },
+  { en: "pot /pɑt/", vn: "cái nồi / chậu", tick: false },
+  { en: "port /pɔrt/", vn: "cảng", tick: false },
+  { en: "pour /pɔr/", vn: "rót / đổ", tick: false },
+  { en: "skull /skʌl/", vn: "hộp sọ", tick: false },
+  { en: "proud /praʊd/", vn: "tự hào", tick: false },
+  { en: "result /rɪˈzʌlt/", vn: "kết quả", tick: false },
+  { en: "slice /slaɪs/", vn: "lát mỏng", tick: false },
+  { en: "rope /roʊp/", vn: "dây thừng", tick: false },
+  { en: "pull /pʊl/", vn: "kéo", tick: false },
+  { en: "rough /rʌf/", vn: "thô ráp", tick: false },
+  { en: "prince /prɪns/", vn: "hoàng tử", tick: false },
+  { en: "princess /ˈprɪnsɛs/", vn: "công chúa", tick: false },
+  { en: "printing /ˈprɪntɪŋ/", vn: "sự in ấn", tick: false },
+  { en: "row /roʊ/", vn: "hàng / chèo thuyền", tick: false },
+  { en: "royal /ˈrɔɪəl/", vn: "hoàng gia", tick: false },
+  { en: "tend /tɛnd/", vn: "có xu hướng", tick: false },
+  { en: "similarity /ˌsɪməˈlærəti/", vn: "sự tương đồng", tick: false },
+  { en: "signature /ˈsɪɡnəʧər/", vn: "chữ ký", tick: false },
+  { en: "safety /ˈseɪfti/", vn: "sự an toàn", tick: false },
+  { en: "rugby /ˈrʌɡbi/", vn: "bóng bầu dục", tick: false },
+  { en: "rule /rul/", vn: "quy tắc / luật lệ", tick: false },
+  { en: "sail /seɪl/", vn: "nhổ neo / buồm", tick: false },
+  { en: "sailor /ˈseɪlər/", vn: "thủy thủ", tick: false },
+  { en: "sand /sænd/", vn: "cát", tick: false },
+  { en: "shake /ʃeɪk/", vn: "lắc / rung", tick: false },
+  { en: "share /ʃɛr/", vn: "chia sẻ", tick: false },
+  { en: "sharp /ʃɑrp/", vn: "sắc nhọn", tick: false },
+  { en: "shelf /ʃɛlf/", vn: "cái kệ", tick: false },
+  { en: "silent /ˈsaɪlənt/", vn: "im lặng", tick: false },
+  { en: "silly /ˈsɪli/", vn: "ngớ ngẩn", tick: false },
+  { en: "similarly /ˈsɪmələrli/", vn: "tương tự", tick: false },
+  { en: "simply /ˈsɪmpli/", vn: "đơn giản", tick: false },
+  { en: "shoot /ʃut/", vn: "bắn", tick: false },
+  { en: "shore /ʃɔr/", vn: "bờ biển", tick: false },
+  { en: "short-term /ˌʃɔrtˈtɜrm/", vn: "ngắn hạn", tick: false },
+  { en: "shy /ʃaɪ/", vn: "nhút nhát", tick: false },
+  { en: "since /sɪns/", vn: "kể từ khi", tick: false },
+  { en: "spicy /ˈspaɪsi/", vn: "cay", tick: false },
+  { en: "spring /sprɪŋ/", vn: "mùa xuân", tick: false },
+  { en: "swim /swɪm/", vn: "bơi", tick: false },
+  { en: "surely /ˈʃʊrli/", vn: "chắc chắn", tick: false },
+  { en: "soil /sɔɪl/", vn: "đất", tick: false },
+  { en: "tent /tɛnt/", vn: "cái lều", tick: false },
+  { en: "staff /stæf/", vn: "nhân viên", tick: false },
+  { en: "supply /səˈplaɪ/", vn: "cung cấp", tick: false },
+  { en: "studio /ˈstudiˌoʊ/", vn: "phòng thu", tick: false },
+  { en: "supporter /səˈpɔrtər/", vn: "người ủng hộ", tick: false },
+  { en: "surface /ˈsɜrfəs/", vn: "bề mặt", tick: false },
+  { en: "statue /ˈstæʧu/", vn: "bức tượng", tick: false },
+  { en: "steady /ˈstɛdi/", vn: "vững vàng", tick: false },
+  { en: "steel /stil/", vn: "thép", tick: false },
+  { en: "still /stɪl/", vn: "vẫn còn", tick: false },
+  { en: "stock /stɑk/", vn: "cổ phiếu / kho hàng", tick: false },
+  { en: "store /stɔr/", vn: "cửa hàng / lưu trữ", tick: false },
+  { en: "stranger /ˈstreɪnʤər/", vn: "người lạ", tick: false },
+  { en: "tail /teɪl/", vn: "cái đuôi", tick: false },
+  { en: "term /tɜrm/", vn: "thuật ngữ / học kỳ", tick: false },
+  { en: "theme /θim/", vn: "chủ đề", tick: false },
+  { en: "talent /ˈtælənt/", vn: "tài năng", tick: false },
+  { en: "talented /ˈtæləntəd/", vn: "có tài", tick: false },
+  { en: "tape /teɪp/", vn: "băng dính / ghi âm", tick: false },
+  { en: "target /ˈtɑrɡət/", vn: "mục tiêu", tick: false },
+  { en: "according to /əˈkɔrdɪŋ tu/", vn: "theo như", tick: false },
+  { en: "unfair /ənˈfɛr/", vn: "không công bằng", tick: false },
+  { en: "throat /θroʊt/", vn: "cổ họng", tick: false },
+  { en: "throughout /θruˈaʊt/", vn: "xuyên suốt", tick: false },
+  { en: "therefore /ˈðɛrˌfɔr/", vn: "vì vậy", tick: false },
+  { en: "this /ðɪs/", vn: "cái này", tick: false }
+  ],
+
+  4: [
+  { en: "though /ðoʊ/", vn: "mặc dù", tick: false },
+  { en: "tight /taɪt/", vn: "chặt / khít", tick: false },
+  { en: "till /tɪl/", vn: "cho đến khi", tick: false },
+  { en: "tin /tɪn/", vn: "thiếc / lon", tick: false },
+  { en: "tiny /ˈtaɪni/", vn: "nhỏ bé", tick: false },
+  { en: "tip /tɪp/", vn: "mẹo / đầu mút / tiền boa", tick: false },
+  { en: "title /ˈtaɪtəl/", vn: "tiêu đề / danh hiệu", tick: false },
+  { en: "toe /toʊ/", vn: "ngón chân", tick: false },
+  { en: "tongue /tʌŋ/", vn: "lưỡi", tick: false },
+  { en: "total /ˈtoʊtəl/", vn: "tổng cộng", tick: false },
+  { en: "touch /tʌʧ/", vn: "chạm vào", tick: false },
+  { en: "tournament /ˈtʊrnəmənt/", vn: "vòng thi đấu / giải đấu", tick: false },
+  { en: "tour /tʊr/", vn: "chuyến du lịch", tick: false },
+  { en: "tropical /ˈtrɑpɪkəl/", vn: "nhiệt đới", tick: false },
+  { en: "accordingly /əˈkɔrdɪŋli/", vn: "một cách tương ứng / do đó", tick: false },
+  { en: "act /ækt/", vn: "hành động / diễn xuất", tick: false },
+  { en: "tube /tub/", vn: "ống", tick: false },
+  { en: "tsunami /suˈnɑmi/", vn: "sóng thần", tick: false },
+  { en: "tunnel /ˈtʌnəl/", vn: "đường hầm", tick: false },
+  { en: "tyre /ˈtaɪər/", vn: "lốp xe", tick: false },
+  { en: "ugly /ˈʌɡli/", vn: "xấu xí", tick: false },
+  { en: "unable /ənˈeɪbəl/", vn: "không thể", tick: false },
+  { en: "workplace /ˈwɜrkˌpleɪs/", vn: "nơi làm việc", tick: false },
+  { en: "unless /ənˈlɛs/", vn: "trừ khi", tick: false },
+  { en: "unlike /ənˈlaɪk/", vn: "không giống", tick: false },
+  { en: "unlikely /ənˈlaɪkli/", vn: "ít có khả năng", tick: false },
+  { en: "worldwide /ˈwɜrldˈwaɪd/", vn: "khắp thế giới", tick: false },
+  { en: "whole /hoʊl/", vn: "toàn bộ", tick: false },
+  { en: "weapon /ˈwɛpən/", vn: "vũ khí", tick: false },
+  { en: "waste /weɪst/", vn: "lãng phí / rác thải", tick: false },
+  { en: "water /ˈwɔtər/", vn: "nước", tick: false },
+  { en: "wave /weɪv/", vn: "sóng / vẫy tay", tick: false },
+  { en: "weigh /weɪ/", vn: "cân nặng", tick: false },
+  { en: "western /ˈwɛstərn/", vn: "thuộc về phía tây", tick: false },
+  { en: "whatever /wətˈɛvər/", vn: "bất cứ thứ gì", tick: false },
+  { en: "whenever /wɛnˈɛvər/", vn: "bất cứ khi nào", tick: false },
+  { en: "whether /ˈwɛðər/", vn: "liệu có ... hay không", tick: false },
+  { en: "while /waɪl/", vn: "trong khi", tick: false },
+  { en: "worry /ˈwɜri/", vn: "lo lắng", tick: false },
+  { en: "yard /jɑrd/", vn: "cái sân / đơn vị thước", tick: false },
+  { en: "win /wɪn/", vn: "chiến thắng", tick: false },
+  { en: "wing /wɪŋ/", vn: "cánh", tick: false },
+  { en: "wise /waɪz/", vn: "khôn ngoan", tick: false },
+  { en: "within /wɪˈðɪn/", vn: "trong vòng / trong khoảng", tick: false },
+  { en: "action /ˈækʃən/", vn: "hành động", tick: false },
+  { en: "aged /eɪʤd/", vn: "lớn tuổi / có tuổi", tick: false },
+  { en: "author /ˈɔθər/", vn: "tác giả", tick: false },
+  { en: "aid /eɪd/", vn: "sự viện trợ / giúp đỡ", tick: false },
+  { en: "aim /eɪm/", vn: "mục tiêu / nhắm vào", tick: false },
+  { en: "active /ˈæktɪv/", vn: "năng động", tick: false },
+  { en: "activity /ækˈtɪvɪti/", vn: "hoạt động", tick: false },
+  { en: "actor /ˈæktər/", vn: "nam diễn viên", tick: false },
+  { en: "actual /ˈækʧuəl/", vn: "thực sự", tick: false },
+  { en: "aircraft /ˈɛrˌkræft/", vn: "máy bay / khí cầu", tick: false },
+  { en: "alarm /əˈlɑrm/", vn: "báo động / đồng hồ báo thức", tick: false },
+  { en: "ahead /əˈhɛd/", vn: "phía trước", tick: false },
+  { en: "alarming /əˈlɑrmɪŋ/", vn: "đáng báo động", tick: false },
+  { en: "album /ˈælbəm/", vn: "album", tick: false },
+  { en: "aside /əˈsaɪd/", vn: "sang một bên", tick: false },
+  { en: "altogether /ˌɔltəˈɡɛðər/", vn: "hoàn toàn / tổng cộng", tick: false },
+  { en: "bake /beɪk/", vn: "nướng bánh", tick: false },
+  { en: "back /bæk/", vn: "phía sau / quay lại", tick: false },
+  { en: "ambulance /ˈæmbjələns/", vn: "xe cứu thương", tick: false },
+  { en: "angle /ˈæŋɡəl/", vn: "góc", tick: false },
+  { en: "backwards /ˈbækwərdz/", vn: "về phía sau", tick: false },
+  { en: "amount /əˈmaʊnt/", vn: "số lượng", tick: false },
+  { en: "balcony /ˈbælkəni/", vn: "ban công", tick: false },
+  { en: "ballet /bæˈleɪ/", vn: "múa ba lê", tick: false },
+  { en: "balloon /bəˈlun/", vn: "bong bóng / khí cầu", tick: false },
+  { en: "bamboo /bæmˈbu/", vn: "cây tre", tick: false },
+  { en: "bar /bɑr/", vn: "quầy bar / thanh chắn", tick: false },
+  { en: "bride /braɪd/", vn: "cô dâu", tick: false },
+  { en: "bear /bɛr/", vn: "con gấu / chịu đựng", tick: false },
+  { en: "beat /bit/", vn: "đánh bại / nhịp đập", tick: false },
+  { en: "beauty /ˈbjuti/", vn: "vẻ đẹp", tick: false },
+  { en: "bee /bi/", vn: "con ong", tick: false },
+  { en: "bridge /brɪʤ/", vn: "cây cầu", tick: false },
+  { en: "beside /bɪˈsaɪd/", vn: "bên cạnh", tick: false },
+  { en: "beneath /bɪˈniθ/", vn: "phía dưới", tick: false },
+  { en: "base /beɪs/", vn: "căn cứ / cơ sở", tick: false },
+  { en: "basement /ˈbeɪsmənt/", vn: "tầng hầm", tick: false },
+  { en: "basic /ˈbeɪsɪk/", vn: "cơ bản", tick: false },
+  { en: "basically /ˈbeɪsɪkli/", vn: "về cơ bản", tick: false },
+  { en: "basis /ˈbeɪsəs/", vn: "nền tảng", tick: false },
+  { en: "basket /ˈbæskət/", vn: "cái giỏ / rổ", tick: false },
+  { en: "besides /bɪˈsaɪdz/", vn: "ngoài ra", tick: false },
+  { en: "bat /bæt/", vn: "con dơi / cái chày", tick: false },
+  { en: "brief /brif/", vn: "ngắn gọn", tick: false },
+  { en: "blanket /ˈblæŋkət/", vn: "cái chăn", tick: false },
+  { en: "briefly /ˈbrifli/", vn: "một cách ngắn gọn", tick: false },
+  { en: "belief /bɪˈlif/", vn: "niềm tin", tick: false },
+  { en: "bell /bɛl/", vn: "cái chuông", tick: false },
+  { en: "broad /brɔd/", vn: "rộng", tick: false },
+  { en: "bill /bɪl/", vn: "hóa đơn", tick: false },
+  { en: "boat /boʊt/", vn: "con thuyền", tick: false },
+  { en: "current /ˈkɜrənt/", vn: "hiện tại / dòng chảy", tick: false },
+  { en: "bronze /brɑnz/", vn: "đồng thiếc / màu đồng", tick: false },
+  { en: "coffee /ˈkɑfi/", vn: "cà phê", tick: false },
+  { en: "cue /kju/", vn: "gợi ý / tín hiệu", tick: false },
+  { en: "control /kənˈtroʊl/", vn: "kiểm soát", tick: false }
+  ],
+
+  5: [
+  { en: "culture /ˈkʌltʃər/", vn: "văn hóa", tick: false },
+  { en: "cold /koʊld/", vn: "lạnh / sự cảm lạnh", tick: false },
+  { en: "college /ˈkɑːlɪdʒ/", vn: "trường cao đẳng / đại học", tick: false },
+  { en: "colour /ˈkʌlər/", vn: "màu sắc", tick: false },
+  { en: "come /kʌm/", vn: "đến", tick: false },
+  { en: "director /dəˈrɛktər/", vn: "giám đốc / đạo diễn", tick: false },
+  { en: "disease /dɪˈziz/", vn: "bệnh tật", tick: false },
+  { en: "district /ˈdɪstrɪkt/", vn: "quận / huyện", tick: false },
+  { en: "common /ˈkɑːmən/", vn: "phổ biến / chung", tick: false },
+  { en: "depth /dɛpθ/", vn: "chiều sâu", tick: false },
+  { en: "cute /kjut/", vn: "dễ thương", tick: false },
+  { en: "cycle /ˈsaɪkəl/", vn: "chu kỳ / đạp xe", tick: false },
+  { en: "daily routine /ˈdeɪli ruˈtin/", vn: "thói quen hàng ngày", tick: false },
+  { en: "company /ˈkʌmpəni/", vn: "công ty", tick: false },
+  { en: "compare /kəmˈpɛr/", vn: "so sánh", tick: false },
+  { en: "complete /kəmˈplit/", vn: "hoàn thành / đầy đủ", tick: false },
+  { en: "elbow /ˈɛlboʊ/", vn: "khủy tay", tick: false },
+  { en: "honey /ˈhʌni/", vn: "mật ong / người yêu", tick: false },
+  { en: "greatly /ˈɡreɪtli/", vn: "rất nhiều / đáng kể", tick: false },
+  { en: "lane /leɪn/", vn: "làn đường / con hẻm", tick: false },
+  { en: "dot /dɑːt/", vn: "dấu chấm", tick: false },
+  { en: "downtown /ˌdaʊnˈtaʊn/", vn: "trung tâm thành phố", tick: false },
+  { en: "downwards /ˈdaʊnwərdz/", vn: "hướng xuống", tick: false },
+  { en: "document /ˈdɑːkjumənt/", vn: "tài liệu", tick: false },
+  { en: "dolphin /ˈdɑːlfɪn/", vn: "cá heo", tick: false },
+  { en: "edit /ˈɛdɪt/", vn: "chỉnh sửa", tick: false },
+  { en: "edition /ɪˈdɪʃən/", vn: "phiên bản / ấn bản", tick: false },
+  { en: "extra /ˈɛkstrə/", vn: "thêm / bổ sung", tick: false },
+  { en: "education /ˌɛdʒəˈkeɪʃən/", vn: "giáo dục", tick: false },
+  { en: "educator /ˈɛdʒəkeɪtər/", vn: "nhà giáo dục", tick: false },
+  { en: "house /haʊs/", vn: "ngôi nhà", tick: false },
+  { en: "handbag /ˈhændˌbæɡ/", vn: "túi xách", tick: false },
+  { en: "globe /ɡloʊb/", vn: "địa cầu / quả cầu", tick: false },
+  { en: "far /fɑːr/", vn: "xa", tick: false },
+  { en: "fence /fɛns/", vn: "hàng rào", tick: false },
+  { en: "golden /ˈɡoʊldən/", vn: "bằng vàng / quý giá", tick: false },
+  { en: "engine /ˈɛndʒɪn/", vn: "động cơ", tick: false },
+  { en: "engineer /ˌɛndʒɪˈnɪr/", vn: "kỹ sư", tick: false },
+  { en: "file /faɪl/", vn: "tập tin / hồ sơ", tick: false },
+  { en: "final /ˈfaɪnəl/", vn: "cuối cùng", tick: false },
+  { en: "lantern /ˈlæntərn/", vn: "đèn lồng", tick: false },
+  { en: "full-time /ˌfʊlˈtaɪm/", vn: "toàn thời gian", tick: false },
+  { en: "fire /faɪər/", vn: "lửa / sa thải", tick: false },
+  { en: "firefighter /ˈfaɪərˌfaɪtər/", vn: "lính cứu hỏa", tick: false },
+  { en: "fully /ˈfʊli/", vn: "đầy đủ / hoàn toàn", tick: false },
+  { en: "health /hɛlθ/", vn: "sức khỏe", tick: false },
+  { en: "firework /ˈfaɪərˌwɜːrk/", vn: "pháo hoa", tick: false },
+  { en: "ladder /ˈlædər/", vn: "cái thang", tick: false },
+  { en: "high /haɪ/", vn: "cao", tick: false },
+  { en: "high school /haɪ skul/", vn: "trường trung học phổ thông", tick: false },
+  { en: "healthcare /ˈhɛlθˌkɛr/", vn: "chăm sóc sức khỏe", tick: false },
+  { en: "heaven /ˈhɛvən/", vn: "thiên đường", tick: false },
+  { en: "heel /hil/", vn: "gót chân", tick: false },
+  { en: "hell /hɛl/", vn: "địa ngục", tick: false },
+  { en: "helmet /ˈhɛlmət/", vn: "mũ bảo hiểm", tick: false },
+  { en: "largely /ˈlɑːrdʒli/", vn: "phần lớn", tick: false },
+  { en: "lately /ˈleɪtli/", vn: "gần đây", tick: false },
+  { en: "latest /ˈleɪtəst/", vn: "mới nhất", tick: false },
+  { en: "lawyer /ˈlɔɪər/", vn: "luật sư", tick: false },
+  { en: "leave /liv/", vn: "rời đi / để lại", tick: false },
+  { en: "island /ˈaɪlənd/", vn: "hòn đảo", tick: false },
+  { en: "lifestyle /ˈlaɪfˌstaɪl/", vn: "lối sống", tick: false },
+  { en: "computer /kəmˈpjutər/", vn: "máy tính", tick: false },
+  { en: "concert /ˈkɑːnsərt/", vn: "buổi hòa nhạc", tick: false },
+  { en: "conversation /ˌkɑːnvərˈseɪʃən/", vn: "cuộc hội thoại", tick: false },
+  { en: "cook /kʊk/", vn: "nấu ăn / đầu bếp", tick: false },
+  { en: "cooking /ˈkʊkɪŋ/", vn: "việc nấu nướng", tick: false },
+  { en: "library /ˈlaɪˌbrɛri/", vn: "thư viện", tick: false },
+  { en: "petrol /ˈpɛtrəl/", vn: "xăng dầu", tick: false },
+  { en: "newly /ˈnuli/", vn: "mới đây / vừa mới", tick: false },
+  { en: "newspaper /ˈnuzˌpeɪpər/", vn: "tờ báo", tick: false },
+  { en: "nightmare /ˈnaɪtˌmɛr/", vn: "ác mộng", tick: false },
+  { en: "likewise /ˈlaɪkˌwaɪz/", vn: "tương tự / cũng như vậy", tick: false },
+  { en: "narrow /ˈnæroʊ/", vn: "hẹp", tick: false },
+  { en: "lotus /ˈloʊtəs/", vn: "hoa sen", tick: false },
+  { en: "lie /laɪ/", vn: "nói dối / nằm", tick: false },
+  { en: "line /laɪn/", vn: "đường kẻ / dòng", tick: false },
+  { en: "limited /ˈlɪmətəd/", vn: "hạn chế", tick: false },
+  { en: "level /ˈlɛvəl/", vn: "mức độ / trình độ", tick: false },
+  { en: "litter /ˈlɪtər/", vn: "rác thải", tick: false },
+  { en: "live /lɪv/", vn: "sống / trực tiếp", tick: false },
+  { en: "moreover /mɔːrˈoʊvər/", vn: "hơn nữa", tick: false },
+  { en: "mind /maɪnd/", vn: "tâm trí / phiền lòng", tick: false },
+  { en: "lively /ˈlaɪvli/", vn: "sinh động / hoạt bát", tick: false },
+  { en: "map /mæp/", vn: "bản đồ", tick: false },
+  { en: "make /meɪk/", vn: "làm / chế tạo", tick: false },
+  { en: "low /loʊ/", vn: "thấp", tick: false },
+  { en: "lower /ˈloʊər/", vn: "thấp hơn / hạ xuống", tick: false },
+  { en: "loyal /ˈlɔɪəl/", vn: "trung thành", tick: false },
+  { en: "luggage /ˈlʌɡɪdʒ/", vn: "hành lý", tick: false },
+  { en: "lyric /ˈlɪrɪk/", vn: "lời bài hát", tick: false },
+  { en: "marker /ˈmɑːrkər/", vn: "bút viết bảng / dấu mốc", tick: false },
+  { en: "moon /mun/", vn: "mặt trăng", tick: false },
+  { en: "trip /trɪp/", vn: "chuyến đi", tick: false },
+  { en: "nurse /nɜːrs/", vn: "y tá", tick: false },
+  { en: "notebook /ˈnoʊtˌbʊk/", vn: "vở / sổ ghi chép", tick: false },
+  { en: "correct /kəˈrɛkt/", vn: "đúng / sửa cho đúng", tick: false },
+  { en: "ocean /ˈoʊʃən/", vn: "đại dương", tick: false },
+  { en: "palm /pɑːm/", vn: "lòng bàn tay / cây cọ", tick: false },
+  { en: "print /prɪnt/", vn: "in ấn", tick: false }
+  ],
+
+  6: [
+  { en: "patience /ˈpeɪʃəns/", vn: "sự kiên nhẫn", tick: false },
+  { en: "novelist /ˈnɑːvəlɪst/", vn: "tiểu thuyết gia", tick: false },
+  { en: "nowadays /ˈnaʊəˌdeɪz/", vn: "ngày nay", tick: false },
+  { en: "pause /pɔːz/", vn: "tạm dừng", tick: false },
+  { en: "overseas /ˌoʊvərˈsiz/", vn: "nước ngoài / hải ngoại", tick: false },
+  { en: "overnight /ˌoʊvərˈnaɪt/", vn: "qua đêm", tick: false },
+  { en: "passage /ˈpæsɪdʒ/", vn: "đoạn văn / lối đi", tick: false },
+  { en: "package /ˈpækɪdʒ/", vn: "gói đồ / bưu kiện", tick: false },
+  { en: "packaging /ˈpækɪdʒɪŋ/", vn: "bao bì", tick: false },
+  { en: "pay /peɪ/", vn: "trả tiền / thanh toán", tick: false },
+  { en: "project /ˈprɑːdʒɛkt/", vn: "dự án", tick: false },
+  { en: "planet /ˈplænət/", vn: "hành tinh", tick: false },
+  { en: "pile /paɪl/", vn: "chồng / đống", tick: false },
+  { en: "pill /pɪl/", vn: "viên thuốc", tick: false },
+  { en: "cost /kɔːst/", vn: "giá cả / chi phí", tick: false },
+  { en: "pick /pɪk/", vn: "chọn / hái", tick: false },
+  { en: "picture /ˈpɪktʃər/", vn: "bức tranh / hình ảnh", tick: false },
+  { en: "research /riˈsɜːrtʃ/", vn: "nghiên cứu", tick: false },
+  { en: "play /pleɪ/", vn: "chơi / vở kịch", tick: false },
+  { en: "product /ˈprɑːdʌkt/", vn: "sản phẩm", tick: false },
+  { en: "report /rɪˈpɔːrt/", vn: "báo cáo", tick: false },
+  { en: "price /praɪs/", vn: "giá", tick: false },
+  { en: "remember /rɪˈmɛmbər/", vn: "nhớ", tick: false },
+  { en: "reach /ritʃ/", vn: "với tới / chạm đến", tick: false },
+  { en: "province /ˈprɑːvɪns/", vn: "tỉnh thành", tick: false },
+  { en: "reward /rɪˈwɔːrd/", vn: "phần thưởng", tick: false },
+  { en: "country /ˈkʌntri/", vn: "quốc gia / nông thôn", tick: false },
+  { en: "course /kɔːrs/", vn: "khóa học", tick: false },
+  { en: "round /raʊnd/", vn: "tròn / vòng quanh", tick: false },
+  { en: "secondary school /ˈsɛkənˌdɛri skul/", vn: "trường trung học cơ sở", tick: false },
+  { en: "cousin /ˈkʌzən/", vn: "anh chị em họ", tick: false },
+  { en: "salary /ˈsæləri/", vn: "lương bổng", tick: false },
+  { en: "rose /roʊz/", vn: "hoa hồng", tick: false },
+  { en: "sample /ˈsæmpəl/", vn: "mẫu thử", tick: false },
+  { en: "stomach /ˈstʌmək/", vn: "dạ dày / bụng", tick: false },
+  { en: "seat /sit/", vn: "chỗ ngồi", tick: false },
+  { en: "skill /skɪl/", vn: "kỹ năng", tick: false },
+  { en: "screen /skrin/", vn: "màn hình", tick: false },
+  { en: "thus /ðʌs/", vn: "do đó / như vậy", tick: false },
+  { en: "sentence /ˈsɛntəns/", vn: "câu / án phạt", tick: false },
+  { en: "cow /kaʊ/", vn: "con bò cái", tick: false },
+  { en: "schedule /ˈskɛdʒʊl/", vn: "lịch trình", tick: false },
+  { en: "scheme /skim/", vn: "kế hoạch / lược đồ", tick: false },
+  { en: "scientist /ˈsaɪəntɪst/", vn: "nhà khoa học", tick: false },
+  { en: "subject /ˈsʌbdʒɪkt/", vn: "môn học / chủ thể", tick: false },
+  { en: "silk /sɪlk/", vn: "lụa", tick: false },
+  { en: "silver /ˈsɪlvər/", vn: "bạc", tick: false },
+  { en: "staircase /ˈstɛrˌkeɪs/", vn: "cầu thang", tick: false },
+  { en: "ship /ʃɪp/", vn: "tàu thủy", tick: false },
+  { en: "create /kriˈeɪt/", vn: "tạo ra", tick: false },
+  { en: "source /sɔːrs/", vn: "nguồn gốc", tick: false },
+  { en: "traditional /trəˈdɪʃənəl/", vn: "truyền thống", tick: false },
+  { en: "traffic /ˈtræfɪk/", vn: "giao thông", tick: false },
+  { en: "suggest /səˈɡdʒɛst/", vn: "gợi ý / đề xuất", tick: false },
+  { en: "speed /spid/", vn: "tốc độ", tick: false },
+  { en: "sum /sʌm/", vn: "tổng số", tick: false },
+  { en: "weekly /ˈwikli/", vn: "hàng tuần", tick: false },
+  { en: "upper /ˈʌpər/", vn: "phía trên", tick: false },
+  { en: "turtle /ˈtɜːrtəl/", vn: "con rùa", tick: false },
+  { en: "type /taɪp/", vn: "loại / đánh máy", tick: false },
+  { en: "trust /trʌst/", vn: "tin tưởng", tick: false },
+  { en: "try /traɪ/", vn: "thử / cố gắng", tick: false },
+  { en: "upwards /ˈʌpwərdz/", vn: "hướng lên trên", tick: false },
+  { en: "very /ˈvɛri/", vn: "rất", tick: false },
+  { en: "visa /ˈvizə/", vn: "thị thực", tick: false },
+  { en: "cup /kʌp/", vn: "cái tách / cúp", tick: false },
+  { en: "way /weɪ/", vn: "đường / cách thức", tick: false },
+  { en: "customer /ˈkʌstəmər/", vn: "khách hàng", tick: false },
+  { en: "cut /kʌt/", vn: "cắt", tick: false },
+  { en: "dad /dæd/", vn: "bố", tick: false },
+  { en: "dance /dæns/", vn: "nhảy múa", tick: false },
+  { en: "wherever /wɛrˈɛvər/", vn: "bất cứ nơi nào", tick: false },
+  { en: "young /jʌŋ/", vn: "trẻ", tick: false },
+  { en: "dancer /ˈdænsər/", vn: "vũ công", tick: false },
+  { en: "dancing /ˈdænsɪŋ/", vn: "việc nhảy múa", tick: false },
+  { en: "dangerous /ˈdeɪndʒərəs/", vn: "nguy hiểm", tick: false },
+  { en: "dark /dɑːrk/", vn: "tối", tick: false },
+  { en: "date /deɪt/", vn: "ngày / ngày tháng", tick: false },
+  { en: "daughter /ˈdɔːtər/", vn: "con gái", tick: false },
+  { en: "day /deɪ/", vn: "ngày", tick: false },
+  { en: "dear /dɪr/", vn: "thân mến / đắt đỏ", tick: false },
+  { en: "December /dɪˈsɛmbər/", vn: "tháng Mười Hai", tick: false },
+  { en: "decide /dɪˈsaɪd/", vn: "quyết định", tick: false },
+  { en: "delicious /dɪˈlɪʃəs/", vn: "ngon", tick: false },
+  { en: "describe /dɪˈskraɪb/", vn: "mô tả", tick: false },
+  { en: "description /dɪˈskrɪpʃən/", vn: "sự mô tả", tick: false },
+  { en: "design /dɪˈzaɪn/", vn: "thiết kế", tick: false },
+  { en: "desk /dɛsk/", vn: "bàn làm việc", tick: false },
+  { en: "detail /ˈditeɪl/", vn: "chi tiết", tick: false },
+  { en: "dialogue /ˈdaɪəˌlɔːɡ/", vn: "đối thoại", tick: false },
+  { en: "dictionary /ˈdɪkʃəˌnɛri/", vn: "từ điển", tick: false },
+  { en: "die /daɪ/", vn: "chết", tick: false },
+  { en: "diet /ˈdaɪət/", vn: "chế độ ăn uống", tick: false },
+  { en: "difference /ˈdɪfərəns/", vn: "sự khác biệt", tick: false },
+  { en: "different /ˈdɪfərənt/", vn: "khác nhau", tick: false },
+  { en: "difficult /ˈdɪfɪˌkʌlt/", vn: "khó khăn", tick: false },
+  { en: "dinner /ˈdɪnər/", vn: "bữa tối", tick: false },
+  { en: "dirty /ˈdɜːrti/", vn: "bẩn thỉu", tick: false },
+  { en: "discuss /dɪˈskʌs/", vn: "thảo luận", tick: false },
+  { en: "dish /dɪʃ/", vn: "món ăn / cái đĩa", tick: false }
+  ],
+
+  7: [
+  { en: "do /du/", vn: "làm", tick: false },
+  { en: "doctor /ˈdɑːktər/", vn: "bác sĩ", tick: false },
+  { en: "dog /dɔːɡ/", vn: "con chó", tick: false },
+  { en: "dollar /ˈdɑːlər/", vn: "đô la", tick: false },
+  { en: "door /dɔːr/", vn: "cửa ra vào", tick: false },
+  { en: "down /daʊn/", vn: "xuống", tick: false },
+  { en: "downstairs /ˌdaʊnˈstɛrz/", vn: "dưới lầu", tick: false },
+  { en: "draw /drɔː/", vn: "vẽ / kéo", tick: false },
+  { en: "dress /drɛs/", vn: "váy liền thân / mặc quần áo", tick: false },
+  { en: "drink /drɪŋk/", vn: "uống / đồ uống", tick: false },
+  { en: "drive /draɪv/", vn: "lái xe", tick: false },
+  { en: "driver /ˈdraɪvər/", vn: "tài xế", tick: false },
+  { en: "during /ˈdʊrɪŋ/", vn: "trong suốt (khoảng thời gian)", tick: false },
+  { en: "each /itʃ/", vn: "mỗi", tick: false },
+  { en: "ear /ɪr/", vn: "tai", tick: false },
+  { en: "early /ˈɜːrli/", vn: "sớm", tick: false },
+  { en: "east /ist/", vn: "hướng đông", tick: false },
+  { en: "easy /ˈizi/", vn: "dễ dàng", tick: false },
+  { en: "eat /it/", vn: "ăn", tick: false },
+  { en: "egg /ɛɡ/", vn: "trứng", tick: false },
+  { en: "eight /eɪt/", vn: "số tám", tick: false },
+  { en: "eighteen /ˌeɪˈtin/", vn: "số mười tám", tick: false },
+  { en: "eighty /ˈeɪti/", vn: "số tám mươi", tick: false },
+  { en: "elephant /ˈɛləfənt/", vn: "con voi", tick: false },
+  { en: "eleven /ɪˈlɛvən/", vn: "số mười một", tick: false },
+  { en: "else /ɛls/", vn: "khác / nữa", tick: false },
+  { en: "email /ˈimeɪl/", vn: "thư điện tử", tick: false },
+  { en: "end /ɛnd/", vn: "kết thúc", tick: false },
+  { en: "enjoy /ɪnˈdʒɔɪ/", vn: "thưởng thức / tận hưởng", tick: false },
+  { en: "enough /ɪˈnʌf/", vn: "đủ", tick: false },
+  { en: "even /ˈivən/", vn: "thậm chí / ngay cả", tick: false },
+  { en: "evening /ˈivnɪŋ/", vn: "buổi tối", tick: false },
+  { en: "event /ɪˈvɛnt/", vn: "sự kiện", tick: false },
+  { en: "ever /ˈɛvər/", vn: "đã từng", tick: false },
+  { en: "every /ˈɛvri/", vn: "mỗi / mọi", tick: false },
+  { en: "everybody /ˈɛvribədi/", vn: "mọi người", tick: false },
+  { en: "everyone /ˈɛvriwʌn/", vn: "mọi người", tick: false },
+  { en: "everything /ˈɛvriθɪŋ/", vn: "mọi thứ", tick: false },
+  { en: "exam /ɪɡˈzæm/", vn: "kỳ thi", tick: false },
+  { en: "example /ɪɡˈzæmpəl/", vn: "ví dụ", tick: false },
+  { en: "excited /ɪkˈsaɪtəd/", vn: "phấn khích", tick: false },
+  { en: "exciting /ɪkˈsaɪtɪŋ/", vn: "thú vị / gây hứng thú", tick: false },
+  { en: "exercise /ˈɛksərsaɪz/", vn: "bài tập / thể dục", tick: false },
+  { en: "expensive /ɪkˈspɛnsɪv/", vn: "đắt tiền", tick: false },
+  { en: "explain /ɪkˈspleɪn/", vn: "giải thích", tick: false },
+  { en: "extra /ˈɛkstrə/", vn: "thêm / bổ sung", tick: false },
+  { en: "eye /aɪ/", vn: "mắt", tick: false },
+  { en: "face /feɪs/", vn: "khuôn mặt", tick: false },
+  { en: "fact /fækt/", vn: "sự thật", tick: false },
+  { en: "fall /fɔːl/", vn: "rơi / ngã / mùa thu", tick: false },
+  { en: "FALSE /fɔːls/", vn: "sai", tick: false },
+  { en: "family /ˈfæməli/", vn: "gia đình", tick: false },
+  { en: "famous /ˈfeɪməs/", vn: "nổi tiếng", tick: false },
+  { en: "fantastic /fænˈtæstɪk/", vn: "tuyệt vời", tick: false },
+  { en: "far /fɑːr/", vn: "xa", tick: false },
+  { en: "farm /fɑːrm/", vn: "nông trại", tick: false },
+  { en: "farmer /ˈfɑːrmər/", vn: "nông dân", tick: false },
+  { en: "fast /fæst/", vn: "nhanh", tick: false },
+  { en: "fat /fæt/", vn: "béo / mỡ", tick: false },
+  { en: "father /ˈfɑːðər/", vn: "cha / bố", tick: false },
+  { en: "favourite /ˈfeɪvərɪt/", vn: "được yêu thích nhất", tick: false },
+  { en: "February /ˈfɛbruɛri/", vn: "tháng Hai", tick: false },
+  { en: "feel /fil/", vn: "cảm thấy", tick: false },
+  { en: "feeling /ˈfilɪŋ/", vn: "cảm xúc / cảm giác", tick: false },
+  { en: "festival /ˈfɛstəvəl/", vn: "lễ hội", tick: false },
+  { en: "few /fju/", vn: "một vài / ít", tick: false },
+  { en: "ice /aɪs/", vn: "đá (lạnh)", tick: false },
+  { en: "ice cream /aɪs krim/", vn: "kem", tick: false },
+  { en: "idea /aɪˈdiə/", vn: "ý tưởng", tick: false },
+  { en: "if /ɪf/", vn: "nếu", tick: false },
+  { en: "imagine /ɪˈmædʒən/", vn: "tưởng tượng", tick: false },
+  { en: "important /ɪmˈpɔːrtənt/", vn: "quan trọng", tick: false },
+  { en: "improve /ɪmˈpruv/", vn: "cải thiện", tick: false },
+  { en: "include /ɪnˈklud/", vn: "bao gồm", tick: false },
+  { en: "information /ˌɪnfərˈmeɪʃən/", vn: "thông tin", tick: false },
+  { en: "interest /ˈɪntrəst/", vn: "sự quan tâm / sở thích / lãi suất", tick: false },
+  { en: "interesting /ˈɪntrəstɪŋ/", vn: "thú vị", tick: false },
+  { en: "internet /ˈɪntərnɛt/", vn: "mạng internet", tick: false },
+  { en: "interview /ˈɪntərvju/", vn: "phỏng vấn", tick: false },
+  { en: "into /ˈɪntu/", vn: "vào trong", tick: false },
+  { en: "introduce /ˌɪntrəˈdus/", vn: "giới thiệu", tick: false },
+  { en: "island /ˈaɪlənd/", vn: "hòn đảo", tick: false },
+  { en: "it /ɪt/", vn: "nó", tick: false },
+  { en: "jacket /ˈdʒækət/", vn: "áo khoác ngắn", tick: false },
+  { en: "January /ˈdʒænjuɛri/", vn: "tháng Giêng", tick: false },
+  { en: "jeans /dʒinz/", vn: "quần bò", tick: false },
+  { en: "job /dʒɑːb/", vn: "công việc", tick: false },
+  { en: "join /dʒɔɪ/", vn: "tham gia", tick: false },
+  { en: "journey /ˈdʒɜːrni/", vn: "hành trình / chuyến đi", tick: false },
+  { en: "juice /dʒus/", vn: "nước ép", tick: false },
+  { en: "July /dʒuˈlaɪ/", vn: "tháng Bảy", tick: false },
+  { en: "June /dʒun/", vn: "tháng Sáu", tick: false },
+  { en: "just /dʒʌst/", vn: "vừa mới / chỉ", tick: false },
+  { en: "keep /kip/", vn: "giữ", tick: false },
+  { en: "key /ki/", vn: "chìa khóa / phím", tick: false },
+  { en: "kilometer /kɪˈlɑːmətər/", vn: "ki-lô-mét", tick: false },
+  { en: "kind /kaɪnd/", vn: "tốt bụng / loại", tick: false },
+  { en: "kitchen /ˈkɪtʃən/", vn: "nhà bếp", tick: false },
+  { en: "know /noʊ/", vn: "biết", tick: false },
+  { en: "land /lænd/", vn: "đất đất liền / hạ cánh", tick: false }
+  ],
+
+  8: [
+  { en: "language /ˈlæŋɡwɪdʒ/", vn: "ngôn ngữ", tick: false },
+  { en: "large /lɑːrdʒ/", vn: "lớn / rộng", tick: false },
+  { en: "last /læst/", vn: "cuối cùng / vừa qua", tick: false },
+  { en: "late /leɪt/", vn: "muộn / trễ", tick: false },
+  { en: "later /ˈleɪtər/", vn: "sau đó / muộn hơn", tick: false },
+  { en: "laugh /læf/", vn: "cười", tick: false },
+  { en: "learn /lɜːrn/", vn: "học", tick: false },
+  { en: "leave /liv/", vn: "rời đi / bỏ lại", tick: false },
+  { en: "left /lɛft/", vn: "bên trái / quá khứ của leave", tick: false },
+  { en: "leg /lɛɡ/", vn: "chân", tick: false },
+  { en: "lesson /ˈlɛsən/", vn: "bài học", tick: false },
+  { en: "let /lɛt/", vn: "để cho / cho phép", tick: false },
+  { en: "letter /ˈlɛtər/", vn: "lá thư / chữ cái", tick: false },
+  { en: "library /ˈlaɪˌbrɛri/", vn: "thư viện", tick: false },
+  { en: "lie /laɪ/", vn: "nằm / nói dối", tick: false },
+  { en: "life /laɪf/", vn: "cuộc sống", tick: false },
+  { en: "light /laɪt/", vn: "ánh sáng / nhẹ", tick: false },
+  { en: "like /laɪk/", vn: "thích / giống như", tick: false },
+  { en: "line /laɪn/", vn: "đường kẻ / dòng", tick: false },
+  { en: "lion /ˈlaɪən/", vn: "sư tử", tick: false },
+  { en: "list /lɪst/", vn: "danh sách", tick: false },
+  { en: "listen /ˈlɪsən/", vn: "nghe", tick: false },
+  { en: "little /ˈlɪtəl/", vn: "nhỏ / một ít", tick: false },
+  { en: "live /lɪv/", vn: "sống / trực tiếp", tick: false },
+  { en: "local /ˈloʊkəl/", vn: "địa phương", tick: false },
+  { en: "long /lɔːŋ/", vn: "dài", tick: false },
+  { en: "look /lʊk/", vn: "nhìn", tick: false },
+  { en: "lose /luz/", vn: "mất / thua", tick: false },
+  { en: "lot /lɑːt/", vn: "nhiều", tick: false },
+  { en: "love /lʌv/", vn: "yêu", tick: false },
+  { en: "lunch /lʌntʃ/", vn: "bữa trưa", tick: false },
+  { en: "machine /məˈʃin/", vn: "máy móc", tick: false },
+  { en: "magazine /ˈmæɡəˌzin/", vn: "tạp chí", tick: false },
+  { en: "main /meɪn/", vn: "chính / chủ yếu", tick: false },
+  { en: "make /meɪk/", vn: "làm / chế tạo", tick: false },
+  { en: "man /mæn/", vn: "đàn ông", tick: false },
+  { en: "many /ˈmɛni/", vn: "nhiều", tick: false },
+  { en: "map /mæp/", vn: "bản đồ", tick: false },
+  { en: "March /mɑːrtʃ/", vn: "tháng Ba", tick: false },
+  { en: "market /ˈmɑːrkət/", vn: "chợ", tick: false },
+  { en: "married /ˈmærid/", vn: "đã kết hôn", tick: false },
+  { en: "match /mætʃ/", vn: "trận đấu / que diêm / làm cho khớp", tick: false },
+  { en: "May /meɪ/", vn: "tháng Năm / có thể", tick: false },
+  { en: "maybe /ˈmeɪbi/", vn: "có lẽ", tick: false },
+  { en: "me /mi/", vn: "tôi (tân ngữ)", tick: false },
+  { en: "meal /mil/", vn: "bữa ăn", tick: false },
+  { en: "mean /min/", vn: "nghĩa là / keo kiệt", tick: false },
+  { en: "meaning /ˈminɪŋ/", vn: "ý nghĩa", tick: false },
+  { en: "meat /mit/", vn: "thịt", tick: false },
+  { en: "meet /mit/", vn: "gặp gỡ", tick: false },
+  { en: "meeting /ˈmitɪŋ/", vn: "cuộc họp", tick: false },
+  { en: "member /ˈmɛmbər/", vn: "thành viên", tick: false },
+  { en: "menu /ˈmɛnju/", vn: "thực đơn", tick: false },
+  { en: "meter /ˈmitər/", vn: "mét / thước đo", tick: false },
+  { en: "midnight /ˈmɪdˌnaɪt/", vn: "nửa đêm", tick: false },
+  { en: "mile /maɪl/", vn: "dặm", tick: false },
+  { en: "milk /mɪlk/", vn: "sữa", tick: false },
+  { en: "million /ˈmɪljən/", vn: "triệu", tick: false },
+  { en: "minute /ˈmɪnɪt/", vn: "phút", tick: false },
+  { en: "miss /mɪs/", vn: "nhớ / bỏ lỡ / cô (Miss)", tick: false },
+  { en: "mistake /mɪˈsteɪk/", vn: "lỗi / sai lầm", tick: false },
+  { en: "model /ˈmɑːdəl/", vn: "mô hình / người mẫu", tick: false },
+  { en: "modern /ˈmɑːdərn/", vn: "hiện đại", tick: false },
+  { en: "moment /ˈmoʊmənt/", vn: "khoảnh khắc / giây lát", tick: false },
+  { en: "Monday /ˈmʌndeɪ/", vn: "thứ Hai", tick: false },
+  { en: "money /ˈmʌni/", vn: "tiền", tick: false },
+  { en: "month /mʌnθ/", vn: "tháng", tick: false },
+  { en: "more /mɔːr/", vn: "nhiều hơn", tick: false },
+  { en: "morning /ˈmɔːrnɪŋ/", vn: "buổi sáng", tick: false },
+  { en: "most /moʊst/", vn: "hầu hết / nhất", tick: false },
+  { en: "mother /ˈmʌðər/", vn: "mẹ", tick: false },
+  { en: "mountain /ˈmaʊntən/", vn: "núi", tick: false },
+  { en: "mouse /maʊs/", vn: "con chuột", tick: false },
+  { en: "mouth /maʊθ/", vn: "miệng", tick: false },
+  { en: "move /muv/", vn: "di chuyển", tick: false },
+  { en: "movie /ˈmuvi/", vn: "phim", tick: false },
+  { en: "much /mʌtʃ/", vn: "nhiều", tick: false },
+  { en: "mum /mʌm/", vn: "mẹ", tick: false },
+  { en: "museum /mjuˈziəm/", vn: "bảo tàng", tick: false },
+  { en: "music /ˈmjuzɪk/", vn: "âm nhạc", tick: false },
+  { en: "must /mʌst/", vn: "phải / nhất định", tick: false },
+  { en: "my /maɪ/", vn: "của tôi", tick: false },
+  { en: "name /neɪm/", vn: "tên", tick: false },
+  { en: "natural /ˈnætʃərəl/", vn: "tự nhiên", tick: false },
+  { en: "near /nɪr/", vn: "gần", tick: false },
+  { en: "need /nid/", vn: "cần", tick: false },
+  { en: "negative /ˈnɛɡətɪv/", vn: "tiêu cực / phủ định", tick: false },
+  { en: "neighbour /ˈneɪbər/", vn: "hàng xóm", tick: false },
+  { en: "never /ˈnɛvər/", vn: "không bao giờ", tick: false },
+  { en: "new /nu/", vn: "mới", tick: false },
+  { en: "news /nuz/", vn: "tin tức", tick: false },
+  { en: "newspaper /ˈnuzˌpeɪpər/", vn: "tờ báo", tick: false },
+  { en: "next /nɛkst/", vn: "kế tiếp / sau đó", tick: false },
+  { en: "next to /ˈnɛkst tu/", vn: "cạnh bên", tick: false },
+  { en: "nice /naɪs/", vn: "tốt / đẹp / tử tế", tick: false },
+  { en: "night /naɪt/", vn: "ban đêm", tick: false },
+  { en: "nine /naɪn/", vn: "số chín", tick: false },
+  { en: "nineteen /ˌnaɪnˈtin/", vn: "số mười chín", tick: false },
+  { en: "ninety /ˈnaɪnti/", vn: "số chín mươi", tick: false }
+  ],
+
+  9: [
+  { en: "no one /ˈnoʊ wʌn/", vn: "không một ai", tick: false },
+  { en: "nobody /ˈnoʊˌbɑːdi/", vn: "không ai", tick: false },
+  { en: "north /nɔːrθ/", vn: "hướng bắc", tick: false },
+  { en: "nose /noʊz/", vn: "mũi", tick: false },
+  { en: "not /nɑːt/", vn: "không", tick: false },
+  { en: "note /noʊt/", vn: "ghi chú / lời nhắn", tick: false },
+  { en: "nothing /ˈnʌθɪŋ/", vn: "không có gì", tick: false },
+  { en: "November /noʊˈvɛmbər/", vn: "tháng Mười Một", tick: false },
+  { en: "now /naʊ/", vn: "bây giờ", tick: false },
+  { en: "number /ˈnʌmbər/", vn: "số / con số", tick: false },
+  { en: "nurse /nɜːrs/", vn: "y tá", tick: false },
+  { en: "object /ˈɑːbdʒɪkt/", vn: "vật thể / mục tiêu / đối tượng", tick: false },
+  { en: "October /ɑːkˈtoʊbər/", vn: "tháng Mười", tick: false },
+  { en: "of /əv/", vn: "của", tick: false },
+  { en: "off /ɔːf/", vn: "tắt / rời khỏi", tick: false },
+  { en: "office /ˈɑːfɪs/", vn: "văn phòng", tick: false },
+  { en: "often /ˈɔːfən/", vn: "thường xuyên", tick: false },
+  { en: "old /oʊld/", vn: "già / cũ", tick: false },
+  { en: "once /wʌns/", vn: "một lần / trước kia", tick: false },
+  { en: "one /wʌn/", vn: "số một", tick: false },
+  { en: "onion /ˈʌnjən/", vn: "hành tây", tick: false },
+  { en: "online /ˈɑːnˌlaɪn/", vn: "trực tuyến", tick: false },
+  { en: "only /ˈoʊnli/", vn: "chỉ duy nhất", tick: false },
+  { en: "open /ˈoʊpən/", vn: "mở", tick: false },
+  { en: "opinion /əˈpɪnjən/", vn: "ý kiến / quan điểm", tick: false },
+  { en: "opposite /ˈɑːpəzɪt/", vn: "đối diện / ngược lại", tick: false },
+  { en: "or /ɔːr/", vn: "hoặc", tick: false },
+  { en: "orange /ˈɔːrɪndʒ/", vn: "quả cam / màu cam", tick: false },
+  { en: "order /ˈɔːrdər/", vn: "thứ tự / đơn đặt hàng / ra lệnh", tick: false },
+  { en: "other /ˈʌðər/", vn: "khác", tick: false },
+  { en: "our /ˈaʊər/", vn: "của chúng tôi", tick: false },
+  { en: "outside /ˌaʊtˈsaɪd/", vn: "bên ngoài", tick: false },
+  { en: "own /oʊn/", vn: "riêng của mình / sở hữu", tick: false },
+  { en: "page /peɪdʒ/", vn: "trang giấy", tick: false },
+  { en: "paint /peɪnt/", vn: "sơn / vẽ màu", tick: false },
+  { en: "painting /ˈpeɪntɪŋ/", vn: "bức họa / việc vẽ", tick: false },
+  { en: "pair /pɛr/", vn: "đôi / cặp", tick: false },
+  { en: "paper /ˈpeɪpər/", vn: "giấy", tick: false },
+  { en: "paragraph /ˈpærəˌɡræf/", vn: "đoạn văn", tick: false },
+  { en: "parent /ˈpɛrənt/", vn: "cha hoặc mẹ", tick: false },
+  { en: "park /pɑːrk/", vn: "công viên / bãi đậu xe", tick: false },
+  { en: "part /pɑːrt/", vn: "phần / bộ phận", tick: false },
+  { en: "partner /ˈpɑːrtnər/", vn: "đối tác / bạn đời / cộng sự", tick: false },
+  { en: "party /ˈpɑːrti/", vn: "bữa tiệc / đảng phái", tick: false },
+  { en: "passport /ˈpæspɔːrt/", vn: "hộ chiếu", tick: false },
+  { en: "past /pæst/", vn: "quá khứ", tick: false },
+  { en: "pay /peɪ/", vn: "thanh toán / trả lương", tick: false },
+  { en: "pen /pɛn/", vn: "bút mực", tick: false },
+  { en: "pencil /ˈpɛnsəl/", vn: "bút chì", tick: false },
+  { en: "people /ˈpipəl/", vn: "con người / nhân dân", tick: false },
+  { en: "pepper /ˈpɛpər/", vn: "hạt tiêu / ớt chuông", tick: false },
+  { en: "perfect /ˈpɜːrfɪkt/", vn: "hoàn hảo", tick: false },
+  { en: "period /ˈpɪriəd/", vn: "giai đoạn / thời kỳ", tick: false },
+  { en: "person /ˈpɜːrsən/", vn: "con người (số ít)", tick: false },
+  { en: "personal /ˈpɜːrsənəl/", vn: "cá nhân / riêng tư", tick: false },
+  { en: "phone /foʊn/", vn: "điện thoại", tick: false },
+  { en: "photo /ˈfoʊtoʊ/", vn: "bức ảnh", tick: false },
+  { en: "photograph /ˈfoʊtəˌɡræf/", vn: "bức ảnh / chụp ảnh", tick: false },
+  { en: "phrase /freɪz/", vn: "cụm từ", tick: false },
+  { en: "piano /piˈænoʊ/", vn: "đàn dương cầm", tick: false },
+  { en: "picture /ˈpɪktʃər/", vn: "bức tranh / hình ảnh", tick: false },
+  { en: "piece /pis/", vn: "mảnh / miếng", tick: false },
+  { en: "pig /pɪɡ/", vn: "con lợn", tick: false },
+  { en: "pink /pɪŋk/", vn: "màu hồng", tick: false },
+  { en: "place /pleɪs/", vn: "nơi chốn / địa điểm", tick: false },
+  { en: "plan /plæn/", vn: "kế hoạch", tick: false },
+  { en: "plane /pleɪn/", vn: "máy bay", tick: false },
+  { en: "plant /plænt/", vn: "thực vật / cây cối / nhà máy", tick: false },
+  { en: "play /pleɪ/", vn: "chơi / vở kịch", tick: false },
+  { en: "player /ˈpleɪər/", vn: "người chơi / cầu thủ", tick: false },
+  { en: "please /pliz/", vn: "làm ơn / làm hài lòng", tick: false },
+  { en: "point /pɔɪnt/", vn: "điểm / chỉ tay", tick: false },
+  { en: "police /pəˈlis/", vn: "cảnh sát", tick: false },
+  { en: "policeman /pəˈlismən/", vn: "nam cảnh sát", tick: false },
+  { en: "pool /pul/", vn: "bể bơi", tick: false },
+  { en: "poor /pʊr/", vn: "nghèo / kém", tick: false },
+  { en: "popular /ˈpɑːpjələr/", vn: "phổ biến / được ưa chuộng", tick: false },
+  { en: "positive /ˈpɑːzətɪv/", vn: "tích cực / khẳng định", tick: false },
+  { en: "possible /ˈpɑːsəbəl/", vn: "có thể / khả thi", tick: false },
+  { en: "post /poʊst/", vn: "bưu điện / đăng bài", tick: false },
+  { en: "potato /pəˈteɪtoʊ/", vn: "khoai tây", tick: false },
+  { en: "pound /paʊnd/", vn: "đơn vị cân Anh / đồng bảng", tick: false },
+  { en: "practice /ˈpræktɪs/", vn: "sự rèn luyện / luyện tập (n)", tick: false },
+  { en: "practise /ˈpræktɪs/", vn: "luyện tập (v)", tick: false },
+  { en: "prefer /prɪˈfɜːr/", vn: "thích hơn", tick: false },
+  { en: "prepare /prɪˈpɛr/", vn: "chuẩn bị", tick: false },
+  { en: "present /ˈprɛzənt/", vn: "món quà / hiện tại / trình bày", tick: false },
+  { en: "pretty /ˈprɪti/", vn: "khá là / xinh xắn", tick: false },
+  { en: "price /praɪs/", vn: "giá cả", tick: false },
+  { en: "probably /ˈprɑːbəbli/", vn: "có lẽ / có thể", tick: false },
+  { en: "problem /ˈprɑːbləm/", vn: "vấn đề", tick: false },
+  { en: "product /ˈprɑːdʌkt/", vn: "sản phẩm", tick: false },
+  { en: "programme /ˈproʊɡræm/", vn: "chương trình", tick: false },
+  { en: "project /ˈprɑːdʒɛkt/", vn: "dự án", tick: false },
+  { en: "purple /ˈpɜːrpəl/", vn: "màu tím", tick: false },
+  { en: "put /pʊt/", vn: "đặt / để", tick: false },
+  { en: "quarter /ˈkwɔːrtər/", vn: "một phần tư", tick: false },
+  { en: "question /ˈkwɛstʃən/", vn: "câu hỏi", tick: false },
+  { en: "quick /kwɪk/", vn: "nhanh", tick: false },
+  { en: "quickly /ˈkwɪkli/", vn: "một cách nhanh chóng", tick: false }
+  ],
+
+  10: [
+  { en: "quiet /ˈkwaɪət/", vn: "yên tĩnh", tick: false },
+  { en: "quite /kwaɪt/", vn: "khá / hoàn toàn", tick: false },
+  { en: "radio /ˈreɪdiˌoʊ/", vn: "đài phát thanh", tick: false },
+  { en: "rain /reɪn/", vn: "mưa", tick: false },
+  { en: "read /rid/", vn: "đọc", tick: false },
+  { en: "reader /ˈridər/", vn: "người đọc / độc giả", tick: false },
+  { en: "reading /ˈridɪŋ/", vn: "việc đọc / bài đọc", tick: false },
+  { en: "ready /ˈrɛdi/", vn: "sẵn sàng", tick: false },
+  { en: "real /ril/", vn: "thật / thực tế", tick: false },
+  { en: "really /ˈrɪli/", vn: "thực sự", tick: false },
+  { en: "reason /ˈrizən/", vn: "lý do", tick: false },
+  { en: "red /rɛd/", vn: "màu đỏ", tick: false },
+  { en: "relax /rɪˈlæks/", vn: "thư giãn", tick: false },
+  { en: "remember /rɪˈmɛmbər/", vn: "nhớ", tick: false },
+  { en: "repeat /rɪˈpit/", vn: "nhắc lại / lặp lại", tick: false },
+  { en: "report /rɪˈpɔrt/", vn: "báo cáo", tick: false },
+  { en: "restaurant /ˈrɛstəˌrɑnt/", vn: "nhà hàng", tick: false },
+  { en: "result /rɪˈzʌlt/", vn: "kết quả", tick: false },
+  { en: "return /rɪˈtɜrn/", vn: "trở lại / hoàn trả", tick: false },
+  { en: "rice /raɪs/", vn: "gạo / cơm", tick: false },
+  { en: "rich /rɪʧ/", vn: "giàu có", tick: false },
+  { en: "ride /raɪd/", vn: "cưỡi (ngựa) / lái (xe đạp, mô tô)", tick: false },
+  { en: "right /raɪt/", vn: "bên phải / đúng / quyền lợi", tick: false },
+  { en: "river /ˈrɪvər/", vn: "con sông", tick: false },
+  { en: "road /roʊd/", vn: "con đường", tick: false },
+  { en: "room /rum/", vn: "căn phòng / không gian", tick: false },
+  { en: "routine /ruˈtin/", vn: "thói quen hàng ngày / công việc định kỳ", tick: false },
+  { en: "rule /rul/", vn: "quy tắc / luật lệ", tick: false },
+  { en: "run /rʌn/", vn: "chạy", tick: false },
+  { en: "sad /sæd/", vn: "buồn", tick: false },
+  { en: "salad /ˈsæləd/", vn: "món salad / rau trộn", tick: false },
+  { en: "salt /sɔlt/", vn: "muối", tick: false },
+  { en: "same /seɪm/", vn: "giống nhau / cùng một", tick: false },
+  { en: "sandwich /ˈsændwɪʧ/", vn: "bánh mì kẹp", tick: false },
+  { en: "Saturday /ˈsætərdeɪ/", vn: "thứ Bảy", tick: false },
+  { en: "say /seɪ/", vn: "nói", tick: false },
+  { en: "school /skul/", vn: "trường học", tick: false },
+  { en: "science /ˈsaɪəns/", vn: "khoa học", tick: false },
+  { en: "scientist /ˈsaɪəntɪst/", vn: "nhà khoa học", tick: false },
+  { en: "sea /si/", vn: "biển", tick: false },
+  { en: "second /ˈsɛkənd/", vn: "thứ hai / giây", tick: false },
+  { en: "section /ˈsɛkʃən/", vn: "phần / mục", tick: false },
+  { en: "see /si/", vn: "nhìn thấy / hiểu", tick: false },
+  { en: "sell /sɛl/", vn: "bán", tick: false },
+  { en: "send /sɛnd/", vn: "gửi", tick: false },
+  { en: "sentence /ˈsɛntəns/", vn: "câu / án phạt", tick: false },
+  { en: "September /sɛpˈtɛmbər/", vn: "tháng Chín", tick: false },
+  { en: "seven /ˈsɛvən/", vn: "số bảy", tick: false },
+  { en: "seventeen /ˌsɛvənˈtin/", vn: "số mười bảy", tick: false },
+  { en: "seventy /ˈsɛvənti/", vn: "số bảy mươi", tick: false },
+  { en: "share /ʃɛr/", vn: "chia sẻ", tick: false },
+  { en: "she /ʃi/", vn: "cô ấy", tick: false },
+  { en: "sheep /ʃip/", vn: "con cừu", tick: false },
+  { en: "shirt /ʃɜrt/", vn: "áo sơ mi", tick: false },
+  { en: "shoe /ʃu/", vn: "chiếc giày", tick: false },
+  { en: "shop /ʃɑp/", vn: "cửa hàng / mua sắm", tick: false },
+  { en: "shopping /ˈʃɑpɪŋ/", vn: "việc mua sắm", tick: false },
+  { en: "short /ʃɔrt/", vn: "ngắn / thấp", tick: false },
+  { en: "should /ʃʊd/", vn: "nên", tick: false },
+  { en: "show /ʃoʊ/", vn: "chỉ ra / trình diễn / chương trình", tick: false },
+  { en: "shower /ˈʃaʊər/", vn: "vòi hoa sen / tắm", tick: false },
+  { en: "sick /sɪk/", vn: "ốm / bệnh", tick: false },
+  { en: "similar /ˈsɪmələr/", vn: "tương tự", tick: false },
+  { en: "sing /sɪŋ/", vn: "hát", tick: false },
+  { en: "singer /ˈsɪŋər/", vn: "ca sĩ", tick: false },
+  { en: "sister /ˈsɪstər/", vn: "chị em gái", tick: false },
+  { en: "sit /sɪt/", vn: "ngồi", tick: false },
+  { en: "situation /ˌsɪʧuˈeɪʃən/", vn: "tình huống / hoàn cảnh", tick: false },
+  { en: "six /sɪks/", vn: "số sáu", tick: false },
+  { en: "sixteen /ˌsɪkˈstin/", vn: "số mười sáu", tick: false },
+  { en: "sixty /ˈsɪksti/", vn: "số sáu mươi", tick: false },
+  { en: "skill /skɪl/", vn: "kỹ năng", tick: false },
+  { en: "skirt /skɜrt/", vn: "chân váy", tick: false },
+  { en: "sleep /slip/", vn: "ngủ", tick: false },
+  { en: "slow /sloʊ/", vn: "chậm", tick: false },
+  { en: "small /smɔl/", vn: "nhỏ / bé", tick: false },
+  { en: "snake /sneɪk/", vn: "con rắn", tick: false },
+  { en: "snow /snoʊ/", vn: "tuyết", tick: false },
+  { en: "so /soʊ/", vn: "vì vậy / quá / như thế", tick: false },
+  { en: "some /sʌm/", vn: "một vài / một ít", tick: false },
+  { en: "somebody /ˈsʌmˌbɑdi/", vn: "ai đó", tick: false },
+  { en: "someone /ˈsʌmˌwʌn/", vn: "người nào đó", tick: false },
+  { en: "something /ˈsʌmθɪŋ/", vn: "cái gì đó", tick: false },
+  { en: "sometimes /ˈsʌmˌtaɪmz/", vn: "thỉnh thoảng", tick: false },
+  { en: "son /sʌn/", vn: "con trai (đối với cha mẹ)", tick: false },
+  { en: "song /sɔŋ/", vn: "bài hát", tick: false },
+  { en: "soon /sun/", vn: "sớm / chẳng bao lâu", tick: false },
+  { en: "sorry /ˈsɑri/", vn: "xin lỗi / lấy làm tiếc", tick: false },
+  { en: "sound /saʊnd/", vn: "âm thanh / nghe có vẻ", tick: false },
+  { en: "soup /sup/", vn: "món súp / canh", tick: false },
+  { en: "south /saʊθ/", vn: "hướng nam", tick: false },
+  { en: "space /speɪs/", vn: "không gian / chỗ trống", tick: false },
+  { en: "speak /spik/", vn: "nói / phát biểu", tick: false },
+  { en: "special /ˈspɛʃəl/", vn: "đặc biệt", tick: false },
+  { en: "spell /spɛl/", vn: "đánh vần", tick: false },
+  { en: "spelling /ˈspɛlɪŋ/", vn: "việc đánh vần / cách viết", tick: false },
+  { en: "spend /spɛnd/", vn: "tiêu (tiền) / dành (thời gian)", tick: false },
+  { en: "sport /spɔrt/", vn: "thể thao", tick: false },
+  { en: "spring /sprɪŋ/", vn: "mùa xuân / lò xo", tick: false },
+  { en: "stand /stænd/", vn: "đứng", tick: false }
+  ],
+
+  11: [
+  { en: "star /stɑːr/", vn: "ngôi sao", tick: false },
+  { en: "start /stɑːrt/", vn: "bắt đầu", tick: false },
+  { en: "statement /ˈsteɪtmənt/", vn: "sự tuyên bố / lời phát biểu", tick: false },
+  { en: "station /ˈsteɪʃən/", vn: "trạm / nhà ga", tick: false },
+  { en: "stay /steɪ/", vn: "ở lại", tick: false },
+  { en: "still /stɪl/", vn: "vẫn còn", tick: false },
+  { en: "stop /stɑːp/", vn: "dừng lại", tick: false },
+  { en: "story /ˈstɔːri/", vn: "câu chuyện", tick: false },
+  { en: "street /strit/", vn: "con phố", tick: false },
+  { en: "strong /strɔːŋ/", vn: "mạnh mẽ", tick: false },
+  { en: "student /ˈstudənt/", vn: "học sinh / sinh viên", tick: false },
+  { en: "study /ˈstʌdi/", vn: "học tập / nghiên cứu", tick: false },
+  { en: "style /staɪl/", vn: "phong cách", tick: false },
+  { en: "subject /ˈsʌbdʒɪkt/", vn: "môn học / chủ đề", tick: false },
+  { en: "success /səkˈsɛs/", vn: "sự thành công", tick: false },
+  { en: "sugar /ˈʃʊɡər/", vn: "đường", tick: false },
+  { en: "summer /ˈsʌmər/", vn: "mùa hè", tick: false },
+  { en: "sun /sʌn/", vn: "mặt trời", tick: false },
+  { en: "Sunday /ˈsʌndeɪ/", vn: "Chủ Nhật", tick: false },
+  { en: "supermarket /ˈsupərˌmɑːrkɪt/", vn: "siêu thị", tick: false },
+  { en: "sure /ʃʊr/", vn: "chắc chắn", tick: false },
+  { en: "sweater /ˈswɛtər/", vn: "áo len", tick: false },
+  { en: "swim /swɪm/", vn: "bơi", tick: false },
+  { en: "swimming /ˈswɪmɪŋ/", vn: "việc bơi lội", tick: false },
+  { en: "table /ˈteɪbəl/", vn: "cái bàn", tick: false },
+  { en: "take /teɪk/", vn: "cầm / lấy / mang đi", tick: false },
+  { en: "talk /tɔːk/", vn: "nói chuyện", tick: false },
+  { en: "tall /tɔːl/", vn: "cao", tick: false },
+  { en: "taxi /ˈtæksi/", vn: "xe tắc xi", tick: false },
+  { en: "tea /ti/", vn: "trà", tick: false },
+  { en: "teach /titʃ/", vn: "dạy học", tick: false },
+  { en: "teacher /ˈtitʃər/", vn: "giáo viên", tick: false },
+  { en: "team /tim/", vn: "đội / nhóm", tick: false },
+  { en: "teenager /ˈtinˌeɪdʒər/", vn: "thanh thiếu niên", tick: false },
+  { en: "telephone /ˈtɛləˌfoʊn/", vn: "điện thoại", tick: false },
+  { en: "television /ˈtɛləˌvɪʒən/", vn: "ti vi", tick: false },
+  { en: "tell /tɛl/", vn: "kể / bảo", tick: false },
+  { en: "ten /tɛn/", vn: "số mười", tick: false },
+  { en: "tennis /ˈtɛnəs/", vn: "quần vợt", tick: false },
+  { en: "terrible /ˈtɛrəbəl/", vn: "kinh khủng / tồi tệ", tick: false },
+  { en: "test /tɛst/", vn: "bài kiểm tra", tick: false },
+  { en: "text /tɛkst/", vn: "văn bản / tin nhắn văn bản", tick: false },
+  { en: "thank /θæŋk/", vn: "cảm ơn", tick: false },
+  { en: "thanks /θæŋks/", vn: "lời cảm ơn", tick: false },
+  { en: "that /ðæt/", vn: "đó / kia", tick: false },
+  { en: "the /ðə/", vn: "mạo từ xác định (cái đó)", tick: false },
+  { en: "theatre /ˈθiətər/", vn: "nhà hát", tick: false },
+  { en: "their /ðɛr/", vn: "của họ", tick: false },
+  { en: "them /ðɛm/", vn: "họ (tân ngữ)", tick: false },
+  { en: "then /ðɛn/", vn: "sau đó / lúc đó", tick: false },
+  { en: "there /ðɛr/", vn: "ở đó / có", tick: false },
+  { en: "they /ðeɪ/", vn: "họ / chúng nó", tick: false },
+  { en: "thing /θɪŋ/", vn: "vật / thứ / điều", tick: false },
+  { en: "think /θɪŋk/", vn: "suy nghĩ", tick: false },
+  { en: "third /θɜːrd/", vn: "thứ ba (số thứ tự)", tick: false },
+  { en: "thirsty /ˈθɜːrsti/", vn: "khát nước", tick: false },
+  { en: "thirteen /ˌθɜːrˈtin/", vn: "số mười ba", tick: false },
+  { en: "thirty /ˈθɜːrti/", vn: "số ba mươi", tick: false },
+  { en: "this /ðɪs/", vn: "này / đây", tick: false },
+  { en: "thousand /ˈθaʊzənd/", vn: "ngàn / nghìn", tick: false },
+  { en: "three /θri/", vn: "số ba", tick: false },
+  { en: "through /θru/", vn: "xuyên qua", tick: false },
+  { en: "Thursday /ˈθɜːrzdeɪ/", vn: "thứ Năm", tick: false },
+  { en: "ticket /ˈtɪkət/", vn: "vé", tick: false },
+  { en: "time /taɪm/", vn: "thời gian / lần", tick: false },
+  { en: "tired /ˈtaɪərd/", vn: "mệt mỏi", tick: false },
+  { en: "title /ˈtaɪtəl/", vn: "tiêu đề / danh hiệu", tick: false },
+  { en: "to /tu/", vn: "đến / hướng tới", tick: false },
+  { en: "today /təˈdeɪ/", vn: "hôm nay", tick: false },
+  { en: "together /təˈɡɛðər/", vn: "cùng nhau", tick: false },
+  { en: "toilet /ˈtɔɪlət/", vn: "nhà vệ sinh", tick: false },
+  { en: "tomato /təˈmeɪtoʊ/", vn: "quả cà chua", tick: false },
+  { en: "tomorrow /təˈmɔˌroʊ/", vn: "ngày mai", tick: false },
+  { en: "tonight /təˈnaɪt/", vn: "tối nay", tick: false },
+  { en: "too /tu/", vn: "cũng / quá", tick: false },
+  { en: "tooth /tuθ/", vn: "răng", tick: false },
+  { en: "topic /ˈtɑːpɪk/", vn: "chủ đề", tick: false },
+  { en: "tourist /ˈtʊrɪst/", vn: "khách du lịch", tick: false },
+  { en: "town /taʊn/", vn: "thị trấn", tick: false },
+  { en: "traffic /ˈtræfɪk/", vn: "giao thông", tick: false },
+  { en: "train /treɪn/", vn: "tàu hỏa / huấn luyện", tick: false },
+  { en: "travel /ˈtrævəl/", vn: "du hành / đi du lịch", tick: false },
+  { en: "tree /tri/", vn: "cái cây", tick: false },
+  { en: "trip /trɪp/", vn: "chuyến đi", tick: false },
+  { en: "trousers /ˈtraʊzərz/", vn: "quần dài", tick: false },
+  { en: "TRUE /tru/", vn: "đúng / thật", tick: false },
+  { en: "try /traɪ/", vn: "thử / cố gắng", tick: false },
+  { en: "T-shirt /ˈtiˌʃɜːrt/", vn: "áo thun", tick: false },
+  { en: "Tuesday /ˈtuzdeɪ/", vn: "thứ Ba", tick: false },
+  { en: "turn /tɜːrn/", vn: "xoay / rẽ / lượt", tick: false },
+  { en: "twelve /twɛlv/", vn: "số mười hai", tick: false },
+  { en: "twenty /ˈtwɛnti/", vn: "số hai mươi", tick: false },
+  { en: "twice /twaɪs/", vn: "hai lần", tick: false },
+  { en: "two /tu/", vn: "số hai", tick: false },
+  { en: "type /taɪp/", vn: "loại / đánh máy", tick: false },
+  { en: "umbrella /ʌmˈbrɛlə/", vn: "cái ô / cái dù", tick: false },
+  { en: "uncle /ˈʌŋkəl/", vn: "chú / bác / cậu", tick: false },
+  { en: "under /ˈʌndər/", vn: "ở dưới", tick: false },
+  { en: "understand /ˌʌndərˈstænd/", vn: "hiểu", tick: false },
+  { en: "university /ˌjunəˈvɜːrsəti/", vn: "trường đại học", tick: false }
+  ],
+  12: [
+  { en: "until /ənˈtɪl/", vn: "cho đến khi", tick: false },
+  { en: "upstairs /ˌʌpˈstɛrz/", vn: "trên lầu / tầng trên", tick: false },
+  { en: "use /juz/", vn: "sử dụng", tick: false },
+  { en: "useful /ˈjusfəl/", vn: "hữu ích", tick: false },
+  { en: "usually /ˈjuʒuəli/", vn: "thường xuyên", tick: false },
+  { en: "vacation /veɪˈkeɪʃən/", vn: "kỳ nghỉ", tick: false },
+  { en: "vegetable /ˈvɛʤtəbəl/", vn: "rau củ", tick: false },
+  { en: "very /ˈvɛri/", vn: "rất", tick: false },
+  { en: "video /ˈvɪdioʊ/", vn: "video", tick: false },
+  { en: "village /ˈvɪlɪʤ/", vn: "ngôi làng", tick: false },
+  { en: "visit /ˈvɪzɪt/", vn: "thăm viếng", tick: false },
+  { en: "visitor /ˈvɪzɪtər/", vn: "khách thăm quan", tick: false },
+  { en: "wait /weɪt/", vn: "đợi", tick: false },
+  { en: "waiter /ˈweɪtər/", vn: "nam bồi bàn", tick: false },
+  { en: "wake /weɪk/", vn: "thức dậy", tick: false },
+  { en: "walk /wɔk/", vn: "đi bộ", tick: false },
+  { en: "wall /wɔl/", vn: "bức tường", tick: false },
+  { en: "want /wɑnt/", vn: "muốn", tick: false },
+  { en: "warm /wɔrm/", vn: "ấm áp", tick: false },
+  { en: "wash /wɑʃ/", vn: "rửa / giặt", tick: false },
+  { en: "watch /wɑʧ/", vn: "xem / đồng hồ đeo tay", tick: false },
+  { en: "water /ˈwɔtər/", vn: "nước", tick: false },
+  { en: "way /weɪ/", vn: "đường / cách thức", tick: false },
+  { en: "we /wi/", vn: "chúng tôi", tick: false },
+  { en: "wear /wɛr/", vn: "mặc / đeo", tick: false },
+  { en: "weather /ˈwɛðər/", vn: "thời tiết", tick: false },
+  { en: "website /ˈwɛbˌsaɪt/", vn: "trang web", tick: false },
+  { en: "Wednesday /ˈwɛnzdeɪ/", vn: "thứ Tư", tick: false },
+  { en: "week /wik/", vn: "tuần", tick: false },
+  { en: "weekend /ˈwiˌkɛnd/", vn: "cuối tuần", tick: false },
+  { en: "welcome /ˈwɛlkəm/", vn: "chào mừng", tick: false },
+  { en: "well /wɛl/", vn: "tốt / khỏe", tick: false },
+  { en: "west /wɛst/", vn: "hướng tây", tick: false },
+  { en: "what /wʌt/", vn: "cái gì", tick: false },
+  { en: "when /wɛn/", vn: "khi nào", tick: false },
+  { en: "where /wɛr/", vn: "ở đâu", tick: false },
+  { en: "which /wɪʧ/", vn: "cái nào", tick: false },
+  { en: "white /waɪt/", vn: "màu trắng", tick: false },
+  { en: "who /hu/", vn: "ai", tick: false },
+  { en: "why /waɪ/", vn: "tại sao", tick: false },
+  { en: "wife /waɪf/", vn: "vợ", tick: false },
+  { en: "win /wɪn/", vn: "chiến thắng", tick: false },
+  { en: "window /ˈwɪndoʊ/", vn: "cửa sổ", tick: false },
+  { en: "wine /waɪn/", vn: "rượu vang", tick: false },
+  { en: "winter /ˈwɪntər/", vn: "mùa đông", tick: false },
+  { en: "with /wɪð/", vn: "với", tick: false },
+  { en: "without /wɪˈθaʊt/", vn: "không có", tick: false },
+  { en: "woman /ˈwʊmən/", vn: "người phụ nữ", tick: false },
+  { en: "wonderful /ˈwʌndərfəl/", vn: "tuyệt vời", tick: false },
+  { en: "word /wɜrd/", vn: "từ", tick: false },
+  { en: "work /wɜrk/", vn: "làm việc", tick: false },
+  { en: "worker /ˈwɜrkər/", vn: "công nhân / người lao động", tick: false },
+  { en: "world /wɜrld/", vn: "thế giới", tick: false },
+  { en: "write /raɪt/", vn: "viết", tick: false },
+  { en: "writer /ˈraɪtər/", vn: "nhà văn", tick: false },
+  { en: "writing /ˈraɪtɪŋ/", vn: "việc viết lách", tick: false },
+  { en: "wrong /rɔŋ/", vn: "sai", tick: false },
+  { en: "year /jɪr/", vn: "năm", tick: false },
+  { en: "yellow /ˈjɛloʊ/", vn: "màu vàng", tick: false },
+  { en: "yesterday /ˈjɛstərˌdeɪ/", vn: "hôm qua", tick: false },
+  { en: "you /ju/", vn: "bạn", tick: false },
+  { en: "young /jʌŋ/", vn: "trẻ", tick: false },
+  { en: "your /jɔr/", vn: "của bạn", tick: false },
+  { en: "yourself /jərˈsɛlf/", vn: "chính bạn", tick: false },
+  { en: "able /ˈeɪbəl/", vn: "có thể / có khả năng", tick: false },
+  { en: "abroad /əˈbrɔd/", vn: "ở nước ngoài", tick: false },
+  { en: "accept /ækˈsɛpt/", vn: "chấp nhận", tick: false },
+  { en: "accident /ˈæksədənt/", vn: "tai nạn", tick: false },
+  { en: "according to /əˈkɔrdɪŋ tu/", vn: "theo như", tick: false },
+  { en: "achieve /əˈʧiv/", vn: "đạt được", tick: false },
+  { en: "act /ækt/", vn: "hành động / diễn", tick: false },
+  { en: "active /ˈæktɪv/", vn: "năng động", tick: false },
+  { en: "actually /ˈækʧuəli/", vn: "thực ra", tick: false },
+  { en: "adult /əˈdʌlt/", vn: "người lớn", tick: false },
+  { en: "advantage /ædˈvæntɪʤ/", vn: "lợi thế", tick: false },
+  { en: "adventure /ædˈvɛnʧər/", vn: "cuộc phiêu lưu", tick: false },
+  { en: "advertise /ˈædvərˌtaɪz/", vn: "quảng cáo (v)", tick: false },
+  { en: "advertisement /ˌædvərˈtaɪzmənt/", vn: "mục quảng cáo (n)", tick: false },
+  { en: "advertising /ˈædvərˌtaɪzɪŋ/", vn: "ngành quảng cáo", tick: false },
+  { en: "affect /əˈfɛkt/", vn: "ảnh hưởng", tick: false },
+  { en: "after /ˈæftər/", vn: "sau khi", tick: false },
+  { en: "against /əˈɡɛnst/", vn: "chống lại / dựa vào", tick: false },
+  { en: "airline /ˈɛrˌlaɪn/", vn: "hãng hàng không", tick: false },
+  { en: "alive /əˈlaɪv/", vn: "còn sống", tick: false },
+  { en: "all /ɔl/", vn: "tất cả", tick: false },
+  { en: "all right /ɔl raɪt/", vn: "ổn / được thôi", tick: false },
+  { en: "allow /əˈlaʊ/", vn: "cho phép", tick: false },
+  { en: "almost /ˈɔlˌmoʊst/", vn: "hầu như", tick: false },
+  { en: "alone /əˈloʊn/", vn: "một mình", tick: false },
+  { en: "along /əˈlɔŋ/", vn: "dọc theo", tick: false },
+  { en: "already /ɔlˈrɛdi/", vn: "đã rồi", tick: false },
+  { en: "alternative /ɔlˈtɜrnətɪv/", vn: "thay thế", tick: false },
+  { en: "although /ɔlˈðoʊ/", vn: "mặc dù", tick: false },
+  { en: "among /əˈmʌŋ/", vn: "giữa (nhiều người/vật)", tick: false },
+  { en: "amount /əˈmaʊnt/", vn: "số lượng / khoản tiền", tick: false },
+  { en: "ancient /ˈeɪnʧənt/", vn: "cổ xưa", tick: false },
+  { en: "ankle /ˈæŋkəl/", vn: "mắt cá chân", tick: false },
+  { en: "any /ˈɛni/", vn: "bất kỳ", tick: false },
+  { en: "anybody /ˈɛniˌbɑdi/", vn: "bất cứ ai", tick: false },
+  { en: "any more /ˌɛni ˈmɔr/", vn: "nữa (trong câu phủ định)", tick: false }
+  ],
+  13: [
+  { en: "anyway /ˈɛniˌweɪ/", vn: "dù sao đi nữa", tick: false },
+  { en: "anywhere /ˈɛniˌwɛr/", vn: "bất cứ nơi nào", tick: false },
+  { en: "app /æp/", vn: "ứng dụng", tick: false },
+  { en: "appear /əˈpɪr/", vn: "xuất hiện", tick: false },
+  { en: "appearance /əˈpɪrəns/", vn: "ngoại hình / sự xuất hiện", tick: false },
+  { en: "apply /əˈplaɪ/", vn: "nộp đơn / áp dụng", tick: false },
+  { en: "architect /ˈɑrkəˌtɛkt/", vn: "kiến trúc sư", tick: false },
+  { en: "architecture /ˈɑrkəˌtɛkʧər/", vn: "kiến trúc", tick: false },
+  { en: "argue /ˈɑrɡju/", vn: "tranh luận / cãi vã", tick: false },
+  { en: "argument /ˈɑrɡjəmənt/", vn: "sự tranh luận / lý lẽ", tick: false },
+  { en: "army /ˈɑrmi/", vn: "quân đội", tick: false },
+  { en: "arrange /əˈreɪnʤ/", vn: "sắp xếp / thu xếp", tick: false },
+  { en: "arrangement /əˈreɪnʤmənt/", vn: "sự sắp xếp", tick: false },
+  { en: "as /æz/", vn: "như / khi / bởi vì", tick: false },
+  { en: "asleep /əˈslip/", vn: "đang ngủ", tick: false },
+  { en: "assistant /əˈsɪstənt/", vn: "trợ lý / người giúp việc", tick: false },
+  { en: "athlete /ˈæθˌlit/", vn: "vận động viên", tick: false },
+  { en: "attack /əˈtæk/", vn: "tấn công", tick: false },
+  { en: "attend /əˈtɛnd/", vn: "tham dự / chú ý", tick: false },
+  { en: "attention /əˈtɛnʃən/", vn: "sự chú ý", tick: false },
+  { en: "attractive /əˈtræktɪv/", vn: "quyến rũ / hấp dẫn", tick: false },
+  { en: "audience /ˈɑdiəns/", vn: "khán giả", tick: false },
+  { en: "author /ˈɔθər/", vn: "tác giả", tick: false },
+  { en: "available /əˈveɪləbəl/", vn: "có sẵn / rảnh rỗi", tick: false },
+  { en: "average /ˈævərɪʤ/", vn: "trung bình", tick: false },
+  { en: "avoid /əˈvɔɪd/", vn: "tránh né", tick: false },
+  { en: "award /əˈwɔrd/", vn: "giải thưởng", tick: false },
+  { en: "awful /ˈɑfəl/", vn: "khủng khiếp / tồi tệ", tick: false },
+  { en: "back /bæk/", vn: "phía sau / quay lại", tick: false },
+  { en: "background /ˈbækˌɡraʊnd/", vn: "nền tảng / lai lịch / hậu cảnh", tick: false },
+  { en: "badly /ˈbædli/", vn: "xấu / tồi tệ / rất nhiều", tick: false },
+  { en: "bar /bɑr/", vn: "thanh / quán bar / rào chắn", tick: false },
+  { en: "baseball /ˈbeɪsˌbɔl/", vn: "bóng chày", tick: false },
+  { en: "based /beɪst/", vn: "dựa trên", tick: false },
+  { en: "basketball /ˈbæskətˌbɔl/", vn: "bóng rổ", tick: false },
+  { en: "bean /bin/", vn: "hạt đậu", tick: false },
+  { en: "bear /bɛr/", vn: "con gấu / chịu đựng", tick: false },
+  { en: "beat /bit/", vn: "đánh bại / nhịp đập", tick: false },
+  { en: "beef /bif/", vn: "thịt bò", tick: false },
+  { en: "before /bɪˈfɔr/", vn: "trước khi", tick: false },
+  { en: "behave /bɪˈheɪv/", vn: "cư xử", tick: false },
+  { en: "behaviour /bɪˈheɪvjər/", vn: "hành vi / cách đối xử", tick: false },
+  { en: "belong /bɪˈlɔŋ/", vn: "thuộc về", tick: false },
+  { en: "belt /bɛlt/", vn: "thắt lưng / dây đai", tick: false },
+  { en: "benefit /ˈbɛnəfɪt/", vn: "lợi ích", tick: false },
+  { en: "best /bɛst/", vn: "tốt nhất", tick: false },
+  { en: "better /ˈbɛtər/", vn: "tốt hơn", tick: false },
+  { en: "between /bɪˈtwin/", vn: "giữa (hai đối tượng)", tick: false },
+  { en: "billion /ˈbɪljən/", vn: "tỷ", tick: false },
+  { en: "bin /bɪn/", vn: "thùng rác / ngăn chứa", tick: false },
+  { en: "biology /baɪˈɑləʤi/", vn: "sinh học", tick: false },
+  { en: "birth /bɜrθ/", vn: "sự ra đời / sự sinh đẻ", tick: false },
+  { en: "biscuit /ˈbɪskət/", vn: "bánh quy", tick: false },
+  { en: "bit /bɪt/", vn: "một ít / mảnh nhỏ", tick: false },
+  { en: "blank /blæŋk/", vn: "trống / để trống", tick: false },
+  { en: "blood /blʌd/", vn: "máu", tick: false },
+  { en: "blow /bloʊ/", vn: "thổi", tick: false },
+  { en: "board /bɔrd/", vn: "tấm ván / bảng / lên tàu", tick: false },
+  { en: "boil /bɔɪl/", vn: "đun sôi", tick: false },
+  { en: "bone /boʊn/", vn: "xương", tick: false },
+  { en: "book /bʊk/", vn: "sách / đặt chỗ", tick: false },
+  { en: "borrow /ˈbɑroʊ/", vn: "mượn", tick: false },
+  { en: "boss /bɔs/", vn: "ông chủ / sếp", tick: false },
+  { en: "bottom /ˈbɑtəm/", vn: "đáy / phần dưới cùng", tick: false },
+  { en: "bowl /boʊl/", vn: "cái bát", tick: false },
+  { en: "brain /breɪn/", vn: "não bộ", tick: false },
+  { en: "bridge /brɪʤ/", vn: "cây cầu", tick: false },
+  { en: "bright /braɪt/", vn: "sáng sủa / thông minh", tick: false },
+  { en: "brilliant /ˈbrɪljənt/", vn: "rực rỡ / lỗi lạc", tick: false },
+  { en: "broken /ˈbroʊkən/", vn: "bị hỏng / bị gãy", tick: false },
+  { en: "brush /brʌʃ/", vn: "bàn chải / chải", tick: false },
+  { en: "burn /bɜrn/", vn: "đốt cháy / vết bỏng", tick: false },
+  { en: "businessman /ˈbɪznəsmən/", vn: "nam doanh nhân", tick: false },
+  { en: "button /ˈbʌtən/", vn: "nút / khuy áo", tick: false },
+  { en: "camp /kæmp/", vn: "trại / cắm trại", tick: false },
+  { en: "camping /ˈkæmpɪŋ/", vn: "việc cắm trại", tick: false },
+  { en: "can /kæn/", vn: "có thể / cái lon", tick: false },
+  { en: "care /kɛr/", vn: "chăm sóc / quan tâm", tick: false },
+  { en: "careful /ˈkɛrfəl/", vn: "cẩn thận", tick: false },
+  { en: "carefully /ˈkɛrfəli/", vn: "một cách cẩn thận", tick: false },
+  { en: "carpet /ˈkɑrpət/", vn: "thảm", tick: false },
+  { en: "cartoon /kɑrˈtun/", vn: "phim hoạt hình", tick: false },
+  { en: "case /keɪs/", vn: "trường hợp / hòm / túi", tick: false },
+  { en: "cash /kæʃ/", vn: "tiền mặt", tick: false },
+  { en: "castle /ˈkæsəl/", vn: "lâu đài", tick: false },
+  { en: "catch /kæʧ/", vn: "bắt lấy / đuổi kịp", tick: false },
+  { en: "cause /kɔz/", vn: "nguyên nhân / gây ra", tick: false },
+  { en: "celebrate /ˈsɛləˌbreɪt/", vn: "kỷ niệm / ăn mừng", tick: false },
+  { en: "celebrity /səˈlɛbrəti/", vn: "người nổi tiếng", tick: false },
+  { en: "certain /ˈsɜrtən/", vn: "chắc chắn / nào đó", tick: false },
+  { en: "certainly /ˈsɜrtənli/", vn: "chắc chắn rồi", tick: false },
+  { en: "chance /ʧæns/", vn: "cơ hội", tick: false },
+  { en: "character /ˈkɛrɪktər/", vn: "nhân vật / tính cách", tick: false },
+  { en: "charity /ˈʧɛrɪti/", vn: "từ thiện", tick: false },
+  { en: "chat /ʧæt/", vn: "trò chuyện tán gẫu", tick: false },
+  { en: "check /ʧɛk/", vn: "kiểm tra / hóa đơn", tick: false },
+  { en: "chef /ʃɛf/", vn: "đầu bếp trưởng", tick: false },
+  { en: "chemistry /ˈkɛməstri/", vn: "hóa học", tick: false },
+  { en: "chip /ʧɪp/", vn: "miếng nhỏ / khoai tây chiên", tick: false },
+  { en: "choice /ʧɔɪs/", vn: "sự lựa chọn", tick: false }
+  ],
+  14: [
+  { en: "church /tʃɜːrtʃ/", vn: "nhà thờ", tick: false },
+  { en: "cigarette /ˌsɪɡəˈrɛt/", vn: "điếu thuốc lá", tick: false },
+  { en: "circle /ˈsɜːrkəl/", vn: "hình tròn / vòng tròn", tick: false },
+  { en: "classical /ˈklæsɪkəl/", vn: "cổ điển", tick: false },
+  { en: "clear /klɪr/", vn: "rõ ràng / trong sạch", tick: false },
+  { en: "clearly /ˈklɪrli/", vn: "một cách rõ ràng", tick: false },
+  { en: "clever /ˈklɛvər/", vn: "thông minh / khéo léo", tick: false },
+  { en: "climate /ˈklaɪmət/", vn: "khí hậu", tick: false },
+  { en: "close /kloʊz/", vn: "đóng lại / gần gũi", tick: false },
+  { en: "closed /kloʊzd/", vn: "đã đóng cửa", tick: false },
+  { en: "clothing /ˈkloʊðɪŋ/", vn: "quần áo / y phục", tick: false },
+  { en: "cloud /klaʊd/", vn: "đám mây", tick: false },
+  { en: "coach /koʊtʃ/", vn: "huấn luyện viên / xe khách đường dài", tick: false },
+  { en: "coast /koʊst/", vn: "bờ biển", tick: false },
+  { en: "code /koʊd/", vn: "mã số / quy tắc", tick: false },
+  { en: "colleague /ˈkɑːliːɡ/", vn: "đồng nghiệp", tick: false },
+  { en: "collect /kəˈlɛkt/", vn: "thu thập / sưu tầm", tick: false },
+  { en: "column /ˈkɑːləm/", vn: "cột / mục (báo)", tick: false },
+  { en: "comedy /ˈkɑːmədi/", vn: "hài kịch", tick: false },
+  { en: "comfortable /ˈkʌmftərbəl/", vn: "thoải mái", tick: false },
+  { en: "comment /ˈkɑːmɛnt/", vn: "bình luận / nhận xét", tick: false },
+  { en: "communicate /kəˈmjuːnəkeɪt/", vn: "giao tiếp", tick: false },
+  { en: "community /kəˈmjuːnəti/", vn: "cộng đồng", tick: false },
+  { en: "compete /kəmˈpiːt/", vn: "cạnh tranh / thi đấu", tick: false },
+  { en: "competition /ˌkɑːmpəˈtɪʃən/", vn: "cuộc thi / sự cạnh tranh", tick: false },
+  { en: "complain /kəmˈpleɪn/", vn: "phàn nàn / khiếu nại", tick: false },
+  { en: "completely /kəmˈpliːtli/", vn: "hoàn toàn", tick: false },
+  { en: "condition /kənˈdɪʃən/", vn: "điều kiện / tình trạng", tick: false },
+  { en: "conference /ˈkɑːnfərəns/", vn: "hội nghị", tick: false },
+  { en: "connect /kəˈnɛkt/", vn: "kết nối", tick: false },
+  { en: "connected /kəˈnɛktəd/", vn: "có kết nối / liên quan", tick: false },
+  { en: "consider /kənˈsɪdər/", vn: "xem xét / cân nhắc", tick: false },
+  { en: "contain /kənˈteɪn/", vn: "chứa đựng / bao gồm", tick: false },
+  { en: "context /ˈkɑːntɛkst/", vn: "ngữ cảnh / bối cảnh", tick: false },
+  { en: "continent /ˈkɑːntənənt/", vn: "lục địa", tick: false },
+  { en: "continue /kənˈtɪnjuː/", vn: "tiếp tục", tick: false },
+  { en: "control /kənˈtroʊl/", vn: "kiểm soát / điều khiển", tick: false },
+  { en: "cook /kʊk/", vn: "nấu ăn / đầu bếp", tick: false },
+  { en: "cooker /ˈkʊkər/", vn: "nồi cơm điện / bếp nấu", tick: false },
+  { en: "copy /ˈkɑːpi/", vn: "bản sao / sao chép", tick: false },
+  { en: "corner /ˈkɔːrnər/", vn: "góc (tường, đường)", tick: false },
+  { en: "correctly /kəˈrɛktli/", vn: "một cách chính xác", tick: false },
+  { en: "count /kaʊnt/", vn: "đếm", tick: false },
+  { en: "couple /ˈkʌpəl/", vn: "cặp đôi / một vài", tick: false },
+  { en: "cover /ˈkʌvər/", vn: "che phủ / bao phủ / vỏ bọc", tick: false },
+  { en: "crazy /ˈkreɪzi/", vn: "điên rồ", tick: false },
+  { en: "creative /kriˈeɪtɪv/", vn: "sáng tạo", tick: false },
+  { en: "credit /ˈkrɛdɪt/", vn: "tín dụng / sự tin tưởng", tick: false },
+  { en: "crime /kraɪm/", vn: "tội phạm / tội ác", tick: false },
+  { en: "criminal /ˈkrɪmənəl/", vn: "kẻ phạm tội", tick: false },
+  { en: "cross /krɔːs/", vn: "băng qua / dấu gạch chéo", tick: false },
+  { en: "crowd /kraʊd/", vn: "đám đông", tick: false },
+  { en: "crowded /ˈkraʊdəd/", vn: "đông đúc", tick: false },
+  { en: "cry /kraɪ/", vn: "khóc / tiếng kêu", tick: false },
+  { en: "cupboard /ˈkʌbərd/", vn: "tủ chén bát / tủ ly", tick: false },
+  { en: "curly /ˈkɜːrli/", vn: "xoăn (tóc)", tick: false },
+  { en: "cycle /ˈsaɪkəl/", vn: "chu kỳ / đạp xe", tick: false },
+  { en: "daily /ˈdeɪli/", vn: "hàng ngày", tick: false },
+  { en: "danger /ˈdeɪndʒər/", vn: "sự nguy hiểm", tick: false },
+  { en: "dark /dɑːrk/", vn: "tối tăm / màu sẫm", tick: false },
+  { en: "data /ˈdeɪtə/", vn: "dữ liệu", tick: false },
+  { en: "dead /dɛd/", vn: "chết / không hoạt động", tick: false },
+  { en: "deal /diːl/", vn: "thỏa thuận / giải quyết", tick: false },
+  { en: "dear /dɪr/", vn: "thân mến / đắt đỏ", tick: false },
+  { en: "death /dɛθ/", vn: "cái chết", tick: false },
+  { en: "decision /dɪˈsɪʒən/", vn: "quyết định", tick: false },
+  { en: "deep /diːp/", vn: "sâu", tick: false },
+  { en: "definitely /ˈdɛfənɪtli/", vn: "chắc chắn / dứt khoát", tick: false },
+  { en: "degree /dɪˈɡriː/", vn: "mức độ / bằng cấp / độ (nhiệt độ)", tick: false },
+  { en: "dentist /ˈdɛntɪst/", vn: "nha sĩ", tick: false },
+  { en: "department /dɪˈpɑːrtmənt/", vn: "phòng ban / bộ phận", tick: false },
+  { en: "depend /dɪˈpɛnd/", vn: "phụ thuộc vào", tick: false },
+  { en: "desert /ˈdɛzərt/", vn: "sa mạc", tick: false },
+  { en: "designer /dɪˈzaɪnər/", vn: "nhà thiết kế", tick: false },
+  { en: "destroy /dɪˈstrɔɪ/", vn: "phá hủy", tick: false },
+  { en: "detective /dɪˈtɛktɪv/", vn: "thám tử", tick: false },
+  { en: "develop /dɪˈvɛləp/", vn: "phát triển", tick: false },
+  { en: "device /dɪˈvaɪs/", vn: "thiết bị", tick: false },
+  { en: "diary /ˈdaɪəri/", vn: "nhật ký", tick: false },
+  { en: "differently /ˈdɪfərəntli/", vn: "khác biệt", tick: false },
+  { en: "digital /ˈdɪdʒɪtəl/", vn: "kỹ thuật số", tick: false },
+  { en: "direct /dɪˈrɛkt/", vn: "trực tiếp / hướng dẫn", tick: false },
+  { en: "direction /dɪˈrɛkʃən/", vn: "hướng đi / sự chỉ dẫn", tick: false },
+  { en: "director /dəˈrɛktər/", vn: "giám đốc / đạo diễn", tick: false },
+  { en: "disagree /ˌdɪsəˈɡriː/", vn: "không đồng ý", tick: false },
+  { en: "disappear /ˌdɪsəˈpɪr/", vn: "biến mất", tick: false },
+  { en: "disaster /dɪˈzæstər/", vn: "thảm họa", tick: false },
+  { en: "discover /dɪˈskʌvər/", vn: "khám phá", tick: false },
+  { en: "discovery /dɪˈskʌvəri/", vn: "sự khám phá", tick: false },
+  { en: "discussion /dɪˈskʌʃən/", vn: "thảo luận", tick: false },
+  { en: "disease /dɪˈziːz/", vn: "bệnh tật", tick: false },
+  { en: "distance /ˈdɪstəns/", vn: "khoảng cách", tick: false },
+  { en: "divorced /dɪˈvɔːrst/", vn: "đã ly dị", tick: false },
+  { en: "document /ˈdɑːkjumənt/", vn: "tài liệu", tick: false },
+  { en: "double /ˈdʌbəl/", vn: "gấp đôi", tick: false },
+  { en: "download /ˌdaʊnˈloʊd/", vn: "tải xuống", tick: false },
+  { en: "downstairs /ˌdaʊnˈstɛrz/", vn: "dưới lầu", tick: false },
+  { en: "drama /ˈdrɑːmə/", vn: "kịch / chính kịch", tick: false },
+  { en: "drawing /ˈdrɔːɪŋ/", vn: "bản vẽ / bức vẽ", tick: false },
+  { en: "dream /driːm/", vn: "giấc mơ / mơ ước", tick: false }
+  ],
+
+  15: [
+  { en: "drive /draɪv/", vn: "lái xe / điều khiển", tick: false },
+  { en: "driving /ˈdraɪvɪŋ/", vn: "việc lái xe", tick: false },
+  { en: "drop /drɑːp/", vn: "rơi / thả / giọt nước", tick: false },
+  { en: "drug /drʌɡ/", vn: "thuốc / dược phẩm / ma túy", tick: false },
+  { en: "dry /draɪ/", vn: "khô ráo", tick: false },
+  { en: "earn /ɜːrn/", vn: "kiếm (tiền) / giành được", tick: false },
+  { en: "earth /ɜːrθ/", vn: "Trái Đất / đất", tick: false },
+  { en: "easily /ˈiːzəli/", vn: "một cách dễ dàng", tick: false },
+  { en: "education /ˌɛdʒəˈkeɪʃən/", vn: "giáo dục", tick: false },
+  { en: "effect /ɪˈfɛkt/", vn: "tác dụng / hiệu quả", tick: false },
+  { en: "either /ˈiːðər/", vn: "cũng không (phủ định) / một trong hai", tick: false },
+  { en: "electric /ɪˈlɛktrɪk/", vn: "thuộc về điện", tick: false },
+  { en: "electrical /ɪˈlɛktrɪkəl/", vn: "liên quan đến điện", tick: false },
+  { en: "electricity /ɪˌlɛkˈtrɪsəti/", vn: "điện năng", tick: false },
+  { en: "electronic /ɪˌlɛkˈtrɑːnɪk/", vn: "thuộc về điện tử", tick: false },
+  { en: "employ /ɪmˈplɔɪ/", vn: "thuê / mướn", tick: false },
+  { en: "employee /ɪmˈplɔɪiː/", vn: "nhân viên / người làm thuê", tick: false },
+  { en: "employer /ɪmˈplɔɪər/", vn: "chủ / người thuê lao động", tick: false },
+  { en: "empty /ˈɛmpti/", vn: "trống rỗng", tick: false },
+  { en: "ending /ˈɛndɪŋ/", vn: "phần kết / sự kết thúc", tick: false },
+  { en: "energy /ˈɛnərdʒi/", vn: "năng lượng", tick: false },
+  { en: "engine /ˈɛndʒɪn/", vn: "động cơ", tick: false },
+  { en: "engineer /ˌɛndʒɪˈnɪr/", vn: "kỹ sư", tick: false },
+  { en: "enormous /ɪˈnɔːrməs/", vn: "to lớn / khổng lồ", tick: false },
+  { en: "enter /ˈɛntər/", vn: "đi vào / nhập dữ liệu", tick: false },
+  { en: "environment /ɪnˈvaɪrənmənt/", vn: "môi trường", tick: false },
+  { en: "equipment /ɪˈkwɪpmənt/", vn: "thiết bị / dụng cụ", tick: false },
+  { en: "error /ˈɛrər/", vn: "sai sót / lỗi", tick: false },
+  { en: "especially /ɪˈspɛʃəli/", vn: "đặc biệt là", tick: false },
+  { en: "essay /ˈɛseɪ/", vn: "bài tiểu luận", tick: false },
+  { en: "everyday /ˈɛvrideɪ/", vn: "hằng ngày / thông thường", tick: false },
+  { en: "everywhere /ˈɛvriwɛr/", vn: "mọi nơi", tick: false },
+  { en: "evidence /ˈɛvɪdəns/", vn: "bằng chứng / chứng cứ", tick: false },
+  { en: "exact /ɪɡˈzækt/", vn: "chính xác", tick: false },
+  { en: "exactly /ɪɡˈzæktli/", vn: "một cách chính xác", tick: false },
+  { en: "excellent /ˈɛksələnt/", vn: "xuất sắc / tuyệt vời", tick: false },
+  { en: "except /ɪkˈsɛpt/", vn: "ngoại trừ", tick: false },
+  { en: "exist /ɪɡˈzɪst/", vn: "tồn tại", tick: false },
+  { en: "expect /ɪkˈspɛkt/", vn: "mong đợi / kỳ vọng", tick: false },
+  { en: "experience /ɪkˈspɪriəns/", vn: "kinh nghiệm / trải nghiệm", tick: false },
+  { en: "experiment /ɪkˈspɛrɪmənt/", vn: "thí nghiệm", tick: false },
+  { en: "expert /ˈɛkspɜːrt/", vn: "chuyên gia", tick: false },
+  { en: "explanation /ˌɛkspləˈneɪʃən/", vn: "sự giải thích", tick: false },
+  { en: "express /ɪkˈsprɛs/", vn: "bày tỏ / hỏa tốc", tick: false },
+  { en: "expression /ɪkˈsprɛʃən/", vn: "sự diễn đạt / biểu cảm", tick: false },
+  { en: "extreme /ɪkˈstriːm/", vn: "vô cùng / cực độ", tick: false },
+  { en: "extremely /ɪkˈstriːmli/", vn: "cực kỳ", tick: false },
+  { en: "factor /ˈfæktər/", vn: "nhân tố / yếu tố", tick: false },
+  { en: "factory /ˈfæktəri/", vn: "nhà máy", tick: false },
+  { en: "fail /feɪl/", vn: "thất bại / trượt (thi)", tick: false },
+  { en: "fair /fɛr/", vn: "công bằng / hội chợ", tick: false },
+  { en: "fall /fɔːl/", vn: "rơi / ngã / mùa thu", tick: false },
+  { en: "fan /fæn/", vn: "người hâm mộ / cái quạt", tick: false },
+  { en: "farm /fɑːrm/", vn: "nông trại", tick: false },
+  { en: "farming /ˈfɑːrmɪŋ/", vn: "việc canh tác / làm nông", tick: false },
+  { en: "fashion /ˈfæʃən/", vn: "thời trang", tick: false },
+  { en: "fat /fæt/", vn: "béo / mỡ", tick: false },
+  { en: "fear /fɪr/", vn: "sợ hãi / nỗi sợ", tick: false },
+  { en: "feature /ˈfiːtʃər/", vn: "đặc điểm / tính năng", tick: false },
+  { en: "feed /fiːd/", vn: "cho ăn / nuôi nấng", tick: false },
+  { en: "female /ˈfiːmeɪl/", vn: "giống cái / nữ giới", tick: false },
+  { en: "fiction /ˈfɪkʃən/", vn: "viễn tưởng / hư cấu", tick: false },
+  { en: "field /fiːld/", vn: "cánh đồng / lĩnh vực", tick: false },
+  { en: "fight /faɪt/", vn: "chiến đấu / đánh nhau", tick: false },
+  { en: "figure /ˈfɪɡjər/", vn: "con số / nhân vật / hình dáng", tick: false },
+  { en: "film /fɪlm/", vn: "phim điện ảnh", tick: false },
+  { en: "final /ˈfaɪnəl/", vn: "cuối cùng", tick: false },
+  { en: "finally /ˈfaɪnəli/", vn: "cuối cùng thì", tick: false },
+  { en: "finger /ˈfɪŋɡər/", vn: "ngón tay", tick: false },
+  { en: "finish /ˈfɪnɪʃ/", vn: "kết thúc / hoàn thành", tick: false },
+  { en: "first /fɜːrst/", vn: "đầu tiên", tick: false },
+  { en: "firstly /ˈfɜːrstli/", vn: "đầu tiên là", tick: false },
+  { en: "fish /fɪʃ/", vn: "con cá / đánh cá", tick: false },
+  { en: "fishing /ˈfɪʃɪŋ/", vn: "việc câu cá", tick: false },
+  { en: "fit /fɪt/", vn: "vừa vặn / cân đối", tick: false },
+  { en: "fix /fɪks/", vn: "sửa chữa / cố định", tick: false },
+  { en: "flat /flæt/", vn: "căn hộ / bằng phẳng", tick: false },
+  { en: "flu /fluː/", vn: "bệnh cúm", tick: false },
+  { en: "fly /flaɪ/", vn: "bay / con ruồi", tick: false },
+  { en: "flying /ˈflaɪɪŋ/", vn: "đang bay / việc bay", tick: false },
+  { en: "focus /ˈfoʊkəs/", vn: "tập trung", tick: false },
+  { en: "following /ˈfɑːloʊɪŋ/", vn: "theo sau / tiếp theo", tick: false },
+  { en: "foreign /ˈfɔːrən/", vn: "nước ngoài", tick: false },
+  { en: "forest /ˈfɔːrɪst/", vn: "khu rừng", tick: false },
+  { en: "fork /fɔːrk/", vn: "cái nĩa / ngã ba", tick: false },
+  { en: "formal /ˈfɔːrməl/", vn: "trang trọng", tick: false },
+  { en: "fortunately /ˈfɔːrtʃənətli/", vn: "may mắn thay", tick: false },
+  { en: "forward /ˈfɔːrwərd/", vn: "về phía trước", tick: false },
+  { en: "free /friː/", vn: "tự do / miễn phí", tick: false },
+  { en: "fresh /frɛʃ/", vn: "tươi mới", tick: false },
+  { en: "fridge /frɪdʒ/", vn: "tủ lạnh", tick: false },
+  { en: "frog /frɔːɡ/", vn: "con ếch", tick: false },
+  { en: "fun /fʌn/", vn: "vui vẻ / trò vui", tick: false },
+  { en: "furniture /ˈfɜːrnɪtʃər/", vn: "đồ nội thất", tick: false },
+  { en: "further /ˈfɜːrðər/", vn: "xa hơn / thêm nữa", tick: false },
+  { en: "future /ˈfjuːtʃər/", vn: "tương lai", tick: false },
+  { en: "gallery /ˈɡæləri/", vn: "phòng trưng bày", tick: false },
+  { en: "gap /ɡæp/", vn: "khoảng trống / kẽ hở", tick: false },
+  { en: "gas /ɡæs/", vn: "khí / khí đốt", tick: false },
+  { en: "gate /ɡeɪt/", vn: "cái cổng", tick: false }
+  ],
+
+  16: [
+  { en: "general /ˈdʒɛnərəl/", vn: "chung / tổng quát", tick: false },
+  { en: "gift /ɡɪft/", vn: "quà tặng / năng khiếu", tick: false },
+  { en: "goal /ɡoʊl/", vn: "mục tiêu / bàn thắng", tick: false },
+  { en: "god /ɡɑːd/", vn: "chúa / thần", tick: false },
+  { en: "gold /ɡoʊld/", vn: "vàng", tick: false },
+  { en: "golf /ɡɑːlf/", vn: "môn đánh gôn", tick: false },
+  { en: "good /ɡʊd/", vn: "tốt", tick: false },
+  { en: "government /ˈɡʌvərnmənt/", vn: "chính phủ", tick: false },
+  { en: "grass /ɡræs/", vn: "cỏ", tick: false },
+  { en: "greet /ɡrit/", vn: "chào hỏi", tick: false },
+  { en: "ground /ɡraʊnd/", vn: "mặt đất", tick: false },
+  { en: "guest /ɡɛst/", vn: "khách mời", tick: false },
+  { en: "guide /ɡaɪd/", vn: "người hướng dẫn / chỉ dẫn", tick: false },
+  { en: "gun /ɡʌn/", vn: "khẩu súng", tick: false },
+  { en: "guy /ɡaɪ/", vn: "anh chàng / gã", tick: false },
+  { en: "habit /ˈhæbɪt/", vn: "thói quen", tick: false },
+  { en: "half /hæf/", vn: "một nửa", tick: false },
+  { en: "hall /hɔːl/", vn: "hội trường / sảnh", tick: false },
+  { en: "happily /ˈhæpəli/", vn: "một cách hạnh phúc", tick: false },
+  { en: "have /hæv/", vn: "có", tick: false },
+  { en: "headache /ˈhɛdeɪk/", vn: "đau đầu", tick: false },
+  { en: "heart /hɑːrt/", vn: "trái tim", tick: false },
+  { en: "heat /hit/", vn: "nhiệt độ / sức nóng", tick: false },
+  { en: "heavy /ˈhɛvi/", vn: "nặng nề", tick: false },
+  { en: "height /haɪt/", vn: "chiều cao", tick: false },
+  { en: "helpful /ˈhɛlpfəl/", vn: "có ích / hay giúp đỡ", tick: false },
+  { en: "hero /ˈhɪroʊ/", vn: "anh hùng", tick: false },
+  { en: "hers /hɜːrz/", vn: "của cô ấy (đại từ sở hữu)", tick: false },
+  { en: "herself /hərˈsɛlf/", vn: "chính cô ấy", tick: false },
+  { en: "hide /haɪd/", vn: "trốn / giấu", tick: false },
+  { en: "high /haɪ/", vn: "cao", tick: false },
+  { en: "hill /hɪl/", vn: "ngọn đồi", tick: false },
+  { en: "himself /hɪmˈsɛlf/", vn: "chính anh ấy", tick: false },
+  { en: "his /hɪz/", vn: "của anh ấy", tick: false },
+  { en: "hit /hɪt/", vn: "đánh / đụng trúng", tick: false },
+  { en: "hockey /ˈhɑːki/", vn: "khúc côn cầu", tick: false },
+  { en: "hold /hoʊld/", vn: "cầm / nắm / tổ chức", tick: false },
+  { en: "hole /hoʊl/", vn: "cái hố / lỗ", tick: false },
+  { en: "home /hoʊm/", vn: "nhà", tick: false },
+  { en: "hope /hoʊp/", vn: "hy vọng", tick: false },
+  { en: "huge /hjudʒ/", vn: "khổng lồ", tick: false },
+  { en: "human /ˈhjumən/", vn: "con người", tick: false },
+  { en: "hurt /hɜːrt/", vn: "làm đau / bị thương", tick: false },
+  { en: "ideal /aɪˈdil/", vn: "lý tưởng", tick: false },
+  { en: "identify /aɪˈdɛntəˌfaɪ/", vn: "xác định / nhận dạng", tick: false },
+  { en: "ill /ɪl/", vn: "ốm", tick: false },
+  { en: "illness /ˈɪlnəs/", vn: "bệnh tật", tick: false },
+  { en: "image /ˈɪmədʒ/", vn: "hình ảnh", tick: false },
+  { en: "immediately /ɪˈmidiətli/", vn: "ngay lập tức", tick: false },
+  { en: "impossible /ɪmˈpɑːsəbəl/", vn: "không thể", tick: false },
+  { en: "included /ɪnˈkludəd/", vn: "bao gồm", tick: false },
+  { en: "including /ɪnˈkludɪŋ/", vn: "kể cả", tick: false },
+  { en: "increase /ɪnˈkris/", vn: "tăng lên", tick: false },
+  { en: "incredible /ɪnˈkrɛdəbəl/", vn: "đáng kinh ngạc", tick: false },
+  { en: "independent /ˌɪndɪˈpɛndənt/", vn: "độc lập", tick: false },
+  { en: "individual /ˌɪndəˈvɪdʒuəl/", vn: "cá nhân", tick: false },
+  { en: "industry /ˈɪndəstri/", vn: "công nghiệp", tick: false },
+  { en: "informal /ɪnˈfɔːrməl/", vn: "không trang trọng", tick: false },
+  { en: "injury /ˈɪndʒəri/", vn: "chấn thương", tick: false },
+  { en: "insect /ˈɪnsɛkt/", vn: "côn trùng", tick: false },
+  { en: "inside /ɪnˈsaɪd/", vn: "bên trong", tick: false },
+  { en: "instead /ɪnˈstɛd/", vn: "thay vì", tick: false },
+  { en: "instruction /ɪnˈstrʌkʃən/", vn: "sự hướng dẫn", tick: false },
+  { en: "instructor /ɪnˈstrʌktər/", vn: "người hướng dẫn", tick: false },
+  { en: "instrument /ˈɪnstrəmənt/", vn: "nhạc cụ / dụng cụ", tick: false },
+  { en: "intelligent /ɪnˈtɛlədʒənt/", vn: "thông minh", tick: false },
+  { en: "international /ˌɪntərˈnæʃənəl/", vn: "quốc tế", tick: false },
+  { en: "introduction /ˌɪntrəˈdʌkʃən/", vn: "sự giới thiệu", tick: false },
+  { en: "invent /ɪnˈvɛnt/", vn: "phát minh", tick: false },
+  { en: "invention /ɪnˈvɛnʃən/", vn: "sự phát minh", tick: false },
+  { en: "invitation /ˌɪnvɪˈteɪʃən/", vn: "lời mời", tick: false },
+  { en: "invite /ɪnˈvaɪt/", vn: "mời", tick: false },
+  { en: "involve /ɪnˈvɑːlv/", vn: "liên quan / bao gồm", tick: false },
+  { en: "item /ˈaɪtəm/", vn: "món đồ / khoản", tick: false },
+  { en: "itself /ɪtˈsɛlf/", vn: "chính nó", tick: false },
+  { en: "jam /dʒæm/", vn: "mứt / sự tắc nghẽn", tick: false },
+  { en: "jazz /dʒæz/", vn: "nhạc jazz", tick: false },
+  { en: "jewellery /ˈdʒuːəlri/", vn: "trang sức", tick: false },
+  { en: "joke /dʒoʊk/", vn: "trò đùa", tick: false },
+  { en: "journalist /ˈdʒɜːrnəlɪst/", vn: "nhà báo", tick: false },
+  { en: "jump /dʒʌmp/", vn: "nhảy", tick: false },
+  { en: "kid /kɪd/", vn: "trẻ con", tick: false },
+  { en: "kill /kɪl/", vn: "giết", tick: false },
+  { en: "king /kɪŋ/", vn: "vua", tick: false },
+  { en: "knee /ni/", vn: "đầu gối", tick: false },
+  { en: "knife /naɪf/", vn: "con dao", tick: false },
+  { en: "knock /nɑːk/", vn: "gõ (cửa)", tick: false },
+  { en: "knowledge /ˈnɑːlɪdʒ/", vn: "kiến thức", tick: false },
+  { en: "lab /læb/", vn: "phòng thí nghiệm", tick: false },
+  { en: "lady /ˈleɪdi/", vn: "quý bà / phụ nữ", tick: false },
+  { en: "lake /leɪk/", vn: "hồ nước", tick: false },
+  { en: "lamp /læmp/", vn: "cái đèn", tick: false },
+  { en: "land /lænd/", vn: "đất liền / hạ cánh", tick: false },
+  { en: "laptop /ˈlæpˌtɑːp/", vn: "máy tính xách tay", tick: false },
+  { en: "last /læst/", vn: "cuối cùng / kéo dài", tick: false },
+  { en: "later /ˈleɪtər/", vn: "sau đó", tick: false },
+  { en: "laughter /ˈlæftər/", vn: "tiếng cười", tick: false },
+  { en: "law /lɔː/", vn: "luật pháp", tick: false },
+  { en: "lawyer /ˈlɔɪər/", vn: "luật sư", tick: false }
+  ],
+  17: [
+  { en: "lazy /ˈleɪzi/", vn: "lười biếng", tick: false },
+  { en: "lead /liːd/", vn: "dẫn dắt / lãnh đạo", tick: false },
+  { en: "leader /ˈliːdər/", vn: "người lãnh đạo", tick: false },
+  { en: "learning /ˈlɜːrnɪŋ/", vn: "việc học tập", tick: false },
+  { en: "least /liːst/", vn: "ít nhất", tick: false },
+  { en: "lecture /ˈlɛktʃər/", vn: "bài giảng", tick: false },
+  { en: "lemon /ˈlɛmən/", vn: "quả chanh vàng", tick: false },
+  { en: "lend /lɛnd/", vn: "cho mượn", tick: false },
+  { en: "less /lɛs/", vn: "ít hơn", tick: false },
+  { en: "level /ˈlɛvəl/", vn: "mức độ / trình độ", tick: false },
+  { en: "lifestyle /ˈlaɪfˌstaɪl/", vn: "lối sống", tick: false },
+  { en: "lift /lɪft/", vn: "nhấc lên / thang máy (UK)", tick: false },
+  { en: "light /laɪt/", vn: "ánh sáng / nhẹ / đèn", tick: false },
+  { en: "likely /ˈlaɪkli/", vn: "có khả năng xảy ra", tick: false },
+  { en: "link /lɪŋk/", vn: "liên kết", tick: false },
+  { en: "listener /ˈlɪsənər/", vn: "người nghe", tick: false },
+  { en: "little /ˈlɪtəl/", vn: "nhỏ / một ít", tick: false },
+  { en: "lock /lɑːk/", vn: "khóa", tick: false },
+  { en: "look /lʊk/", vn: "nhìn / vẻ ngoài", tick: false },
+  { en: "lorry /ˈlɔːri/", vn: "xe tải (UK)", tick: false },
+  { en: "lost /lɔːst/", vn: "bị mất / lạc đường", tick: false },
+  { en: "loud /laʊd/", vn: "ồn ào / to tiếng", tick: false },
+  { en: "loudly /ˈlaʊdli/", vn: "một cách ầm ĩ", tick: false },
+  { en: "lovely /ˈlʌvli/", vn: "đáng yêu / dễ chịu", tick: false },
+  { en: "low /loʊ/", vn: "thấp", tick: false },
+  { en: "luck /lʌk/", vn: "sự may mắn", tick: false },
+  { en: "lucky /ˈlʌki/", vn: "may mắn", tick: false },
+  { en: "mail /meɪl/", vn: "thư từ / gửi thư", tick: false },
+  { en: "major /ˈmeɪdʒər/", vn: "chính / quan trọng / chuyên ngành", tick: false },
+  { en: "male /meɪl/", vn: "giống đực / nam giới", tick: false },
+  { en: "manage /ˈmænədʒ/", vn: "quản lý / xoay sở", tick: false },
+  { en: "manager /ˈmænədʒər/", vn: "người quản lý", tick: false },
+  { en: "manner /ˈmænər/", vn: "cách thức / thái độ / cử chỉ", tick: false },
+  { en: "mark /mɑːrk/", vn: "đánh dấu / điểm số", tick: false },
+  { en: "marry /ˈmæri/", vn: "kết hôn", tick: false },
+  { en: "material /məˈtɪriəl/", vn: "chất liệu / tài liệu", tick: false },
+  { en: "mathematics /ˌmæθəˈmætɪks/", vn: "toán học", tick: false },
+  { en: "maths /mæθs/", vn: "toán (viết tắt)", tick: false },
+  { en: "matter /ˈmætər/", vn: "vấn đề / vật chất", tick: false },
+  { en: "may /meɪ/", vn: "có thể / tháng Năm", tick: false },
+  { en: "media /ˈmiːdiə/", vn: "truyền thông", tick: false },
+  { en: "medical /ˈmɛdɪkəl/", vn: "thuộc về y tế", tick: false },
+  { en: "medicine /ˈmɛdəsən/", vn: "thuốc / y học", tick: false },
+  { en: "memory /ˈmɛməri/", vn: "trí nhớ / bộ nhớ", tick: false },
+  { en: "mention /ˈmɛnʃən/", vn: "đề cập", tick: false },
+  { en: "metal /ˈmɛtəl/", vn: "kim loại", tick: false },
+  { en: "method /ˈmɛθəd/", vn: "phương pháp", tick: false },
+  { en: "middle /ˈmɪdəl/", vn: "ở giữa", tick: false },
+  { en: "might /maɪt/", vn: "có thể (xác suất thấp)", tick: false },
+  { en: "mind /maɪnd/", vn: "tâm trí / phiền lòng", tick: false },
+  { en: "mine /maɪn/", vn: "của tôi / mỏ khai thác", tick: false },
+  { en: "mirror /ˈmɪrər/", vn: "cái gương", tick: false },
+  { en: "missing /ˈmɪsɪŋ/", vn: "mất tích / thiếu", tick: false },
+  { en: "mobile /ˈmoʊbəl/", vn: "di động", tick: false },
+  { en: "monkey /ˈmʌŋki/", vn: "con khỉ", tick: false },
+  { en: "moon /muːn/", vn: "mặt trăng", tick: false },
+  { en: "mostly /ˈmoʊstli/", vn: "chủ yếu là", tick: false },
+  { en: "motorcycle /ˈmoʊtərˌsaɪkəl/", vn: "xe máy", tick: false },
+  { en: "movement /ˈmuːvmənt/", vn: "sự chuyển động / phong trào", tick: false },
+  { en: "musical /ˈmjuːzɪkəl/", vn: "thuộc về âm nhạc", tick: false },
+  { en: "musician /mjuːˈzɪʃən/", vn: "nhạc sĩ", tick: false },
+  { en: "myself /maɪˈsɛlf/", vn: "tự bản thân tôi", tick: false },
+  { en: "narrow /ˈnæroʊ/", vn: "hẹp", tick: false },
+  { en: "national /ˈnæʃənəl/", vn: "thuộc về quốc gia", tick: false },
+  { en: "nature /ˈneɪtʃər/", vn: "tự nhiên / thiên nhiên", tick: false },
+  { en: "nearly /ˈnɪrli/", vn: "gần như / suýt soát", tick: false },
+  { en: "necessary /ˈnɛsəˌsɛri/", vn: "cần thiết", tick: false },
+  { en: "neck /nɛk/", vn: "cái cổ", tick: false },
+  { en: "need /niːd/", vn: "cần", tick: false },
+  { en: "neither /ˈniːðər/", vn: "không cái nào trong hai", tick: false },
+  { en: "nervous /ˈnɜːrvəs/", vn: "lo lắng / hồi hộp", tick: false },
+  { en: "network /ˈnɛtˌwɜːrk/", vn: "mạng lưới", tick: false },
+  { en: "noise /nɔɪz/", vn: "tiếng ồn", tick: false },
+  { en: "noisy /ˈnɔɪzi/", vn: "ồn ào", tick: false },
+  { en: "none /nʌn/", vn: "không ai / không cái gì", tick: false },
+  { en: "normal /ˈnɔːrməl/", vn: "bình thường", tick: false },
+  { en: "normally /ˈnɔːrməli/", vn: "thông thường", tick: false },
+  { en: "notice /ˈnoʊtɪs/", vn: "chú ý / thông báo", tick: false },
+  { en: "novel /ˈnɑːvəl/", vn: "tiểu thuyết", tick: false },
+  { en: "nowhere /ˈnoʊˌwɛr/", vn: "không nơi nào", tick: false },
+  { en: "number /ˈnʌmbər/", vn: "số lượng / con số", tick: false },
+  { en: "nut /nʌt/", vn: "hạt (vỏ cứng) / đai ốc", tick: false },
+  { en: "ocean /ˈoʊʃən/", vn: "đại dương", tick: false },
+  { en: "offer /ˈɔːfər/", vn: "đưa ra lời đề nghị", tick: false },
+  { en: "officer /ˈɔːfəsər/", vn: "viên chức / sĩ quan", tick: false },
+  { en: "oil /ɔɪl/", vn: "dầu", tick: false },
+  { en: "onto /ˈɑːntuː/", vn: "lên trên", tick: false },
+  { en: "opportunity /ˌɑːpərˈtuːnəti/", vn: "cơ hội", tick: false },
+  { en: "option /ˈɑːpʃən/", vn: "tùy chọn / sự lựa chọn", tick: false },
+  { en: "ordinary /ˈɔːrdənˌɛri/", vn: "bình thường / tầm thường", tick: false },
+  { en: "organization /ˌɔːrɡənəˈzeɪʃən/", vn: "tổ chức", tick: false },
+  { en: "organize /ˈɔːrɡəˌnaɪz/", vn: "tổ chức / sắp xếp", tick: false },
+  { en: "original /əˈrɪdʒənəl/", vn: "nguyên bản / độc đáo", tick: false },
+  { en: "ourselves /ˌaʊərˈsɛlvz/", vn: "tự chúng tôi", tick: false },
+  { en: "outside /ˌaʊtˈsaɪd/", vn: "bên ngoài", tick: false },
+  { en: "oven /ˈʌvən/", vn: "lò nướng", tick: false },
+  { en: "own /oʊn/", vn: "sở hữu / riêng mình", tick: false },
+  { en: "owner /ˈoʊnər/", vn: "chủ sở hữu", tick: false },
+  { en: "pack /pæk/", vn: "đóng gói / bó / bầy", tick: false }
+  ],
+  18: [
+  { en: "pain /peɪn/", vn: "sự đau đớn / nỗi đau", tick: false },
+  { en: "painter /ˈpeɪntər/", vn: "họa sĩ / thợ sơn", tick: false },
+  { en: "palace /ˈpæləs/", vn: "cung điện", tick: false },
+  { en: "pants /pænts/", vn: "quần dài", tick: false },
+  { en: "parking /ˈpɑːrkɪŋ/", vn: "việc đỗ xe / bãi đỗ xe", tick: false },
+  { en: "particular /pərˈtɪkjələr/", vn: "cụ thể / đặc biệt", tick: false },
+  { en: "pass /pæs/", vn: "vượt qua / chuyền bóng", tick: false },
+  { en: "passenger /ˈpæsəndʒər/", vn: "hành khách", tick: false },
+  { en: "past /pæst/", vn: "quá khứ / đã qua", tick: false },
+  { en: "patient /ˈpeɪʃənt/", vn: "kiên nhẫn / bệnh nhân", tick: false },
+  { en: "pattern /ˈpætərn/", vn: "mẫu / hoa văn / quy luật", tick: false },
+  { en: "pay /peɪ/", vn: "trả tiền / thanh toán", tick: false },
+  { en: "peace /pis/", vn: "hòa bình / sự yên tĩnh", tick: false },
+  { en: "penny /ˈpɛni/", vn: "đồng xu (đơn vị tiền tệ nhỏ)", tick: false },
+  { en: "per /pər/", vn: "mỗi / theo", tick: false },
+  { en: "per cent /pər ˈsɛnt/", vn: "phần trăm", tick: false },
+  { en: "perform /pərˈfɔːrm/", vn: "biểu diễn / thực hiện", tick: false },
+  { en: "perhaps /pərˈhæps/", vn: "có lẽ / có thể", tick: false },
+  { en: "permission /pərˈmɪʃən/", vn: "sự cho phép", tick: false },
+  { en: "personality /ˌpɜːrsəˈnæləti/", vn: "tính cách / nhân phẩm", tick: false },
+  { en: "pet /pɛt/", vn: "thú cưng", tick: false },
+  { en: "petrol /ˈpɛtrəl/", vn: "xăng dầu (UK)", tick: false },
+  { en: "photograph /ˈfoʊtəˌɡræf/", vn: "bức ảnh / chụp ảnh", tick: false },
+  { en: "physical /ˈfɪzɪkəl/", vn: "thuộc về thể chất / vật lý", tick: false },
+  { en: "physics /ˈfɪzɪks/", vn: "vật lý học", tick: false },
+  { en: "pick /pɪk/", vn: "chọn / hái / nhặt", tick: false },
+  { en: "pilot /ˈpaɪlət/", vn: "phi công", tick: false },
+  { en: "planet /ˈplænət/", vn: "hành tinh", tick: false },
+  { en: "plant /plænt/", vn: "thực vật / nhà máy / gieo trồng", tick: false },
+  { en: "plastic /ˈplæstɪk/", vn: "nhựa / chất dẻo", tick: false },
+  { en: "plate /pleɪt/", vn: "cái đĩa", tick: false },
+  { en: "platform /ˈplætfɔːrm/", vn: "nền tảng / sân ga", tick: false },
+  { en: "please /pliz/", vn: "làm ơn / làm hài lòng", tick: false },
+  { en: "pleased /plizd/", vn: "hài lòng / vui mừng", tick: false },
+  { en: "pocket /ˈpɑːkət/", vn: "túi quần / túi áo", tick: false },
+  { en: "polite /pəˈlaɪt/", vn: "lịch sự", tick: false },
+  { en: "pollution /pəˈluːʃən/", vn: "sự ô nhiễm", tick: false },
+  { en: "pop /pɑːp/", vn: "nhạc pop / tiếng nổ bốp", tick: false },
+  { en: "population /ˌpɑːpjuˈleɪʃən/", vn: "dân số", tick: false },
+  { en: "position /pəˈzɪʃən/", vn: "vị trí / chức vụ", tick: false },
+  { en: "possession /pəˈzɛʃən/", vn: "sự sở hữu / tài sản", tick: false },
+  { en: "possibility /ˌpɑːsəˈbɪləti/", vn: "khả năng / triển vọng", tick: false },
+  { en: "poster /ˈpoʊstər/", vn: "áp phích / tờ quảng cáo", tick: false },
+  { en: "power /ˈpaʊər/", vn: "sức mạnh / năng lượng / quyền lực", tick: false },
+  { en: "predict /prɪˈdɪkt/", vn: "dự đoán", tick: false },
+  { en: "present /ˈprɛzənt/", vn: "hiện tại / món quà / trình bày", tick: false },
+  { en: "president /ˈprɛzədənt/", vn: "chủ tịch / tổng thống", tick: false },
+  { en: "prevent /prɪˈvɛnt/", vn: "ngăn chặn", tick: false },
+  { en: "print /prɪnt/", vn: "in ấn", tick: false },
+  { en: "printer /ˈprɪntər/", vn: "máy in", tick: false },
+  { en: "prison /ˈprɪzən/", vn: "nhà tù", tick: false },
+  { en: "prize /praɪz/", vn: "giải thưởng", tick: false },
+  { en: "process /ˈprɑːsɛs/", vn: "quá trình / xử lý", tick: false },
+  { en: "produce /prəˈduːs/", vn: "sản xuất", tick: false },
+  { en: "professional /prəˈfɛʃənəl/", vn: "chuyên nghiệp", tick: false },
+  { en: "professor /prəˈfɛsər/", vn: "giáo sư", tick: false },
+  { en: "profile /ˈproʊfaɪl/", vn: "hồ sơ / tiểu sử", tick: false },
+  { en: "program /ˈproʊɡræm/", vn: "chương trình", tick: false },
+  { en: "progress /ˈprɑːɡrɛs/", vn: "sự tiến bộ / tiến trình", tick: false },
+  { en: "promise /ˈprɑːməs/", vn: "hứa hẹn / lời hứa", tick: false },
+  { en: "pronounce /prəˈnaʊns/", vn: "phát âm", tick: false },
+  { en: "protect /prəˈtɛkt/", vn: "bảo vệ", tick: false },
+  { en: "provide /prəˈvaɪd/", vn: "cung cấp", tick: false },
+  { en: "pub /pʌb/", vn: "quán rượu / tiệm bia", tick: false },
+  { en: "public /ˈpʌblɪk/", vn: "công cộng / công khai", tick: false },
+  { en: "publish /ˈpʌblɪʃ/", vn: "xuất bản", tick: false },
+  { en: "pull /pʊl/", vn: "kéo", tick: false },
+  { en: "purpose /ˈpɜːrpəs/", vn: "mục đích", tick: false },
+  { en: "push /pʊʃ/", vn: "đẩy", tick: false },
+  { en: "quality /ˈkwɑːləti/", vn: "chất lượng / đặc tính", tick: false },
+  { en: "quantity /ˈkwɑːntəti/", vn: "số lượng", tick: false },
+  { en: "queen /kwin/", vn: "nữ hoàng", tick: false },
+  { en: "question /ˈkwɛstʃən/", vn: "câu hỏi / chất vấn", tick: false },
+  { en: "quietly /ˈkwaɪətli/", vn: "một cách yên tĩnh", tick: false },
+  { en: "race /reɪs/", vn: "cuộc đua / chủng tộc", tick: false },
+  { en: "railway /ˈreɪlˌweɪ/", vn: "đường sắt", tick: false },
+  { en: "raise /reɪz/", vn: "nâng lên / nuôi nấng / gây quỹ", tick: false },
+  { en: "rate /reɪt/", vn: "tỉ lệ / tốc độ / đánh giá", tick: false },
+  { en: "rather /ˈræðər/", vn: "khá là / thà rằng", tick: false },
+  { en: "reach /ritʃ/", vn: "với tới / đạt được", tick: false },
+  { en: "react /riˈækt/", vn: "phản ứng lại", tick: false },
+  { en: "realize /ˈriəˌlaɪz/", vn: "nhận ra / thực hiện được", tick: false },
+  { en: "receive /rəˈsiv/", vn: "nhận được", tick: false },
+  { en: "recent /ˈrisənt/", vn: "gần đây", tick: false },
+  { en: "recently /ˈrisəntli/", vn: "mới đây / gần đây", tick: false },
+  { en: "reception /rɪˈsɛpʃən/", vn: "sự tiếp đón / quầy lễ tân", tick: false },
+  { en: "recipe /ˈrɛsəpi/", vn: "công thức nấu ăn", tick: false },
+  { en: "recognize /ˈrɛkəɡˌnaɪz/", vn: "nhận ra / công nhận", tick: false },
+  { en: "recommend /ˌrɛkəˈmɛnd/", vn: "khuyên / giới thiệu", tick: false },
+  { en: "record /ˈrɛkərd/", vn: "ghi âm / kỷ lục / hồ sơ", tick: false },
+  { en: "recording /rɪˈkɔːrdɪŋ/", vn: "bản ghi âm / sự ghi hình", tick: false },
+  { en: "recycle /riˈsaɪkəl/", vn: "tái chế", tick: false },
+  { en: "reduce /rɪˈduːs/", vn: "giảm bớt", tick: false },
+  { en: "refer /rəˈfɜːr/", vn: "tham khảo / ám chỉ", tick: false },
+  { en: "refuse /rəˈfjuːz/", vn: "từ chối", tick: false },
+  { en: "region /ˈridʒən/", vn: "vùng / miền", tick: false },
+  { en: "regular /ˈrɛɡjələr/", vn: "thường xuyên / đều đặn", tick: false },
+  { en: "relationship /riˈleɪʃənˌʃɪp/", vn: "mối quan hệ", tick: false },
+  { en: "remove /riˈmuːv/", vn: "loại bỏ / tháo gỡ", tick: false },
+  { en: "repair /rɪˈpɛr/", vn: "sửa chữa", tick: false }
+  ],
+  19: [
+  { en: "replace /rɪˈpleɪs/", vn: "thay thế", tick: false },
+  { en: "reply /rɪˈplaɪ/", vn: "hồi đáp / trả lời", tick: false },
+  { en: "report /rɪˈpɔːrt/", vn: "báo cáo", tick: false },
+  { en: "reporter /rɪˈpɔːrtər/", vn: "phóng viên", tick: false },
+  { en: "request /rɪˈkwɛst/", vn: "yêu cầu", tick: false },
+  { en: "research /riˈsɜːrtʃ/", vn: "nghiên cứu", tick: false },
+  { en: "researcher /riˈsɜːrtʃər/", vn: "nhà nghiên cứu", tick: false },
+  { en: "respond /rɪˈspɑːnd/", vn: "phản hồi / trả lời", tick: false },
+  { en: "response /rɪˈspɑːns/", vn: "sự phản hồi / câu trả lời", tick: false },
+  { en: "rest /rɛst/", vn: "nghỉ ngơi / phần còn lại", tick: false },
+  { en: "review /rɪˈvjuː/", vn: "đánh giá / xem xét lại", tick: false },
+  { en: "ride /raɪd/", vn: "cưỡi (ngựa) / lái (xe đạp)", tick: false },
+  { en: "ring /rɪŋ/", vn: "nhẫn / rung chuông / gọi điện", tick: false },
+  { en: "rise /raɪz/", vn: "dâng lên / gia tăng", tick: false },
+  { en: "rock /rɑːk/", vn: "đá / nhạc rock / đu đưa", tick: false },
+  { en: "role /roʊl/", vn: "vai trò", tick: false },
+  { en: "roof /ruf/", vn: "mái nhà", tick: false },
+  { en: "round /raʊnd/", vn: "tròn / vòng quanh", tick: false },
+  { en: "route /rut/", vn: "tuyến đường / lộ trình", tick: false },
+  { en: "rubbish /ˈrʌbɪʃ/", vn: "rác rưởi (UK)", tick: false },
+  { en: "rude /rud/", vn: "thô lỗ", tick: false },
+  { en: "run /rʌn/", vn: "chạy / vận hành", tick: false },
+  { en: "runner /ˈrʌnər/", vn: "người chạy bộ", tick: false },
+  { en: "running /ˈrʌnɪŋ/", vn: "việc chạy bộ / đang chạy", tick: false },
+  { en: "sadly /ˈsædli/", vn: "một cách buồn bã / đáng tiếc là", tick: false },
+  { en: "safe /seɪf/", vn: "an toàn / két sắt", tick: false },
+  { en: "sail /seɪl/", vn: "nhổ neo / lướt buồm", tick: false },
+  { en: "sailing /ˈseɪlɪŋ/", vn: "môn đua thuyền buồm", tick: false },
+  { en: "salary /ˈsæləri/", vn: "tiền lương", tick: false },
+  { en: "sale /seɪl/", vn: "việc bán hàng / giảm giá", tick: false },
+  { en: "sauce /sɔːs/", vn: "nước xốt", tick: false },
+  { en: "save /seɪv/", vn: "tiết kiệm / cứu giúp / lưu giữ", tick: false },
+  { en: "scared /skɛrd/", vn: "bị hoảng sợ", tick: false },
+  { en: "scary /ˈskɛri/", vn: "đáng sợ", tick: false },
+  { en: "scene /sin/", vn: "cảnh tượng / hiện trường", tick: false },
+  { en: "schedule /ˈskɛdʒuːl/", vn: "lịch trình / thời khóa biểu", tick: false },
+  { en: "score /skɔːr/", vn: "điểm số / ghi bàn", tick: false },
+  { en: "screen /skrin/", vn: "màn hình", tick: false },
+  { en: "search /sɜːrtʃ/", vn: "tìm kiếm", tick: false },
+  { en: "season /ˈsizən/", vn: "mùa", tick: false },
+  { en: "seat /sit/", vn: "chỗ ngồi", tick: false },
+  { en: "second /ˈsɛkənd/", vn: "thứ hai / giây", tick: false },
+  { en: "secondly /ˈsɛkəndli/", vn: "thứ hai là", tick: false },
+  { en: "secret /ˈsikrət/", vn: "bí mật", tick: false },
+  { en: "secretary /ˈsɛkrəˌtɛri/", vn: "thư ký", tick: false },
+  { en: "seem /sim/", vn: "có vẻ như", tick: false },
+  { en: "sense /sɛns/", vn: "giác quan / ý nghĩa / cảm giác", tick: false },
+  { en: "separate /ˈsɛpərət/", vn: "riêng biệt / tách rời", tick: false },
+  { en: "series /ˈsɪriz/", vn: "chuỗi / phim truyền hình dài tập", tick: false },
+  { en: "serious /ˈsɪriəs/", vn: "nghiêm túc / nghiêm trọng", tick: false },
+  { en: "serve /sɜːrv/", vn: "phục vụ", tick: false },
+  { en: "service /ˈsɜːrvəs/", vn: "dịch vụ", tick: false },
+  { en: "several /ˈsɛvərəl/", vn: "vài / một số", tick: false },
+  { en: "shake /ʃeɪk/", vn: "rung / lắc / bắt tay", tick: false },
+  { en: "shall /ʃæl/", vn: "sẽ / nên (dùng cho lời mời)", tick: false },
+  { en: "shape /ʃeɪp/", vn: "hình dạng / vóc dáng", tick: false },
+  { en: "sheet /ʃit/", vn: "ga trải giường / tờ giấy", tick: false },
+  { en: "ship /ʃɪp/", vn: "con tàu lớn", tick: false },
+  { en: "shoulder /ˈʃoʊldər/", vn: "vai", tick: false },
+  { en: "shout /ʃaʊt/", vn: "hét lên / la mắng", tick: false },
+  { en: "shut /ʃʌt/", vn: "đóng lại", tick: false },
+  { en: "side /saɪd/", vn: "mặt / phía / bên", tick: false },
+  { en: "sign /saɪn/", vn: "ký tên / biển báo / dấu hiệu", tick: false },
+  { en: "silver /ˈsɪlvər/", vn: "bạc", tick: false },
+  { en: "simple /ˈsɪmpəl/", vn: "đơn giản", tick: false },
+  { en: "since /sɪns/", vn: "từ khi / bởi vì", tick: false },
+  { en: "singing /ˈsɪŋɪŋ/", vn: "tiếng hát / việc ca hát", tick: false },
+  { en: "single /ˈsɪŋɡəl/", vn: "đơn lẻ / độc thân", tick: false },
+  { en: "sir /sɜːr/", vn: "ngài / thưa ông", tick: false },
+  { en: "site /saɪt/", vn: "địa điểm / trang web", tick: false },
+  { en: "size /saɪz/", vn: "kích cỡ", tick: false },
+  { en: "ski /skiː/", vn: "trượt tuyết / ván trượt", tick: false },
+  { en: "skiing /ˈskiːɪŋ/", vn: "môn trượt tuyết", tick: false },
+  { en: "skin /skɪn/", vn: "da", tick: false },
+  { en: "sky /skaɪ/", vn: "bầu trời", tick: false },
+  { en: "sleep /slip/", vn: "ngủ", tick: false },
+  { en: "slowly /ˈsloʊli/", vn: "một cách chậm chạp", tick: false },
+  { en: "smartphone /ˈsmɑːrtˌfoʊn/", vn: "điện thoại thông minh", tick: false },
+  { en: "smell /smɛl/", vn: "mùi / ngửi", tick: false },
+  { en: "smile /smaɪl/", vn: "mỉm cười", tick: false },
+  { en: "smoke /smoʊk/", vn: "khói / hút thuốc", tick: false },
+  { en: "smoking /ˈsmoʊkɪŋ/", vn: "việc hút thuốc", tick: false },
+  { en: "soap /soʊp/", vn: "xà phòng", tick: false },
+  { en: "soccer /ˈsɑːkər/", vn: "môn bóng đá", tick: false },
+  { en: "social /ˈsoʊʃəl/", vn: "thuộc xã hội / hòa đồng", tick: false },
+  { en: "society /səˈsaɪəti/", vn: "xã hội", tick: false },
+  { en: "sock /sɑːk/", vn: "chiếc tất", tick: false },
+  { en: "soft /sɔːft/", vn: "mềm mại", tick: false },
+  { en: "soldier /ˈsoʊldʒər/", vn: "người lính", tick: false },
+  { en: "solution /səˈluːʃən/", vn: "giải pháp / dung dịch", tick: false },
+  { en: "solve /sɑːlv/", vn: "giải quyết", tick: false },
+  { en: "somewhere /ˈsʌmwɛr/", vn: "nơi nào đó", tick: false },
+  { en: "sort /sɔːrt/", vn: "loại / phân loại", tick: false },
+  { en: "source /sɔːrs/", vn: "nguồn gốc", tick: false },
+  { en: "speaker /ˈspikər/", vn: "loa / người nói", tick: false },
+  { en: "specific /spəˈsɪfɪk/", vn: "cụ thể / rành mạch", tick: false },
+  { en: "speech /spitʃ/", vn: "bài phát biểu / khả năng nói", tick: false }
+  ],
+  20: [
+  { en: "speed /spid/", vn: "tốc độ", tick: false },
+  { en: "spider /ˈspaɪdər/", vn: "con nhện", tick: false },
+  { en: "spoon /spun/", vn: "cái thìa / muỗng", tick: false },
+  { en: "square /skwɛr/", vn: "hình vuông / quảng trường", tick: false },
+  { en: "stage /steɪʤ/", vn: "giai đoạn / sân khấu", tick: false },
+  { en: "stair /stɛr/", vn: "bậc thang", tick: false },
+  { en: "stamp /stæmp/", vn: "con tem / đóng dấu", tick: false },
+  { en: "star /stɑr/", vn: "ngôi sao", tick: false },
+  { en: "start /stɑrt/", vn: "bắt đầu", tick: false },
+  { en: "state /steɪt/", vn: "trạng thái / tiểu bang / nhà nước", tick: false },
+  { en: "stay /steɪ/", vn: "ở lại", tick: false },
+  { en: "steal /stil/", vn: "ăn trộm", tick: false },
+  { en: "step /stɛp/", vn: "bước đi / bước tiếp theo", tick: false },
+  { en: "stomach /ˈstʌmək/", vn: "dạ dày / bụng", tick: false },
+  { en: "stone /stoʊn/", vn: "viên đá", tick: false },
+  { en: "store /stɔr/", vn: "cửa hàng / lưu trữ", tick: false },
+  { en: "storm /stɔrm/", vn: "cơn bão", tick: false },
+  { en: "straight /streɪt/", vn: "thẳng / trung thực", tick: false },
+  { en: "strange /streɪnʤ/", vn: "kỳ lạ", tick: false },
+  { en: "strategy /ˈstrætəʤi/", vn: "chiến lược", tick: false },
+  { en: "stress /strɛs/", vn: "sự căng thẳng / nhấn mạnh", tick: false },
+  { en: "structure /ˈstrʌkʧər/", vn: "cấu trúc", tick: false },
+  { en: "stupid /ˈstupəd/", vn: "ngớ ngẩn / ngu ngốc", tick: false },
+  { en: "succeed /səkˈsid/", vn: "thành công", tick: false },
+  { en: "successful /səkˈsɛsfəl/", vn: "đầy thành công", tick: false },
+  { en: "such /sʌʧ/", vn: "như thế / đến nỗi", tick: false },
+  { en: "suddenly /ˈsʌdənli/", vn: "đột ngột", tick: false },
+  { en: "suggest /səɡˈʤɛst/", vn: "gợi ý / đề nghị", tick: false },
+  { en: "suggestion /səɡˈʤɛsʧən/", vn: "sự gợi ý", tick: false },
+  { en: "suit /sut/", vn: "bộ com lê / phù hợp", tick: false },
+  { en: "support /səˈpɔrt/", vn: "ủng hộ / hỗ trợ", tick: false },
+  { en: "suppose /səˈpoʊz/", vn: "giả sử / cho là", tick: false },
+  { en: "sure /ʃʊr/", vn: "chắc chắn", tick: false },
+  { en: "surprise /sərˈpraɪz/", vn: "sự ngạc nhiên", tick: false },
+  { en: "surprised /sərˈpraɪzd/", vn: "bị ngạc nhiên", tick: false },
+  { en: "surprising /sərˈpraɪzɪŋ/", vn: "đáng ngạc nhiên", tick: false },
+  { en: "survey /ˈsɜrveɪ/", vn: "khảo sát", tick: false },
+  { en: "sweet /swit/", vn: "ngọt ngào / kẹo", tick: false },
+  { en: "symbol /ˈsɪmbəl/", vn: "biểu tượng", tick: false },
+  { en: "system /ˈsɪstəm/", vn: "hệ thống", tick: false },
+  { en: "tablet /ˈtæblət/", vn: "máy tính bảng / viên thuốc", tick: false },
+  { en: "talk /tɔk/", vn: "nói chuyện", tick: false },
+  { en: "target /ˈtɑrɡət/", vn: "mục tiêu / đối tượng", tick: false },
+  { en: "task /tæsk/", vn: "nhiệm vụ", tick: false },
+  { en: "taste /teɪst/", vn: "vị giác / nếm / gu thẩm mỹ", tick: false },
+  { en: "teaching /ˈtiʧɪŋ/", vn: "việc giảng dạy", tick: false },
+  { en: "technology /tɛkˈnɑləʤi/", vn: "công nghệ", tick: false },
+  { en: "teenage /ˈtinˌeɪʤ/", vn: "tuổi thiếu niên", tick: false },
+  { en: "temperature /ˈtɛmprəʧər/", vn: "nhiệt độ", tick: false },
+  { en: "term /tɜrm/", vn: "thuật ngữ / học kỳ / thời hạn", tick: false },
+  { en: "text /tɛkst/", vn: "văn bản / tin nhắn", tick: false },
+  { en: "themselves /ðɛmˈsɛlvz/", vn: "chính họ", tick: false },
+  { en: "thick /θɪk/", vn: "dày / đậm đặc", tick: false },
+  { en: "thief /θif/", vn: "kẻ trộm", tick: false },
+  { en: "thin /θɪn/", vn: "mỏng / gầy", tick: false },
+  { en: "thinking /ˈθɪŋkɪŋ/", vn: "sự suy nghĩ / tư duy", tick: false },
+  { en: "third /θɜrd/", vn: "thứ ba", tick: false },
+  { en: "thought /θɔt/", vn: "suy nghĩ / tư tưởng", tick: false },
+  { en: "throw /θroʊ/", vn: "ném", tick: false },
+  { en: "tidy /ˈtaɪdi/", vn: "gọn gàng", tick: false },
+  { en: "tie /taɪ/", vn: "cà vạt / thắt / buộc", tick: false },
+  { en: "tip /tɪp/", vn: "mẹo / tiền típ / đầu mút", tick: false },
+  { en: "tool /tul/", vn: "công cụ", tick: false },
+  { en: "top /tɑp/", vn: "đỉnh / hàng đầu", tick: false },
+  { en: "touch /tʌʧ/", vn: "chạm / tiếp xúc", tick: false },
+  { en: "tour /tʊr/", vn: "chuyến du lịch / đi tham quan", tick: false },
+  { en: "tourism /ˈtʊrˌɪzəm/", vn: "ngành du lịch", tick: false },
+  { en: "towards /təˈwɔrdz/", vn: "hướng về phía", tick: false },
+  { en: "towel /ˈtaʊəl/", vn: "khăn tắm / khăn lau", tick: false },
+  { en: "tower /ˈtaʊər/", vn: "tòa tháp", tick: false },
+  { en: "toy /tɔɪ/", vn: "đồ chơi", tick: false },
+  { en: "track /træk/", vn: "đường ray / dấu vết / theo dõi", tick: false },
+  { en: "tradition /trəˈdɪʃən/", vn: "truyền thống", tick: false },
+  { en: "traditional /trəˈdɪʃənəl/", vn: "thuộc về truyền thống", tick: false },
+  { en: "train /treɪn/", vn: "tàu hỏa / huấn luyện", tick: false },
+  { en: "trainer /ˈtreɪnər/", vn: "huấn luyện viên / giày thể thao", tick: false },
+  { en: "training /ˈtreɪnɪŋ/", vn: "việc đào tạo / huấn luyện", tick: false },
+  { en: "transport /ˈtrænspɔrt/", vn: "vận tải / giao thông", tick: false },
+  { en: "traveller /ˈtrævələr/", vn: "người du hành / khách du lịch", tick: false },
+  { en: "trouble /ˈtrʌbəl/", vn: "rắc rối / lo lắng", tick: false },
+  { en: "truck /trʌk/", vn: "xe tải", tick: false },
+  { en: "twin /twɪn/", vn: "sinh đôi", tick: false },
+  { en: "typical /ˈtɪpɪkəl/", vn: "điển hình / đặc trưng", tick: false },
+  { en: "underground /ˌʌndərˈɡraʊnd/", vn: "dưới lòng đất / tàu điện ngầm", tick: false },
+  { en: "understanding /ˌʌndərˈstændɪŋ/", vn: "sự thấu hiểu / am hiểu", tick: false },
+  { en: "unfortunately /ʌnˈfɔrʧənətli/", vn: "không may là", tick: false },
+  { en: "unhappy /ʌnˈhæpi/", vn: "không hạnh phúc / buồn", tick: false },
+  { en: "uniform /ˈjunəˌfɔrm/", vn: "đồng phục", tick: false },
+  { en: "unit /ˈjunət/", vn: "đơn vị / bài học", tick: false },
+  { en: "united /juˈnaɪtəd/", vn: "hợp nhất / liên hiệp", tick: false },
+  { en: "unusual /ʌnˈjuʒuəl/", vn: "bất thường", tick: false },
+  { en: "upstairs /ˌʌpˈstɛrz/", vn: "trên lầu", tick: false },
+  { en: "use /juz/", vn: "sử dụng", tick: false },
+  { en: "used to /ˈjust tu/", vn: "đã từng", tick: false },
+  { en: "user /ˈjuzər/", vn: "người dùng", tick: false },
+  { en: "usual /ˈjuʒuəl/", vn: "thông thường", tick: false },
+  { en: "valley /ˈvæli/", vn: "thung lũng", tick: false },
+  { en: "van /væn/", vn: "xe tải nhỏ / xe bán tải", tick: false },
+  { en: "variety /vəˈraɪəti/", vn: "sự đa dạng", tick: false },
+  { en: "vehicle /ˈviɪkəl/", vn: "xe cộ / phương tiện giao thông", tick: false }
+  ],
+  21: [
+  { en: "speed /spiːd/", vn: "tốc độ", tick: false },
+  { en: "spider /ˈspaɪdər/", vn: "con nhện", tick: false },
+  { en: "spoon /spuːn/", vn: "cái thìa / muỗng", tick: false },
+  { en: "square /skwɛr/", vn: "hình vuông / quảng trường", tick: false },
+  { en: "stage /steɪdʒ/", vn: "giai đoạn / sân khấu", tick: false },
+  { en: "stair /stɛr/", vn: "bậc thang", tick: false },
+  { en: "stamp /stæmp/", vn: "con tem / đóng dấu", tick: false },
+  { en: "star /stɑːr/", vn: "ngôi sao", tick: false },
+  { en: "start /stɑːrt/", vn: "bắt đầu", tick: false },
+  { en: "state /steɪt/", vn: "trạng thái / tiểu bang / nhà nước", tick: false },
+  { en: "stay /steɪ/", vn: "ở lại", tick: false },
+  { en: "steal /stiːl/", vn: "ăn trộm", tick: false },
+  { en: "step /stɛp/", vn: "bước đi / bước tiếp theo", tick: false },
+  { en: "stomach /ˈstʌmək/", vn: "dạ dày / bụng", tick: false },
+  { en: "stone /stoʊn/", vn: "viên đá", tick: false },
+  { en: "store /stɔːr/", vn: "cửa hàng / lưu trữ", tick: false },
+  { en: "storm /stɔːrm/", vn: "cơn bão", tick: false },
+  { en: "straight /streɪt/", vn: "thẳng / trung thực", tick: false },
+  { en: "strange /streɪndʒ/", vn: "kỳ lạ", tick: false },
+  { en: "strategy /ˈstrætədʒi/", vn: "chiến lược", tick: false },
+  { en: "stress /strɛs/", vn: "sự căng thẳng / nhấn mạnh", tick: false },
+  { en: "structure /ˈstrʌktʃər/", vn: "cấu trúc", tick: false },
+  { en: "stupid /ˈstuːpɪd/", vn: "ngớ ngẩn / ngu ngốc", tick: false },
+  { en: "succeed /səkˈsiːd/", vn: "thành công", tick: false },
+  { en: "successful /səkˈsɛsfəl/", vn: "đầy thành công", tick: false },
+  { en: "such /sʌtʃ/", vn: "như thế / đến nỗi", tick: false },
+  { en: "suddenly /ˈsʌdənli/", vn: "đột ngột", tick: false },
+  { en: "suggest /səˈdʒɛst/", vn: "gợi ý / đề nghị", tick: false },
+  { en: "suggestion /səˈdʒɛstʃən/", vn: "sự gợi ý", tick: false },
+  { en: "suit /suːt/", vn: "bộ com lê / phù hợp", tick: false },
+  { en: "support /səˈpɔːrt/", vn: "ủng hộ / hỗ trợ", tick: false },
+  { en: "suppose /səˈpoʊz/", vn: "giả sử / cho là", tick: false },
+  { en: "sure /ʃʊr/", vn: "chắc chắn", tick: false },
+  { en: "surprise /sərˈpraɪz/", vn: "sự ngạc nhiên", tick: false },
+  { en: "surprised /sərˈpraɪzd/", vn: "bị ngạc nhiên", tick: false },
+  { en: "surprising /sərˈpraɪzɪŋ/", vn: "đáng ngạc nhiên", tick: false },
+  { en: "survey /ˈsɜːrveɪ/", vn: "khảo sát", tick: false },
+  { en: "sweet /swiːt/", vn: "ngọt ngào / kẹo", tick: false },
+  { en: "symbol /ˈsɪmbəl/", vn: "biểu tượng", tick: false },
+  { en: "system /ˈsɪstəm/", vn: "hệ thống", tick: false },
+  { en: "tablet /ˈtæblət/", vn: "máy tính bảng / viên thuốc", tick: false },
+  { en: "talk /tɔːk/", vn: "nói chuyện", tick: false },
+  { en: "target /ˈtɑːrɡɪt/", vn: "mục tiêu / đối tượng", tick: false },
+  { en: "task /tæsk/", vn: "nhiệm vụ", tick: false },
+  { en: "taste /teɪst/", vn: "vị giác / nếm / gu thẩm mỹ", tick: false },
+  { en: "teaching /ˈtiːtʃɪŋ/", vn: "việc giảng dạy", tick: false },
+  { en: "technology /tɛkˈnɑːlədʒi/", vn: "công nghệ", tick: false },
+  { en: "teenage /ˈtiːnˌeɪdʒ/", vn: "tuổi thiếu niên", tick: false },
+  { en: "temperature /ˈtɛmprətʃər/", vn: "nhiệt độ", tick: false },
+  { en: "term /tɜːrm/", vn: "thuật ngữ / học kỳ / thời hạn", tick: false },
+  { en: "text /tɛkst/", vn: "văn bản / tin nhắn", tick: false },
+  { en: "themselves /ðɛmˈsɛlvz/", vn: "chính họ", tick: false },
+  { en: "thick /θɪk/", vn: "dày / đậm đặc", tick: false },
+  { en: "thief /θiːf/", vn: "kẻ trộm", tick: false },
+  { en: "thin /θɪn/", vn: "mỏng / gầy", tick: false },
+  { en: "thinking /ˈθɪŋkɪŋ/", vn: "sự suy nghĩ / tư duy", tick: false },
+  { en: "third /θɜːrd/", vn: "thứ ba", tick: false },
+  { en: "thought /θɔːt/", vn: "suy nghĩ / tư tưởng", tick: false },
+  { en: "throw /θroʊ/", vn: "ném", tick: false },
+  { en: "tidy /ˈtaɪdi/", vn: "gọn gàng", tick: false },
+  { en: "tie /taɪ/", vn: "cà vạt / thắt / buộc", tick: false },
+  { en: "tip /tɪp/", vn: "mẹo / tiền típ / đầu mút", tick: false },
+  { en: "tool /tuːl/", vn: "công cụ", tick: false },
+  { en: "top /tɑːp/", vn: "đỉnh / hàng đầu", tick: false },
+  { en: "touch /tʌtʃ/", vn: "chạm / tiếp xúc", tick: false },
+  { en: "tour /tʊr/", vn: "chuyến du lịch / đi tham quan", tick: false },
+  { en: "tourism /ˈtʊrɪzəm/", vn: "ngành du lịch", tick: false },
+  { en: "towards /təˈwɔːrdz/", vn: "hướng về phía", tick: false },
+  { en: "towel /ˈtaʊəl/", vn: "khăn tắm / khăn lau", tick: false },
+  { en: "tower /ˈtaʊər/", vn: "tòa tháp", tick: false },
+  { en: "toy /tɔɪ/", vn: "đồ chơi", tick: false },
+  { en: "track /træk/", vn: "đường ray / dấu vết / theo dõi", tick: false },
+  { en: "tradition /trəˈdɪʃən/", vn: "truyền thống", tick: false },
+  { en: "traditional /trəˈdɪʃənəl/", vn: "thuộc về truyền thống", tick: false },
+  { en: "train /treɪn/", vn: "tàu hỏa / huấn luyện", tick: false },
+  { en: "trainer /ˈtreɪnər/", vn: "huấn luyện viên / giày thể thao", tick: false },
+  { en: "training /ˈtreɪnɪŋ/", vn: "việc đào tạo / huấn luyện", tick: false },
+  { en: "transport /ˈtrænspɔːrt/", vn: "vận tải / giao thông", tick: false },
+  { en: "traveller /ˈtrævələr/", vn: "người du hành / khách du lịch", tick: false },
+  { en: "trouble /ˈtrʌbəl/", vn: "rắc rối / lo lắng", tick: false },
+  { en: "truck /trʌk/", vn: "xe tải", tick: false },
+  { en: "twin /twɪn/", vn: "sinh đôi", tick: false },
+  { en: "typical /ˈtɪpɪkəl/", vn: "điển hình / đặc trưng", tick: false },
+  { en: "underground /ˌʌndərˈɡraʊnd/", vn: "dưới lòng đất / tàu điện ngầm", tick: false },
+  { en: "understanding /ˌʌndərˈstændɪŋ/", vn: "sự thấu hiểu / am hiểu", tick: false },
+  { en: "unfortunately /ʌnˈfɔːrtʃənətli/", vn: "không may là", tick: false },
+  { en: "unhappy /ʌnˈhæpi/", vn: "không hạnh phúc / buồn", tick: false },
+  { en: "uniform /ˈjuːnɪfɔːrm/", vn: "đồng phục", tick: false },
+  { en: "unit /ˈjuːnɪt/", vn: "đơn vị / bài học", tick: false },
+  { en: "united /juˈnaɪtəd/", vn: "hợp nhất / liên hiệp", tick: false },
+  { en: "unusual /ʌnˈjuːʒuəl/", vn: "bất thường", tick: false },
+  { en: "upstairs /ˌʌpˈstɛrz/", vn: "trên lầu", tick: false },
+  { en: "use /juːz/", vn: "sử dụng", tick: false },
+  { en: "used to /ˈjuːst tu/", vn: "đã từng", tick: false },
+  { en: "user /ˈjuːzər/", vn: "người dùng", tick: false },
+  { en: "usual /ˈjuːʒuəl/", vn: "thông thường", tick: false },
+  { en: "valley /ˈvæli/", vn: "thung lũng", tick: false },
+  { en: "van /væn/", vn: "xe tải nhỏ / xe bán tải", tick: false },
+  { en: "variety /vəˈraɪəti/", vn: "sự đa dạng", tick: false },
+  { en: "vehicle /ˈviːɪkəl/", vn: "xe cộ / phương tiện giao thông", tick: false }
+  ],
+  22: [
+  { en: "brilliant /ˈbrɪljənt/", vn: "rực rỡ / thông minh lỗi lạc", tick: false },
+  { en: "view /vjuː/", vn: "tầm nhìn / quan điểm", tick: false },
+  { en: "virus /ˈvaɪrəs/", vn: "vi-rút", tick: false },
+  { en: "voice /vɔɪs/", vn: "giọng nói", tick: false },
+  { en: "wait /weɪt/", vn: "đợi / chờ", tick: false },
+  { en: "war /wɔːr/", vn: "chiến tranh", tick: false },
+  { en: "wash /wɑːʃ/", vn: "rửa / giặt", tick: false },
+  { en: "washing /ˈwɑːʃɪŋ/", vn: "việc giặt giũ", tick: false },
+  { en: "wave /weɪv/", vn: "sóng / vẫy tay", tick: false },
+  { en: "weak /wiːk/", vn: "yếu / kém", tick: false },
+  { en: "web /wɛb/", vn: "mạng lưới / trang web", tick: false },
+  { en: "wedding /ˈwɛdɪŋ/", vn: "lễ cưới", tick: false },
+  { en: "weight /weɪt/", vn: "trọng lượng / cân nặng", tick: false },
+  { en: "welcome /ˈwɛlkəm/", vn: "chào mừng", tick: false },
+  { en: "wet /wɛt/", vn: "ướt át", tick: false },
+  { en: "wheel /wiːl/", vn: "bánh xe", tick: false },
+  { en: "while /waɪl/", vn: "trong khi", tick: false },
+  { en: "whole /hoʊl/", vn: "toàn bộ", tick: false },
+  { en: "whose /huːz/", vn: "của ai", tick: false },
+  { en: "wide /waɪd/", vn: "rộng / rộng lớn", tick: false },
+  { en: "wild /waɪld/", vn: "hoang dã", tick: false },
+  { en: "wind /wɪnd/", vn: "gió", tick: false },
+  { en: "winner /ˈwɪnər/", vn: "người chiến thắng", tick: false },
+  { en: "wish /wɪʃ/", vn: "ước / lời chúc", tick: false },
+  { en: "wood /wʊd/", vn: "gỗ / rừng cây", tick: false },
+  { en: "wooden /ˈwʊdən/", vn: "làm bằng gỗ", tick: false },
+  { en: "working /ˈwɜːrkɪŋ/", vn: "đang làm việc", tick: false },
+  { en: "worried /ˈwɜːrid/", vn: "lo lắng", tick: false },
+  { en: "worry /ˈwɜːri/", vn: "lo lắng (động từ)", tick: false },
+  { en: "worse /wɜːrs/", vn: "tệ hơn", tick: false },
+  { en: "worst /wɜːrst/", vn: "tệ nhất", tick: false },
+  { en: "wow /waʊ/", vn: "ồ / chà (biểu cảm)", tick: false },
+  { en: "yet /jɛt/", vn: "chưa / tuy nhiên", tick: false },
+  { en: "zero /ˈzɪroʊ/", vn: "số không", tick: false },
+  { en: "wool /wʊl/", vn: "len / sợi len", tick: false },
+  { en: "wrong /rɔːŋ/", vn: "sai trái", tick: false },
+  { en: "time /taɪm/", vn: "thời gian / lần", tick: false },
+  { en: "motor /ˈmoʊtər/", vn: "động cơ / mô-tơ", tick: false },
+  { en: "hence /hɛns/", vn: "vì thế / kể từ đây", tick: false },
+  { en: "mode /moʊd/", vn: "chế độ / cách thức", tick: false },
+  { en: "model /ˈmɑːdəl/", vn: "mô hình / người mẫu", tick: false },
+  { en: "ink /ɪŋk/", vn: "mực", tick: false }
+  ],
+
+
+};
+
+let currList = 1, listCopy=[], index=0;
+
+let totalWords = 0;
+let knownCount = 0;
+
+/********** LOAD LIST **********/
+function loadList(){
+  currList = document.getElementById("wordList").value;
+  listCopy = [...data[currList]];
+  totalWords = listCopy.length;
+  knownCount = 0;
+
+  updateCounter();
+  renderWords();
+  index=-1;
+  nextWord();
+  loadExercises();
+}
+
+function updateCounter(){
+  document.getElementById("progressCounter").innerText =
+    `Đã biết ${knownCount} / ${totalWords}`;
+}
+
+
+document.getElementById("wordList").onchange = loadList;
+loadList();
+
+/********** RENDER & SORT **********/
+function renderWords(){
+  const box=document.getElementById("wordContainer");
+  box.innerHTML="";
+
+  let sorted=[...data[currList]].sort((a,b)=>b.tick - a.tick);
+
+  sorted.forEach(item=>{
+    let realIndex = data[currList].indexOf(item);
+    box.innerHTML+=`
+      <div class="word-row">
+        <span>${item.en}: ${item.vn}</span>
+        <input type="checkbox" ${item.tick?"checked":""} onclick="toggleTick(${realIndex})">
+      </div>`;
+  });
+}
+
+/********** TICK UPDATE **********/
+function toggleTick(realIndex){
+  data[currList][realIndex].tick = !data[currList][realIndex].tick;
+  renderWords();
+}
+
+/********** REVIEW **********/
+function nextWord(){
+  document.getElementById("answer").innerHTML="";
+  if(listCopy.length===0){
+    document.getElementById("vietWord").innerHTML="🎉 Bạn đã học xong hết!";
+    return;
+  }
+  index=Math.floor(Math.random()*listCopy.length);
+  document.getElementById("vietWord").innerHTML=listCopy[index].vn;
+}
+
+function know(){
+  firework();
+  knownCount++;
+  listCopy.splice(index,1);
+  updateCounter();
+  nextWord();
+}
+
+function dontKnow(){
+  document.getElementById("answer").innerHTML=listCopy[index].en;
+}
+
+/********** EXERCISES **********/
+function loadExercises(){
+  const box=document.getElementById("exercise");
+  box.innerHTML="";
+  exercises[currList].forEach((item,i)=>{
+    box.innerHTML+=`
+    <div style="margin:10px 0;">
+      ${i+1}. ${item.q}
+      <input id="ex${i}">
+      <button onclick="checkEx(${i})">Check</button>
+      <span id="res${i}" class="result"></span>
+    </div>`;
+  });
+}
+
+function checkEx(i){
+  const user = document.getElementById("ex"+i).value.trim().toLowerCase();
+  const ans = exercises[currList][i].a.toLowerCase();
+  const box = document.getElementById("res"+i);
+
+  if(user === ans) {
+    box.innerHTML = "✔ Correct";
+    box.style.color = "#28a745"; // chữ Correct màu xanh lá
+    firework(); // gọi pháo hoa
+  } else {
+    box.innerHTML = "✘ " + exercises[currList][i].a;
+    box.style.color = "#D02752"; // chữ sai màu đỏ
+  }
+}
+
+/********** FIREWORK **********/
+function firework(){
+  for(let i=0;i<25;i++){
+    const c=document.createElement("div");
+    c.className="confetti";
+    c.style.setProperty("--x",(Math.random()-.5)*600+"px");
+    c.style.setProperty("--y",(Math.random()-.5)*600+"px");
+    c.style.backgroundColor=`hsl(${Math.random()*360},90%,60%)`;
+    document.body.appendChild(c);
+    setTimeout(()=>c.remove(),900);
+  }
+}
+</script>
+
+</body>
+</html>
