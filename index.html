@@ -238,6 +238,45 @@ select {
     opacity: .9;
     animation: pop .9s ease-out forwards;
   }
+
+.exercise label {
+  cursor: pointer;
+  font-size: 20px;
+}
+.exercise input[type="radio"] {
+  transform: scale(1.3);
+  margin-right: 6px;
+}
+
+.mcq-question {
+  margin: 12px 0;
+  padding: 10px;
+  background: #fff;
+  border-radius: 10px;
+}
+
+.mcq-q {
+  margin-bottom: 4px;
+}
+
+.mcq-options {
+  margin: 4px 0 6px 0;
+}
+
+.mcq-options label {
+  display: block;
+  margin: 2px 0;
+  font-size: 20px;
+}
+
+.mcq-footer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+
   @keyframes pop {
     0% { transform: translate(0,0) scale(1); opacity:1;}
     50% {transform: translate(calc(var(--x)*.5),calc(var(--y)*.4)) scale(1.1);opacity:1;}
@@ -2561,6 +2600,54 @@ const data = {
 
 };
 
+const exercises = {
+  1: [
+  {
+    q: "My father is an ________.",
+    options: ["actor", "actress", "action", "activity"],
+    correct: "A",
+    explain: "Actor nghĩa là nam diễn viên. Vì chủ ngữ là 'father' (bố) nên dùng danh từ chỉ giới tính nam."
+  },
+  {
+    q: "She lives in a small ________.",
+    options: ["apartment", "article", "arm", "lake"],
+    correct: "A",
+    explain: "Apartment nghĩa là căn hộ. Câu này có nghĩa là 'Cô ấy sống trong một căn hộ nhỏ'."
+  },
+  {
+    q: "He rides his ________ to school.",
+    options: ["bicycle", "beach", "bed", "bottle"],
+    correct: "A",
+    explain: "Bicycle nghĩa là xe đạp. Động từ 'ride' (lái/cưỡi) thường đi với xe đạp hoặc xe máy."
+  },
+  {
+    q: "My mother gives me good ________.",
+    options: ["advice", "advise", "agree", "afraid"],
+    correct: "A",
+    explain: "Advice là danh từ (lời khuyên). Advise là động từ. Sau tính từ 'good' ta cần một danh từ."
+  },
+  {
+    q: "<b>Reading Passage: The Journey of Learning</b>: <br>In many countries, school attendance is compulsory for children from the age of six. Students start in primary school and then move to secondary school. During each semester, a pupil has to follow a fixed timetable with many different subjects. To get good grades, students must concentrate on the lectures and complete all homework or assignments given by their teachers. <br>Many students find it difficult to revise for a big examination. Instead of studying regularly, some people choose rote learning, which means they learn by heart everything without understanding it. Others might even become a copycat by looking at a friend’s paper. However, these methods do not help you gain real knowledge.<br>After students graduate from high school, they can pursue higher education at a university or an academy. Here, they can choose to be an undergraduate and work toward a bachelor's degree. To be successful, learners need to cultivate critical thinking and stay motivated. Education is not just about passing an exam; it is a way to broaden your horizons and prepare for the future. <br><b>According to the passage, What is a requirement for children in many countries?</b>",
+    options: ["They must pay expensive tuition fees.", "Going to school is required by law.", "They have to wear a uniform every day.", "They must live in a boarding school."],
+    correct: "B",
+    explain: "Required by law = Compulsory"
+  },
+  {
+    q: "<b>What does the author think about rote learning</b>",
+    options: ["They must pay expensive tuition fees.", "Going to school is required by law.", "They have to wear a uniform every day.", "They must live in a boarding school."],
+    correct: "C",
+    explain: "Memorizing facts without understanding = Learn by heart everything without understanding it"
+  },
+  {
+    q: "<b>What should a student do to get a bachelor's degree at a university?</b>",
+    options: ["Play truant and skip all the lectures.", "Become a copycat during the semester.", "Continue their studies after finishing high school.", "Only focus on the school address."],
+    correct: "C",
+    explain: "Continue their studies after finishing high school = Pursue higher education/graduate from high school"
+  },
+],
+};
+
+
 let currList = 1, listCopy=[], index=0;
 
 let totalWords = 0;
@@ -2645,31 +2732,58 @@ function dontKnow(){
 
 /********** EXERCISES **********/
 function loadExercises(){
-  const box=document.getElementById("exercise");
-  box.innerHTML="";
-  exercises[currList].forEach((item,i)=>{
-    box.innerHTML+=`
-    <div style="margin:10px 0;">
-      ${i+1}. ${item.q}
-      <input id="ex${i}">
-      <button onclick="checkEx(${i})">Check</button>
-      <span id="res${i}" class="result"></span>
-    </div>`;
+  const box = document.getElementById("exercise");
+  box.innerHTML = "";
+
+  exercises[currList].forEach((item, i) => {
+    const letters = ["A", "B", "C", "D"];
+
+    let optionsHTML = "";
+    item.options.forEach((opt, idx) => {
+      optionsHTML += `
+        <label style="display:block; margin:4px 0;">
+          <input type="radio" name="ex${i}" value="${letters[idx]}">
+          ${letters[idx]}. ${opt}
+        </label>
+      `;
+    });
+
+    box.innerHTML += `
+  <div style="margin:15px 0; padding:10px; background:#fff; border-radius:10px;">
+    <div>${i+1}. ${item.q}</div>
+    <div style="margin-left:20px;">${optionsHTML}</div>
+    <button onclick="checkEx(${i})">Check</button>
+    <span id="res${i}" class="result"></span>
+  </div>
+`;
+
   });
 }
 
 function checkEx(i){
-  const user = document.getElementById("ex"+i).value.trim().toLowerCase();
-  const ans = exercises[currList][i].a.toLowerCase();
+  const radios = document.querySelectorAll(`input[name="ex${i}"]`);
+  let user = "";
+
+  radios.forEach(r => {
+    if(r.checked) user = r.value;
+  });
+
+  const correct = exercises[currList][i].correct;
   const box = document.getElementById("res"+i);
 
-  if(user === ans) {
+  if(user === ""){
+    box.innerHTML = "⚠ Chọn đáp án!";
+    box.style.color = "#ff9800";
+    return;
+  }
+
+  if(user === correct){
     box.innerHTML = "✔ Correct";
-    box.style.color = "#28a745"; // chữ Correct màu xanh lá
-    firework(); // gọi pháo hoa
+    box.style.color = "#28a745";
+    firework();
   } else {
-    box.innerHTML = "✘ " + exercises[currList][i].a;
-    box.style.color = "#D02752"; // chữ sai màu đỏ
+    box.innerHTML = `✘ ${correct}. ${exercises[currList][i].options["ABCD".indexOf(correct)]}`;
+    box.style.color = "#D02752";
   }
 }
 
